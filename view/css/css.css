@@ -1,0 +1,535 @@
+.Button_green {
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+    background-color: #226b00;
+    color: #fff;
+    transition: background-color .15s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .Button_green:hover, .btn-bootstrap:focus {
+    background-color: #226b00;
+  }
+  
+  .Button_green:active {
+    background-color: #226b00;
+  }
+
+
+  .Button_whitte {
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+    background-color: #feffff;
+    color: #fff;
+    transition: background-color .15s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .Button_whitte:hover, .btn-bootstrap:focus {
+    background-color: #feffff;
+  }
+  
+  .Button_whitte:active {
+    background-color: #feffff;
+  }
+
+
+
+.datatable{ position:absolute;
+  z-index:1;
+  background-color:#FFFFFF;
+  top:200px;
+  left:500px;
+  width:500px;
+  height:100px;
+ }
+
+
+
+
+
+
+  .Button_red {
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+    background-color: #fd0808;
+    color: #fff;
+    transition: background-color .15s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .Button_green:hover, .btn-bootstrap:focus {
+    background-color: #fd0808;
+  }
+  
+  .Button_green:active {
+    background-color: #fd0808;
+  }
+
+
+
+  .Button_blue {
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+    background-color: #0069d9;
+    color: #fff;
+    transition: background-color .15s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .Button_blue:hover, .btn-bootstrap:focus {
+    background-color: #0069d9;
+  }
+  
+  .Button_blue:active {
+    background-color: #0069d9;
+  }
+
+
+/*   .Button_blue1 {
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+    background-color: #ffffff;
+    color: #fff;
+    transition: background-color .15s ease-in-out;
+  }
+  
+  .Button_blue1:hover, .btn-bootstrap:focus {
+    background-color: #0069d9;
+  }
+  
+  .Button_blue1:active {
+    background-color: #0069d9;
+  } */
+
+  
+  .Button_black {
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+    background-color: #000000;
+    color: #fff;
+    transition: background-color .15s ease-in-out;
+        cursor: pointer;
+  }
+  
+  .Button_black:hover, .btn-bootstrap:focus {
+    background-color: #000000;
+  }
+  
+  .Button_black:active {
+    background-color: #000000;
+  }
+
+
+
+  .botonimagen{
+    background-image:url(../images/spain.png);
+    background-repeat:no-repeat;
+    height:10px;
+    width:10px;
+    background-position:center;
+  }
+
+
+
+  /* Home */
+
+  #salto_shop{
+
+    cursor:pointer;
+    background-color: #000000;
+    color: #feffff;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+  }
+  #salto_more{
+
+    cursor:pointer;
+    background-color: #000000;
+    color: #feffff;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+  }
+
+  #opauto{
+    cursor:pointer;
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+
+  /* Shop */
+  #title_Shop{
+    text-align: center;
+  }
+
+  #container_shop{
+    text-align: center;
+  }
+  #details{
+    text-align: center;
+    width: 55%;
+    height: 500px;
+  }
+  #api{
+    margin-left: 20px;
+    text-align: center;
+    width: 700%;
+    height: 500px;
+  }
+ 
+  .imgapi{
+    float: left;
+    
+  }
+  .imga1 {
+
+    padding: 10px 10px 10px 10px;
+    margin: 10px;
+    display:inline-block;
+    width: 250px; height: 250px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  /* Details */
+
+  .img_details{
+    width: 100px; height: 100px;
+  }
+
+  table {
+    width: 300%;
+    height: 300px;
+  }
+  #volver_shop{
+    background-color: #000000;
+    color: #fff;
+    cursor:pointer;
+  }
+
+  /* Boton filtrar check */
+  #filtrar_check{
+    background-color: #000000;
+    color: #fff;
+    cursor:pointer;
+    border-style:double;
+  }
+
+  #check_precio{
+    background-color: #000000;
+    color: #fff;
+    cursor:pointer;
+    border-style:double;
+  }
+
+  #mapshop {
+    height: 70%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+  .mapdetails{
+    cursor:pointer;
+    
+  }
+
+  .googlelogin{
+    cursor:pointer;
+    
+  }
+
+  .ghublogin{
+    cursor:pointer;
+    width: 160px; height: 45px;
+  }
+
+  .owl-item{
+    margin-top: 210px;
+  }
+
+  /* pagination */
+  #titulo_api{
+    text-align:center;
+    margin-top: revert;
+  }
+
+  #loadmore{
+    background-color: #000000;
+    color: #fff;
+    cursor:pointer;
+    border-style:double;
+    margin-inline: auto;
+    justify-content: center;
+    vertical-align: middle;
+  }
+
+  .imgapi{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+  }
+
+  .btn{
+    text-decoration: none;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+  }
+  .btn:hover{
+    color: #1883ba;
+    background-color: #ffffff;
+  }
+
+
+  .oscuro{ 
+    background-color: #1f1f1f; 
+    color: #f1eded; 
+}
+
+.darkfos{
+  background-color: #1f1f1f; 
+}
+
+.submit{
+  cursor:pointer;
+}
+  
+  
+/* Login */
+
+#login_btn{
+  background-color: #000000;
+  color: white;
+}
+
+
+#cnhg_user{
+  background-color: #000000;
+  color: white;
+}
+
+#register_btn{
+  background-color: #000000;
+  color: white;
+}
+
+body {
+  background-image: url(http://kreativo.se/backlogin.jpg);
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  padding-top: 20px;
+}
+
+.container_login {
+  width: 406px;
+  max-width: 406px;
+  margin: 0 auto;
+  padding: 240px 25px 25px;
+}
+
+#signup {
+  padding: 0px 25px 25px;
+  background: #fff;
+  box-shadow: 
+      0px 0px 0px 5px rgba( 255,255,255,0.4 ), 
+      0px 4px 20px rgba( 0,0,0,0.33 );
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  display: table;
+  position: static;
+}
+
+#signup .header {
+  margin-bottom: 20px;
+}
+
+#signup .header h3 {
+  color: #333333;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#signup .header p {
+  color: #8f8f8f;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+#signup .sep {
+  height: 1px;
+  background: #e8e8e8;
+  width: 406px;
+  margin: 0px -25px;
+}
+
+#signup .inputs {
+  margin-top: 25px;
+}
+
+#signup .inputs label {
+  color: #8f8f8f;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 7px;
+  display: block;
+}
+
+input::-webkit-input-placeholder {
+  color:    #b5b5b5;
+}
+
+input:-moz-placeholder {
+  color:    #b5b5b5;
+}
+
+#signup .inputs input[type=email], input[type=password],input[type=text],input[type=button] {
+  background: #f5f5f5;
+  font-size: 0.8rem;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: none;
+  padding: 13px 10px;
+  width: 330px;
+  margin-bottom: 20px;
+  box-shadow: inset 0px 2px 3px rgba( 0,0,0,0.1 );
+  clear: both;
+}
+
+#signup .inputs input[type=email]:focus, input[type=password]:focus {
+  background: #fff;
+  box-shadow: 0px 0px 0px 3px #fff38e, inset 0px 2px 3px rgba( 0,0,0,0.2 ), 0px 5px 5px rgba( 0,0,0,0.15 );
+  outline: none;   
+}
+
+#signup .inputs .checkboxy {
+  display: block;
+  position: static;
+  height: 25px;
+  margin-top: 10px;
+  clear: both;
+}
+
+#signup .inputs input[type=checkbox] {
+  float: left;
+  margin-right: 10px;
+  margin-top: 3px;
+}
+
+#signup .inputs label.terms {
+  float: left;
+  font-size: 14px;
+  font-style: italic;
+}
+
+#signup .inputs #submit {
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px 0;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-align: center;
+  text-decoration: none;
+      background: -moz-linear-gradient(
+      top,
+      #b9c5dd 0%,
+      #a4b0cb);
+  background: -webkit-gradient(
+      linear, left top, left bottom, 
+      from(#b9c5dd),
+      to(#a4b0cb));
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #737b8d;
+  -moz-box-shadow:
+      0px 5px 5px rgba(000,000,000,0.1),
+      inset 0px 1px 0px rgba(255,255,255,0.5);
+  -webkit-box-shadow:
+      0px 5px 5px rgba(000,000,000,0.1),
+      inset 0px 1px 0px rgba(255,255,255,0.5);
+  box-shadow:
+      0px 5px 5px rgba(000,000,000,0.1),
+      inset 0px 1px 0px rgba(255,255,255,0.5);
+  text-shadow:
+      0px 1px 3px rgba(000,000,000,0.3),
+      0px 0px 0px rgba(255,255,255,0);
+  display: table;
+  position: static;
+  clear: both;
+}
+
+#signup .inputs #submit:hover {
+  background: -moz-linear-gradient(
+      top,
+      #a4b0cb 0%,
+      #b9c5dd);
+  background: -webkit-gradient(
+      linear, left top, left bottom, 
+      from(#a4b0cb),
+      to(#b9c5dd));
+}
+
+
+
+/* Favoritos */
+
+
+
+.div2{
+ 
+  /* background: #5DEAA8; */
+  height: 40px;
+  width: 40px;
+  margin-top: 10px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  cursor: pointer;
+}
+
+
+
+.heart {
+  font-size: 135px;
+  cursor: pointer;
+}
+#cuadro{
+  float:left;
+  border-top-width: 10px;
+  border-right-width: 1em;
+  border-bottom-width: thick;
+  border-left-width: thin;
+  border: lawngreen;
+}
+.btn_compra{
+  text-decoration: none;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: helvetica;
+  font-weight: 50;
+  font-size: 15px;
+  font-style: italic;
+  color: hsl(0, 100%, 100%);
+
+  background-color: #678d00;
+  border-radius: 15px;
+  border: 3px double #fafffa;
+  cursor: pointer;
+}
+.btn_compra:hover{
+  opacity: 0.6;
+  text-decoration: none;
+}
+

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<functions>
+    <function>
+        <name>list_shop</name>
+        <uri>list_shop</uri>
+    </function>
+
+    <function>
+        <name>all_data_shop</name>
+        <uri>all_data_shop</uri>
+    </function>
+
+     <function>
+        <name>details</name>
+        <uri>details</uri>
+    </function>
+
+    
+     <function>
+        <name>grupos_disponibles</name>
+        <uri>grupos_disponibles</uri>
+    </function>
+
+     <function>
+        <name>pagination</name>
+        <uri>pagination</uri>
+    </function>
+
+      <function>
+        <name>maps_data</name>
+        <uri>maps_data</uri>
+    </function>
+
+     <function>
+        <name>checks</name>
+        <uri>checks</uri>
+    </function>
+
+<!--      <function>
+        <name>owl_carrousel</name>
+        <uri>owl_carrousel</uri>
+    </function>
+
+      <function>
+        <name>categories</name>
+        <uri>categories</uri>
+      </function>
+
+      <function>
+        <name>morevisited</name>
+        <uri>morevisited</uri>
+      </function>
+
+      <function>
+        <name>more_groups</name>
+        <uri>more_groups</uri>
+      </function> -->
+      </functions>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<functions>
+
+    <function>
+        <name>list_login</name>
+        <uri>list_login</uri>
+    </function>
+
+     <function>
+        <name>list_register</name>
+        <uri>list_register</uri>
+    </function>
+
+     <function>
+        <name>validate_register</name>
+        <uri>validate_register</uri>
+    </function>
+
+    <function>
+        <name>validate_register</name>
+        <uri>validate_register</uri>
+    </function>
+
+    <function>
+        <name>active_user</name>
+        <uri>active_user</uri>
+    </function>
+
+    <function>
+        <name>list_user_change</name>
+        <uri>list_user_change</uri>
+    </function>
+
+    
+    <function>
+        <name>send_email_change_passw</name>
+        <uri>send_email_change_passw</uri>
+    </function>
+
+       <function>
+        <name>update_passwd</name>
+        <uri>update_passwd</uri>
+    </function>
+
+      <function>
+        <name>list_psswd</name>
+        <uri>list_psswd</uri>
+    </function>
+
+     <function>
+        <name>manual_login</name>
+        <uri>manual_login</uri>
+    </function>
+
+      <function>
+        <name>get_user_log</name>
+        <uri>get_user_log</uri>
+    </function>
+
+         <function>
+        <name>social_login</name>
+        <uri>social_login</uri>
+    </function>
+    
+</functions>
