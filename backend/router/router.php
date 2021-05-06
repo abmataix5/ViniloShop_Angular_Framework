@@ -1,11 +1,6 @@
 <?php
 
  require 'autoload.php'; 
-/*  require_once("paths.php");
- include(UTILS . "utils.inc.php");
- include(UTILS . "common.inc.php");
- include(UTILS . "upload.inc.php");
- include(UTILS . "mail.inc.php"); */
 
  if (PRODUCTION) { //estamos en producción
     ini_set('display_errors', '1');
@@ -18,6 +13,8 @@
 ob_start();
 session_start();
 $_SESSION['module'] = "";
+
+$_POST = json_decode(file_get_contents('php://input'), true);
 
 function handlerRouter() {
 

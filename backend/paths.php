@@ -1,5 +1,5 @@
 <?php
-    define('PROJECT', '/Vinilo_framework/');
+    define('PROJECT', '/ViniloShop_Angular_Framework/backend/');
 
     //SITE_ROOT
     define('SITE_ROOT', $_SERVER['DOCUMENT_ROOT'] . PROJECT);

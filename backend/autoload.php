@@ -1,16 +1,16 @@
 <?php
-    //load all inc.php
+  
      require_once("paths.php");
     include(UTILS . "utils.inc.php"); 
     include(UTILS . "common.inc.php"); 
-/*     include(UTILS . "upload.inc.php"); */
-   include(UTILS . "mail.class.php"); 
-   include(UTILS . "middleware_auth.php"); 
-    //load all class.singleton.php
+    include(UTILS . "mail.class.php"); 
+    include(UTILS . "middleware_auth.php"); 
+
     spl_autoload_register(null, false);
     spl_autoload_extensions('.php,.inc.php,.class.php,.class.singleton.php');
 
     spl_autoload_register('loadClasses');
+
     function loadClasses($className) {
         //Get module name 
         $porciones = explode("_", $className);
