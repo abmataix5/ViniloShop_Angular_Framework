@@ -1,7 +1,8 @@
 
-viniloshop.controller('controller_home', function($scope,carrousel) {
+viniloshop.controller('controller_home', function($scope,carrousel,viewedBrands) {
     console.log("dentro vinilo.controller");
     console.log(carrousel);
+    console.log(viewedBrands);
 /*     let brands = 3;
     let total = viewedBrands.length;
 

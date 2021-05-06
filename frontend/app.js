@@ -10,14 +10,7 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                     resolve: {
                         carrousel: function (services) {
 
-
-
-                             data =  services.get('home','owl_carrousel');
-                            return data; 
-
-
-                            
-                           /*  return services.get('home','owl_carrousel');  */
+                            return services.get('home','owl_carrousel');  
                         },
                         viewedBrands: function (services) {
                             return services.get('home','categories');
