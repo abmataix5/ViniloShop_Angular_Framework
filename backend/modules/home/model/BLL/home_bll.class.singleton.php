@@ -37,10 +37,10 @@
 			return $this->dao->select_data_morevisited($this->db,$arrArgument);  
 		}
 
-		public function obtain_more_groups_BLL($arrArgument){
+		public function obtain_more_groups_BLL(){
 		
 			/*  echo ("holas");   */
-			return $this->dao->select_data_more_groups($this->db,$arrArgument);  
+			return $this->dao->select_data_more_groups($this->db);  
 		}
 /* 	    public function obtain_data_list_BLL($arrArgument){
 	      return $this->dao->select_data_list($this->db,$arrArgument);

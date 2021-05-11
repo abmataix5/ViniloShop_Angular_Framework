@@ -37,10 +37,10 @@ class home_dao {
            return $db->ejecutar($sql);
        }
 
-       public function select_data_more_groups($db,$arrArgument){
+       public function select_data_more_groups($db){
     
        
-        $sql = "SELECT DISTINCT img_grupo,nombre_grupo FROM stock LIMIT $arrArgument";
+        $sql = "SELECT DISTINCT img_grupo,nombre_grupo FROM stock";
         $stmt = $db->ejecutar($sql);
         return ($db->listar($stmt));
     }

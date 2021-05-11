@@ -38,11 +38,11 @@
 
 		function more_groups() {
 			/* 	echo("moreee"); */
-				if (isset($_POST["limit"])){
+				
 					$json = array();
-					 $json = loadModel(MODEL_HOME, "home_model", "more_groups",$_POST['limit']);
+					 $json = loadModel(MODEL_HOME, "home_model", "more_groups");
 					 echo json_encode($json);
-				}
+				
 		}
 
 	

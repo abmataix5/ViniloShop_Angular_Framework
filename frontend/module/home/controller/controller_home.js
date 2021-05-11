@@ -1,43 +1,76 @@
 
-viniloshop.controller('controller_home', function($scope,carrousel,viewedBrands) {
-    console.log("dentro vinilo.controller");
-    console.log(carrousel);
-    console.log(viewedBrands);
-/*     let brands = 3;
-    let total = viewedBrands.length;
+viniloshop.controller('controller_home', function($scope,carrousel,categorias,more_groups) {
 
-    $scope.myInterval = 5000;
-    $scope.noWrapSlides = false;
-    $scope.active = 0;
-    $scope.slides = featuredCars;
-    $scope.viewedBrands = viewedBrands.slice(0, brands);
+ /*    console.log("dentro vinilo.controller"); */
 
-    angular.element($window).on('mousewheel', function() {
-        let footerHeight = document.getElementById('container-footer').offsetHeight;
-        let position = $window.scrollY + footerHeight;
-        let bottom = document.body.scrollHeight - $window.innerHeight;
-        //////
-        if (position >= bottom) {
-            if (brands < total) {
-                brands += 3;
-                $scope.viewedBrands = viewedBrands.slice(0, brands);
-                $scope.$apply();
-            }else {
-                angular.element($window).off('mousewheel');
-            }// end_else
-        }// end_if
-    });
+    let count = 3;
 
-    $scope.redirectShopBrand = function(brand) {
-        localStorage.brandShop = brand;
+    $scope.slides = carrousel;  
+    $scope.categorias = categorias;
+    $scope.more_groups = more_groups.slice(0,count);
+
+
+
+    angular.element(document).ready(function() {
+
+            /*Function para cargar mas grupos  */
+
+      $scope.load_more = function(){
+        count=count+3;
+        $scope.more_groups = more_groups.slice(0,count);    
+        
+        
+      }
+
+          /* Redirect shop por categoria */
+
+          $scope.redirectShopCategorias = function(categoria) {
+
+            localStorage.categoria = categoria;
+            location.href = "#/shop";
+        }
+
+
+           /* Redirect shop sin filtros*/
+
+      $scope.redirectShop = function() {
+  
         location.href = "#/shop";
-    };// end_redirectShopBrand */
+    }
+
+         /* Owl carrousel */
+  
+      $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:false,
+        dots:false,
+        autoplay:true,
+        autoplayTimeout:3000,
+        autoplayHoverPause:true,
+        responsive:{
+          0:{
+            items:1
+          },
+          600:{
+            items:3
+          },
+          1000:{
+            items:3
+          }
+        }
+    
+       })  
+
+
+  
+  });
+
+
+
+     
+
 });// end_controller
 
-viniloshop.controller('controller_menu', function($scope, services_logIn) {
-    services_logIn.printMenu();
 
-    $scope.logOut = function() {
-        services_logIn.logOut();
-    };// endlogOut
-})
+

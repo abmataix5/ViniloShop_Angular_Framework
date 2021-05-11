@@ -32,9 +32,9 @@ class home_model {
   return $this->bll->obtain_morevisited_BLL($arrArgument);   
 }
 
-public function more_groups($arrArgument){
+public function more_groups(){
     /* echo("Dentro funcion");   */ 
-  return $this->bll->obtain_more_groups_BLL($arrArgument);   
+  return $this->bll->obtain_more_groups_BLL();   
 }
 /*     public function obtain_data_details($arrArgument){
         return $this->bll->obtain_data_details_BLL($arrArgument);

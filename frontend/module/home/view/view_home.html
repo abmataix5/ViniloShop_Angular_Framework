@@ -4,29 +4,46 @@
 
 <div id="caorusel" class = "owl-carousel owl-theme">
 
+   <img ng-repeat ="data in slides" id="carousel_shop" ng-click="redirectShopCatego()" ng-src="frontend/{{data.ruta}}">
 
-
-</div>
+</div> 
 
 
 <!-- Categorias  de productos -->
  <section class="about py-lg-4 py-md-3 py-sm-3 py-3" id="about">
+
      <div class="container py-lg-5 py-md-5 py-sm-4 py-4">
         <h3 class="title text-center mb-lg-5 mb-md-4  mb-sm-4 mb-3" id="productos">Categorias</h3>
         
         <div id = "categories" class="row banner-below-w3l">
-     
+
+         <div ng-repeat= "data in categorias" class="col-lg-4 col-md-6 col-sm-6 text-center banner-agile-flowers"> 
+         
+            <img  ng-src="frontend/{{data.ruta}}" class="img-thumbnail" alt="">  
+
+            <div class="banner-right-icon">  
+               <button id="salto_shop" class="{{data.categoria}}"  ng-click="redirectShopCategorias('{{data.categoria}}')">{{data.categoria}}</button>
+            </div>   
+            
+         </div>
 
        
-     </div>
+        </div>
 
-     <div>
-     <h3 class="title text-center mb-lg-5 mb-md-4  mb-sm-4 mb-3" id="productos">Grupos disponibles</h3>
-        <div id = "grupos_scroll" class="row banner-below-w3l">
-         
+         <div>
+         <h3 class="title text-center mb-lg-5 mb-md-4  mb-sm-4 mb-3" id="productos">Grupos disponibles</h3>
+         <div id = "grupos_scroll" class="row banner-below-w3l">
+
+            <div ng-repeat="data in more_groups" class="col-lg-4 col-md-6 col-sm-6 text-center banner-agile-flowers">  
+               <img  ng-src="frontend/{{data.img_grupo}}" class="img-thumbnail" alt="">  
+               <div class="banner-right-icon">  
+                  <button id="salto_more" class="{{data.nombre_grupo}}" ng-click="redirectShop()" >{{data.nombre_grupo}}</button> 
+               </div>   
+            </div>
+
+         </div>
+         <a id="loadmore" ng-click="load_more()">Cargar más</a>
      </div>
-     <a id="loadmore">Cargar más</a>
-   </div>
   
   <!-- //Categorias de productos -->
 

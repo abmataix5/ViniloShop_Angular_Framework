@@ -12,20 +12,23 @@ viniloshop.config(['$routeProvider', '$locationProvider',
 
                             return services.get('home','owl_carrousel');  
                         },
-                        viewedBrands: function (services) {
+                        categorias: function (services) {
                             return services.get('home','categories');
+                        },
+                        more_groups: function (services) {
+                            return services.get('home','more_groups');
                         }
                     }// end_resolve
                 }).when("/contact", {
                     templateUrl: "frontend/module/contact/view/view_contact.html", 
                     controller: "controller_contact"
-                })/* .when("/shop", {
+                }) .when("/shop", {
                     templateUrl: "frontend/module/shop/view/view_shop.html", 
                     controller: "controller_shop",
                     resolve: {
-                        filters: function (services) {
-                            return services.get('shop', 'sendFilters');
-                        },
+                        grupos: function (services) {
+                            return services.get('shop', 'grupos_disponibles');
+                        }/* ,
                         cars: function (services) {
                             return services.get('shop', 'sendInfo');
                         },
@@ -34,9 +37,9 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                         },
                         cart: function(services) {
                             return services.post('cart', 'selectCart', {JWT: localStorage.token});
-                        }
-                    }
-                }).when('/shop/:carPlate' , {
+                        } */
+                    } 
+                })/* .when('/shop/:carPlate' , {
                     templateUrl: "frontend/module/shop/view/view_shopDetails.html",
                     controller: "controller_shopDetails",
                     resolve: {
@@ -125,5 +128,5 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                 }).otherwise("/home", {
                     templateUrl: "frontend/module/home/view/view_home.html", 
                     controller: "controller_home"
-                });  */
+                });   */
     }]);
