@@ -51,6 +51,7 @@ Aplicacion destinada a la venta online.
 *  *Order*
 *   *Shop* 
 * *Contact* 
+* *Login/Register/Social login*
 
 
 ### Funcionalidad ⚙️
@@ -66,7 +67,7 @@ Aplicacion destinada a la venta online.
 
 ### Próximas actualizaciones: 🛠️
 
-*  *Nuevo módulo Login/Register* 
+
 * *Shop carrito compra* 
 
 
