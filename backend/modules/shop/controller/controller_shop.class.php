@@ -59,11 +59,11 @@
 	   
 		function checks(){
 			
-			if ((isset($_POST["checks"]))){   
+		
 			  $json = array();
-			   $json = loadModel(MODEL_SHOP, "shop_model", "obtain_checks",$_POST["checks"]);
-				echo json_encode($json); 
-			}   
+			  $json = loadModel(MODEL_SHOP, "shop_model", "obtain_checks",$_POST["checks"],$_POST["checks_2"]);
+			  echo json_encode($json); 
+			 
 	  }
 		
 	

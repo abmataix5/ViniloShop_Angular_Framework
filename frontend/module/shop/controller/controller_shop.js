@@ -161,10 +161,11 @@ viniloshop.controller('controller_shop', function($scope,services,grupos,all_sto
 
     $scope.filtrar = function() {
 
-        localStorage.filters = filtros;
+            localStorage.filters = filtros;
             var producto_filtrado = "";
-           console.log(filtros_catego);
-            producto_filtrado = services.post('shop', 'checks', {'checks': filtros}) 
+            console.log(filtros_catego);
+            console.log(filtros);
+            producto_filtrado = services.post('shop', 'checks', {'checks': filtros,'checks_2': filtros_catego}) 
 
             /* Para poder sacar los datos en un array normal */
 
