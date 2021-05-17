@@ -19,7 +19,7 @@ viniloshop.factory("services", ['$http','$q', function ($http, $q) {
             return promise;
         };
 
-       /*  obj.get = function (module, functi, dada) {
+     /*    obj.get = function (module, functi, dada) {
             var defered=$q.defer();
             var promise=defered.promise;
             $http({
@@ -32,9 +32,9 @@ viniloshop.factory("services", ['$http','$q', function ($http, $q) {
                  defered.reject(data);
               });
             return promise;
-        };
+        }; */
 
-        obj.get = function (module, functi, dada, dada2) {
+     /*    obj.get = function (module, functi, dada, dada2) {
             var defered=$q.defer();
             var promise=defered.promise;
             $http({
@@ -47,14 +47,14 @@ viniloshop.factory("services", ['$http','$q', function ($http, $q) {
                  defered.reject(data);
               });
             return promise;
-        };
+        }; */
 
         obj.post = function (module, option, data) {
           var defered = $q.defer();
           var promise = defered.promise;
           $http({
                 method: 'POST',
-                url: serviceBase + module + '&op=' + option,
+                url: serviceBase + module + '&function=' + option,
                 data: data
             }).success(function(response, status, headers, config) {
                defered.resolve(response);
@@ -64,7 +64,7 @@ viniloshop.factory("services", ['$http','$q', function ($http, $q) {
           return promise;
         };
 
-        obj.put = function (module, functi, dada) {
+  /*       obj.put = function (module, functi, dada) {
           var defered=$q.defer();
           var promise=defered.promise;
           $http({
@@ -77,9 +77,9 @@ viniloshop.factory("services", ['$http','$q', function ($http, $q) {
                defered.reject(data);
             });
           return promise;
-        };
+        }; */
 
-        obj.delete = function (module, functi, dada) {
+ /*        obj.delete = function (module, functi, dada) {
             var defered=$q.defer();
             var promise=defered.promise;
             $http({
@@ -92,7 +92,7 @@ viniloshop.factory("services", ['$http','$q', function ($http, $q) {
                  defered.reject(data);
               });
             return promise;
-        }; */
+        };  */
         
     return obj;
 }]);

@@ -86,8 +86,7 @@ function handlerRouter() {
 
     if (!$exist) {
         echo("IE que no existe");
-    /*      require_once(VIEW_PATH_INC . "header.php"); */
-     /*    require_once(VIEW_PATH_INC . "menu.php"); */
+        require_once(VIEW_PATH_INC . "header.html"); 
         require_once(VIEW_PATH_INC . "404.php");
         require_once(VIEW_PATH_INC . "footer.html"); 
     } else {

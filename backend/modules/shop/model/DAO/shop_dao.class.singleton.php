@@ -44,9 +44,23 @@ class shop_dao {
     }
 
     public function select_checks_list($db,$arrArgument) {
-        $sql = "SELECT * FROM stock WHERE $arrArgument";
-        $stmt = $db->ejecutar($sql);
-        return $db->listar($stmt);
+        $mesu = sizeof($arrArgument);
+        $check_0 = $arrArgument[0];
+        $check_1 = $arrArgument[1];
+        $check_2 = $arrArgument[2];
+        $check_3 = $arrArgument[3];
+        $check_4 = $arrArgument[4];
+
+        if($mesu > 0){
+            $sql = "SELECT * FROM stock WHERE estilo_musical = '$check_0' or estilo_musical = '$check_1' or estilo_musical = '$check_2' or estilo_musical = '$check_3' or estilo_musical = '$check_4'";
+            $stmt = $db->ejecutar($sql);
+            return $db->listar($stmt);
+        }else{
+            $sql = "SELECT * FROM stock";
+            $stmt = $db->ejecutar($sql);
+            return $db->listar($stmt);
+        }
+      
     }
 
 

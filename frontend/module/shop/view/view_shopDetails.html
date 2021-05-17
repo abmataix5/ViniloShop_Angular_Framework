@@ -1,0 +1,48 @@
+
+<div ng-repeat = "data in data" id="details">
+            <table border="2px"> 
+                  <tr >
+                     <td rowspan="8"><img  class ="img_details" ng-src="frontend/{{data.ruta}}"></td>
+                     <td>Codigo del producto</td>
+                     <td>{{data.cod_producto}}</td>
+                 </tr>
+
+                 <tr>
+                     <td>Codigo del grupo</td>
+                     <td>{{data.cod_producto}}</td>
+                 </tr>
+
+                 <tr>
+                     <td>Fecha estreno</td>
+                     <td>{{data.fecha_estreno}}</td>
+                 </tr>
+
+                 <tr>
+                 <td>Nombre del grupo</td>
+                 <td>{{data.nombre_grupo}}</td>
+                 </tr>
+
+                 <tr>
+                 <td>Nombre del disco</td>
+                 <td>{{data.nombre_disco}}</td>
+                 </tr>
+
+                 <tr>
+                 <td>Estilo musical</td>
+                 <td>{{data.estilo_musical}}</td>
+                 </tr>
+
+                 <tr>
+                 <td>Codigo de compra</td>
+                 <td>{{data.cod_compra}}</td>
+
+                 <tr>
+                 <td>Precio</td>
+                 <td>{{data.precio}}</td>
+             </tr>
+             <tr><td><button id="volver_shop" ng-click="back_shop()">Volver</button><a class="btn_compra">Añadir al carrito</a></td></tr>
+             
+         </table>
+
+         
+    </div>

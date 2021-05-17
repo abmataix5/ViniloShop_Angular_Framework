@@ -1,4 +1,4 @@
-var viniloshop = angular.module('viniloshop', ['ngRoute']);
+var viniloshop = angular.module('viniloshop', ['ngRoute','ui.bootstrap']);
 //////c
 /* console.log(viniloshop); */
 viniloshop.config(['$routeProvider', '$locationProvider',
@@ -28,32 +28,33 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                     resolve: {
                         grupos: function (services) {
                             return services.get('shop', 'grupos_disponibles');
+                        } ,
+                        all_stock: function (services) {
+                            return services.get('shop', 'maps_data');
                         }/* ,
-                        cars: function (services) {
-                            return services.get('shop', 'sendInfo');
-                        },
                         favs: function(services) {
                             return services.post('shop', 'sendFavs', {JWT: localStorage.token});
                         },
                         cart: function(services) {
                             return services.post('cart', 'selectCart', {JWT: localStorage.token});
-                        } */
+                        }  */
                     } 
-                })/* .when('/shop/:carPlate' , {
+                }) .when('/shop/:id_prod' , {
                     templateUrl: "frontend/module/shop/view/view_shopDetails.html",
                     controller: "controller_shopDetails",
-                    resolve: {
-                        car: function(services, $route) {
-                            return services.post('shop', 'read', {'carPlate': $route.current.params.carPlate})
-                        },
+                     resolve: {
+                        producto: function(services, $route) {
+                            console.log($route.current.params.id_prod);
+                             return services.post('shop', 'details', {'id': $route.current.params.id_prod}) 
+                        } /* ,
                         favs: function(services) {
                             return services.post('shop', 'sendFavs', {JWT: localStorage.token});
                         },
                         cart: function(services) {
                             return services.post('cart', 'selectCart', {JWT: localStorage.token});
-                        }
-                    }// end_resolve
-                }).when("/login", {
+                        }  */
+                    }
+                })/* .when("/login", {
                     templateUrl: "frontend/module/login/view/view_logIn.html",
                     controller: "controller_logIn"
                 }).when("/register", {
@@ -128,5 +129,5 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                 }).otherwise("/home", {
                     templateUrl: "frontend/module/home/view/view_home.html", 
                     controller: "controller_home"
-                });   */
+                });    */
     }]);

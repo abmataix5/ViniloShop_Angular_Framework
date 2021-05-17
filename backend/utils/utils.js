@@ -13,6 +13,16 @@ function ajaxPromise(sUrl, sType, sTData, sData = undefined) {
     });
 }
 
+function removeItemFromArr ( arr, item ) {
+ 
+    var i = arr.indexOf( item );
+
+    if ( i !== -1 ) {
+     
+        arr.splice( i, 1 );
+    }
+}
+
 console.log("aqmigabe");
 function amigable(url) {
     var link="";

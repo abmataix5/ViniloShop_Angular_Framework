@@ -45,46 +45,30 @@
                <form name="f1" class="ff"> 
 
 
-                  <div class="left-side">
-                     <h3 class="agileits-sear-head">Rango de precio</h3>
-                     <ul id ="filtros_precio" >
-                        <li>
-                           <input type="checkbox" class="checked" id ="check_barato">
-                           <span  class="span" >0-50$</span>
-                        </li>
-                        <li>
-                           <input type="checkbox" class="checked" id ="check_medio">
-                           <span  class="span" >50-100$</span>
-                        </li>
-                        <li>
-                           <input type="checkbox" class="checked" id ="check_caro">
-                           <span  class="span" >+ de 100$</span>
-                        </li>
-                     </ul>
-                  </div>
+              
 
 
                   <div class="left-side">
                      <h3 class="agileits-sear-head">Estilo musical</h3>
                      <ul id="filtros_estilo">
                         <li>
-                           <input type="checkbox" class="checked" id ="check_rock">
+                           <input type="checkbox" class="checked"  ng-click="filtro_rock('Rock')" id ="check_rock">
                            <span  class="span" >Rock</span>
                         </li>
                         <li>
-                           <input type="checkbox" class="checked" id ="check_pop">
+                           <input type="checkbox" class="checked" ng-click="filtro_pop('Pop')"  id ="check_pop">
                            <span class="span" >Pop</span>
                         </li>
                         <li>
-                           <input type="checkbox" class="checked" id ="check_electronica">
+                           <input type="checkbox" class="checked" ng-click="filtro_elec('Electronica')"  id ="check_electronica">
                            <span class="span" >Electronica</span>
                         </li>
                         <li>
-                           <input type="checkbox" class="checked" id ="check_clasica">
+                           <input type="checkbox" class="checked" ng-click="filtro_clasica('Clasica')"  id ="check_clasica">
                            <span class="span" >Clasica</span>
                         </li>
                         <li>
-                           <input type="checkbox" class="checked" id ="check_rap">
+                           <input type="checkbox" class="checked" ng-click="filtro_rap('Rap')"  id ="check_rap">
                            <span class="span" >Rap</span>
                         </li>
                         
@@ -97,19 +81,19 @@
                      <h3 class="agileits-sear-head">Categoria</h3>
                      <ul id="filtros_categoria">
                         <li>
-                           <input type="checkbox" class="checked" id ="check_disco">
+                           <input type="checkbox" class="checked" ng-click="filtro_disco('Disco')"  id ="check_disco">
                            <span class="span" >Discos</span>
                         </li>
                         <li>
-                           <input type="checkbox" class="checked" id ="check_vinilo">
+                           <input type="checkbox" class="checked" ng-click="filtro_vinilo('Vinilo')"  id ="check_vinilo">
                            <span class="span" >Vinilos</span>
                         </li>
                         <li>
-                           <input type="checkbox" class="checked" id ="check_camiseta">
+                           <input type="checkbox" class="checked" ng-click="filtro_cami('Camiseta')"  id ="check_camiseta">
                            <span class="span" >Camsietas</span>
                         </li>
                         <li>
-                           <input type="checkbox" class="checked" id ="check_poster">
+                           <input type="checkbox" class="checked" ng-click="filtro_poster('Poster')"  id ="check_poster">
                            <span class="span" >Posters</span>
                         </li>
                      
@@ -117,7 +101,7 @@
                      </ul>
                   </div>
                   <!-- reviews -->
-                  <a id="filtrar_check">Filtrar</a>
+                  <a id="filtrar_check" ng-click="filtrar()" >Filtrar</a>
                </form>
                </div>
              
@@ -127,12 +111,30 @@
                   
                   <div id="shop_div" class="row">
                      
-                     <div id="container_shop"></div>
-                    <!--  <div id="details">
-                   <!-- Api books -->
+                     <div id="container_shop">
+
+                        <div id="cuadro" ng-repeat= "data in stock">
+                           
+                           <img class="imga1" id="{{data.cod_producto}}" ng-src="frontend/{{data.ruta}}" ng-click="showDetails(data.cod_producto)"><br>
+                           <i id="{{data.cod_producto}}" class="heart fa fa-heart-o"></i>
+                           <a class="btn_compra">Comprar</a>
+
+                        </div>
+
+                     </div>
+                
                    
                      </div> 
-                     <div id="pages" class="text-center"></div>
+
+                     <!-- PAgination -->
+
+                     <div id="container-pagination" style="display: flex; align-items: center; justify-content: center">
+                        <div id="pagination-shop">
+                           <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" items-per-page = "itemsPerPage" class="pagination-sm"></ul>
+                        </div>
+                     </div>
+
+
 
                      <!-- Api books realcionados -->
                      <div id="api_div">

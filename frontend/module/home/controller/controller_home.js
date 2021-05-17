@@ -1,5 +1,5 @@
 
-viniloshop.controller('controller_home', function($scope,carrousel,categorias,more_groups) {
+viniloshop.controller('controller_home', function($scope,services,carrousel,categorias,more_groups) {
 
  /*    console.log("dentro vinilo.controller"); */
 
@@ -13,30 +13,6 @@ viniloshop.controller('controller_home', function($scope,carrousel,categorias,mo
 
     angular.element(document).ready(function() {
 
-            /*Function para cargar mas grupos  */
-
-      $scope.load_more = function(){
-        count=count+3;
-        $scope.more_groups = more_groups.slice(0,count);    
-        
-        
-      }
-
-          /* Redirect shop por categoria */
-
-          $scope.redirectShopCategorias = function(categoria) {
-
-            localStorage.categoria = categoria;
-            location.href = "#/shop";
-        }
-
-
-           /* Redirect shop sin filtros*/
-
-      $scope.redirectShop = function() {
-  
-        location.href = "#/shop";
-    }
 
          /* Owl carrousel */
   
@@ -67,7 +43,30 @@ viniloshop.controller('controller_home', function($scope,carrousel,categorias,mo
   });
 
 
+    /*Function para cargar mas grupos  */
 
+  $scope.load_more = function(){
+    count=count+3;
+    $scope.more_groups = more_groups.slice(0,count);    
+    
+    
+  }
+
+          /* Redirect shop por categoria */
+
+  $scope.redirectShopCategorias = function(categoria) {
+
+    localStorage.categoria = categoria;
+    location.href = "#/shop";
+}
+
+
+    /* Redirect shop sin filtros*/
+
+$scope.redirectShop = function() {
+  
+  location.href = "#/shop";
+}
      
 
 });// end_controller

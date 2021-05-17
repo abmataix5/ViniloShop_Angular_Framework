@@ -168,8 +168,11 @@
   }
   #details{
     text-align: center;
-    width: 55%;
+    width: 30%;
     height: 500px;
+    bottom:0px; /*Abajo deje un espacio de 0px*/
+    position:absolute;
+ 
   }
   #api{
     margin-left: 20px;
