@@ -21,6 +21,11 @@
         <uri>grupos_disponibles</uri>
     </function>
 
+      <function>
+        <name>por_categoria</name>
+        <uri>por_categoria</uri>
+    </function>
+
      <function>
         <name>pagination</name>
         <uri>pagination</uri>

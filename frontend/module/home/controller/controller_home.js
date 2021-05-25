@@ -69,6 +69,7 @@ $scope.redirectShop = function() {
 }
      
 
+
 });// end_controller
 
 

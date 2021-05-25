@@ -8,8 +8,8 @@
 
         <!-- Owl carrousel -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>     
-         <link rel="stylesheet" href="frontend/view/inc/OwlCarousel/dist/assets/owl.carousel.css">
-         <script type="text/javascript" src="frontend/view/inc/OwlCarousel/dist/owl.carousel.min.js"></script>  
+        <link rel="stylesheet" href="frontend/view/inc/OwlCarousel/dist/assets/owl.carousel.css">
+        <script type="text/javascript" src="frontend/view/inc/OwlCarousel/dist/owl.carousel.min.js"></script>  
          
 
         <!-- JS Imports -->
@@ -21,6 +21,8 @@
        <link href="frontend/view/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
        <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
        <link rel = "stylesheet" href = "//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+       <link href="frontend/view/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+       
        <!-- App.js, apiiconcector -->
 
         <script src = "frontend/app.js"></script>
@@ -31,10 +33,24 @@
         <script type = "text/javascript" src = "frontend/module/shop/controller/controller_shop.js"></script>
         <script type = "text/javascript" src = "frontend/module/shop/controller/controller_shopDetails.js"></script>
 
+        <script type = "text/javascript" src = "frontend/module/login/controller/controller_login.js"></script>
+        <script type = "text/javascript" src = "frontend/module/login/controller/controller_register.js"></script>
+        
+
+
+        <script type = "text/javascript" src = "frontend/module/login/services/services_localstorage.js"></script>
+        <script type = "text/javascript" src = "frontend/module/login/services/services_login.js"></script>
+        <script type = "text/javascript" src = "frontend/module/login/services/services_socialLogin.js"></script>
+    
 
      <!-- Utils js -->    
+     <script src = "https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+<!--      <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script> -->
+     <!-- Add Firebase products that you want to use -->
+<!--      <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script> -->
 
-     <script type = "text/javascript" src = "backend/utils/utils.js"></script>
+<!--      <script type = "text/javascript" src = "backend/utils/utils.js"></script> -->
      
       
       <!-- font-awesome icons -->
@@ -48,7 +64,7 @@
        <!--//stylesheets-->
         <link href="//fonts.googleapis.com/css?family=Sunflower:500,700" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script></head>
     </head>
     <body>
         <div ng-include = '"frontend/view/inc/header.html"'></div>

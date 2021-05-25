@@ -5,46 +5,20 @@
 			
 		}
 
-		function list_login(){
-			require(VIEW_PATH_INC . "top_page_login.php");  
-			require(VIEW_PATH_INC . "header.html");
-        	loadView('modules/login/view/', 'login.html');
-       		require_once(VIEW_PATH_INC . "footer.html");
-		}
-
-		function list_register(){
-			require(VIEW_PATH_INC . "top_page_login.php");  
-			require(VIEW_PATH_INC . "header.html");
-        	loadView('modules/login/view/', 'register.html');
-       		require_once(VIEW_PATH_INC . "footer.html");
-		}
-
-		function list_user_change(){
-			require(VIEW_PATH_INC . "top_page_login.php");  
-			require(VIEW_PATH_INC . "header.html");
-        	loadView('modules/login/view/', 'change_passw.html');
-       		require_once(VIEW_PATH_INC . "footer.html");
-		}
-
-		function list_psswd(){
-			require(VIEW_PATH_INC . "top_page_login.php");  
-			require(VIEW_PATH_INC . "header.html");
-        	loadView('modules/login/view/', 'up_psswd.html');
-       		require_once(VIEW_PATH_INC . "footer.html");
-		}
-
+	
 
 
 		function manual_login(){
 
 			$User = array(); 
 			$User = ($_POST["data"]);
-
-			$nameUser =  ($User[0]['value']);
-			$password =  ($User[1]['value']);
-
-             $exist_user = loadModel(MODEL_LOGIN, "login_model", "register_validate",$nameUser);  
 		
+
+		 	$nameUser =  ($User['username']);
+			$password =  ($User['password']);
+	
+             $exist_user = loadModel(MODEL_LOGIN, "login_model", "register_validate",$nameUser);  
+
 			 if ($exist_user == true) { /* El usuario existe */
 
 				if (password_verify($password,$exist_user[0]['password'])) {
@@ -62,7 +36,7 @@
 			
 			} else{ /* El usuario no existe */
 				echo("NO existe el usuario");
-			} 
+			}  
 
 		}
 
@@ -111,26 +85,31 @@
 		function validate_register(){ 
 
 				$User = array();
-				$User = ($_POST["data"]);
+				$User = ($_POST['data']);
 				
-
+			/* echo ($User['username']); */
 		
-				$nameUser =  ($User[0]['value']);
+			 	 $nameUser =  ($User['username']);
+
+				
 				$exist_user = loadModel(MODEL_LOGIN, "login_model", "register_validate",$nameUser);
 
-			if ($exist_user == true) { /* Usuario ya registrado */
+	/* 		echo json_encode($exist_user); */
+
+		 	if ($exist_user == true) { 
 				echo json_encode("Ya existe usuario");
 			} else {
 				
-				/* echo json_encode("Vamos a ello"); */
-
-				$nameUser = ($User[0]['value']);
-				$email = ($User[1]['value']);
-				$password = ($User[2]['value']);
-				$hashavatar = md5(strtolower(trim($nameUser)));
+		
+ 
+				$nameUser = ($User['username']);
+			 	$email = ($User['email']);
+		 		$password = ($User['password']); 			
+			    $hashavatar = md5(strtolower(trim($nameUser)));	
 				$hashed_pass = password_hash(strtolower($password), PASSWORD_DEFAULT);
 				$avatar="https://www.gravatar.com/avatar/$hashavatar?s=40&d=identicon";
 				$tokenMail = generate_Token_secure(20);
+			
 				$data_user = [
 					'username' => $nameUser,
 					'email' => $email,
@@ -138,7 +117,9 @@
 					'avatar' =>  $avatar,
 					'tokenemail' => $tokenMail
 				];
-				$ok = loadModel(MODEL_LOGIN, "login_model", "insert_register",$data_user);
+
+				
+			$ok = loadModel(MODEL_LOGIN, "login_model", "insert_register",$data_user);
 			
 
 				$arrArgument = [
@@ -147,23 +128,22 @@
 					'inputName' => $nameUser,
 					'inputEmail' =>  $email,
 				];
-
-			    echo (mail::enviar_email($arrArgument)); 
-			} 
 		
+		 	    echo (mail::enviar_email($arrArgument));    
+			}  
+		 
 		
 		}
 		
 
 		function active_user(){
 			
-	    	if (isset($_GET['param'])) {
+	    	
 				
-	    		loadModel(MODEL_LOGIN, "login_model", "active_user",$_GET['param']);
+	    	loadModel(MODEL_LOGIN, "login_model", "active_user",$_POST['token']);
 
-				/* Redirigimos al login */
-	            self::list_login();
-	    	}	
+			echo ('OK');
+	
 	    }
 
 		function send_email_change_passw(){

@@ -54,24 +54,25 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                             return services.post('cart', 'selectCart', {JWT: localStorage.token});
                         }  */
                     }
-                })/* .when("/login", {
-                    templateUrl: "frontend/module/login/view/view_logIn.html",
-                    controller: "controller_logIn"
+                }).when("/login", {
+                    templateUrl: "frontend/module/login/view/login.html",
+                    controller: "controller_login"
                 }).when("/register", {
-                    templateUrl : "frontend/module/login/view/view_register.html",
+                    templateUrl : "frontend/module/login/view/register.html",
                     controller: "controller_register"
                 }).when("/recover", {
-                    templateUrl: "frontend/module/login/view/view_recover.html",
+                    templateUrl: "frontend/module/login/view/recover.html",
                     controller: "controller_recover"
                 }).when("/login/activate/:token", {
                     resolve: {
-                        activateUser: function(services, $route, toastr) {
-                            services.put('login', 'validateEmail', {'token': $route.current.params.token})
+                        activateUser: function(services, $route) {
+                            services.put('login', 'active_user', {'token': $route.current.params.token})
                             .then(function(response) {
-                                if (response == 1) {
-                                    toastr.success('Thank you for verifing your account.' ,'Account verified..');
+                                console.log(response);
+                                if (response == 'OK') {
+                              Window.alert('Cuenta activada');
                                 }else {
-                                    toastr.error('The current token is invalid.' ,'Error');
+                               console.log("Erroor");
                                 }// end_else
                                 location.href = "#/login";
                             }, function(error) {
@@ -79,7 +80,7 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                             });// end_services
                         }// end_activateUser
                     }// end_resolve
-                }).when("/login/recover/:token", {
+                })/* .when("/login/recover/:token", {
                     templateUrl: "frontend/module/login/view/view_recoverForm.html",
                     controller: "controller_recoverForm",
                     resolve: {
@@ -95,7 +96,7 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                             });
                         }// end_checkToken
                     }// end_resolve
-                }).when("/profile", {
+                }) *//* .when("/profile", {
                     templateUrl: "frontend/module/profile/view/view_profile.html",
                     controller: "controller_profile",
                     resolve: {
@@ -129,5 +130,5 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                 }).otherwise("/home", {
                     templateUrl: "frontend/module/home/view/view_home.html", 
                     controller: "controller_home"
-                });    */
+                });     */
     }]);

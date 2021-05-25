@@ -23,6 +23,10 @@
 	    public function obtain_details_list_BLL($arrArgument){
 			return $this->dao->select_details_list($this->db,$arrArgument);
 		  } 
+
+		  public function obtain_categoria_list_BLL($arrArgument){
+			return $this->dao->select_categoria($this->db,$arrArgument);
+		  } 
 		  public function obtain_grupos_list_BLL(){
 			return $this->dao->select_grupos_list($this->db);
 		  } 

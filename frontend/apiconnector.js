@@ -64,12 +64,12 @@ viniloshop.factory("services", ['$http','$q', function ($http, $q) {
           return promise;
         };
 
-  /*       obj.put = function (module, functi, dada) {
+         obj.put = function (module, functi, dada) {
           var defered=$q.defer();
           var promise=defered.promise;
           $http({
                 method: 'PUT',
-                url: serviceBase + module + '&op=' + functi,
+                url: serviceBase + module + '&function=' + functi,
                 data: dada
             }).success(function(data, status, headers, config) {
       	       defered.resolve(data);
@@ -77,7 +77,7 @@ viniloshop.factory("services", ['$http','$q', function ($http, $q) {
                defered.reject(data);
             });
           return promise;
-        }; */
+        }; 
 
  /*        obj.delete = function (module, functi, dada) {
             var defered=$q.defer();

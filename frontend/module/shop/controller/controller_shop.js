@@ -163,15 +163,18 @@ viniloshop.controller('controller_shop', function($scope,services,grupos,all_sto
 
             localStorage.filters = filtros;
             var producto_filtrado = "";
-            console.log(filtros_catego);
-            console.log(filtros);
+        /*     console.log(filtros_catego);
+            console.log(filtros); */
             producto_filtrado = services.post('shop', 'checks', {'checks': filtros,'checks_2': filtros_catego}) 
 
             /* Para poder sacar los datos en un array normal */
 
             producto_filtrado.then(function(data) {
-                console.log(data);
-                $scope.stock = data;
+                       
+                $scope.stock = data.slice((($scope.currentPage - 1) * $scope.itemsPerPage), ($scope.currentPage * $scope.itemsPerPage));;
+                all_stock = data;
+                $scope.totalItems = data.length; 
+           
             });
     };
 
@@ -181,35 +184,32 @@ viniloshop.controller('controller_shop', function($scope,services,grupos,all_sto
         $scope.stock = all_stock.slice((($scope.currentPage - 1) * $scope.itemsPerPage), ($scope.currentPage * $scope.itemsPerPage));
     };// end_PageChanged
 
-    if (localStorage.filters) {
-        console.log("ola");
-         $scope.stock = all_stock.slice((($scope.currentPage - 1) * $scope.itemsPerPage), (($scope.currentPage) * $scope.itemsPerPage));
-         localStorage.removeItem('filters');
-    }else {
+
+
+    /* Si hay algun flitro activo por el salto de home al shop entra aqui */
+
+  if(localStorage.getItem('categoria')){
+
+
+     
+        var catego=  localStorage.getItem('categoria')
+        catego = services.post('shop', 'por_categoria', {'data': catego}) 
+        console.log(catego);
+        
+
+        catego.then(function(data) {
+                       console.log(data)
+            $scope.stock = data.slice((($scope.currentPage - 1) * $scope.itemsPerPage), ($scope.currentPage * $scope.itemsPerPage));;
+            all_stock = data;
+            $scope.totalItems = data.length; 
+       
+        });
+
+        localStorage.removeItem('categoria');
+        
+    }else{
         $scope.stock = all_stock.slice((($scope.currentPage - 1) * $scope.itemsPerPage), (($scope.currentPage) * $scope.itemsPerPage));
+    }
    
-    }// end_else
-
-
-
-
-
-  /*   function setPage(carsVal, currentPageVal, filteredCarsVal = undefined, currentCarsVal = undefined) {
-        $scope.currentPage = currentPageVal;
-        $scope.totalItems = carsVal.length;
-        $scope.cars = carsVal.slice((($scope.currentPage - 1) * $scope.itemsPerPage), (($scope.currentPage) * $scope.itemsPerPage));
-
-        if (filteredCarsVal != undefined) {
-            filteredCars = filteredCarsVal;
-        }// end_if 
-        if (currentCarsVal != undefined) {
-            currentCars = currentCarsVal;
-        }// end_if
-    }// end_setPage */
-
-
-
-
-
 
 });

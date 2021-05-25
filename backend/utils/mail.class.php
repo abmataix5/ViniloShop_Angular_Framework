@@ -11,7 +11,8 @@ class mail{
         switch ($arr['type']) {
             case 'alta':
                 $subject = 'Tu Alta en ViniloShop';
-                $ruta = "<a href='" . amigable("?module=login&function=active_user&param=" . $arr['token'], true) . "'>aqu&iacute;</a>";
+                $ruta = '<a href="http://localhost/ViniloShop_Angular_Framework/#/login/activate/'. $arr['token'] .'">aqu&iacute;</a>';
+         /*        $ruta = "<a href='" . amigable("?module=login&function=active_user&param=" . $arr['token'], true) . "'>aqu&iacute;</a>"; */
                 $body = 'Gracias por unirte a nuestra aplicaci&oacute;n<br> Para finalizar el registro, pulsa ' . $ruta;
                 $from = 'abelclasse6@gmail.com';
                 $email = $arr['inputEmail'];
@@ -27,7 +28,7 @@ class mail{
                 
             case 'contact':
                 $subject = 'Tu Petici&oacute;n a Ohana_dogs ha sido enviada<br>';
-                $ruta = '<a href=' . 'http://localhost/Vinilo_framework'. '>aqu&iacute;</a>';
+                $ruta = '<a href=' . 'http://localhost/Vinilo_framework/#/home/active_user/'. '>aqu&iacute;</a>';
                 $body = 'Para visitar nuestra web, pulsa ' . $ruta;
                 break; 
     

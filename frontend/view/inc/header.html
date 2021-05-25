@@ -43,8 +43,8 @@
                            <li>
                               <span class="far fa-heart"></span>
                            </li>
-                           <li id="log_op">
-                            <a  href="<?php amigable('?module=login&function=list_login'); ?>"><span id="icon_login" class="far fa-user"></span></a>                          
+                           <li id="log_op"  >
+                            <a  href="#/login"><span id="icon_login" class="far fa-user"></span></a>                          
                           </li>
                          
                            <li class="toyscart toyscart2 cart cart box_1">
@@ -61,6 +61,7 @@
                           </li>  
                         <!--   <li> <a type="button"  href="index.php?page=controller_cart&op=cart_list" class="btn btn-dark" >Cart</a></li> -->
                            <li> <a type="button" class="btn btn-dark" onclick="cambiarModo()">Modo oscuro</a></li>
+                           <li ng-show = "showProfile"><div class="div2" style = "background : url({{profileImg}})" ng-click="logOut()"></div> <p>{{profileName}}</p></li>
                         </ul>
                      </div>
                   </div>

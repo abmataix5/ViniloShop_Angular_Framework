@@ -21,6 +21,10 @@ class shop_model {
     public function obtain_details($arrArgument){
         return $this->bll->obtain_details_list_BLL($arrArgument);
     } 
+
+    public function obtain_categoria($arrArgument){
+        return $this->bll->obtain_categoria_list_BLL($arrArgument);
+    } 
     public function obtain_grupos(){
         return $this->bll->obtain_grupos_list_BLL();
     } 

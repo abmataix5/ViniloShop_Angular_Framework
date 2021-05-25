@@ -31,6 +31,12 @@ class shop_dao {
         return $db->listar($stmt);
     }
 
+    public function select_categoria($db,$arrArgument) {
+        $sql = "SELECT * FROM stock WHERE categoria = '$arrArgument'";
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
+    }
+
     public function select_pag_list($db) {
         $sql = "SELECT * FROM stock ";
         $stmt = $db->ejecutar($sql);

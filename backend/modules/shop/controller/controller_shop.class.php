@@ -20,6 +20,15 @@
 			  
 		}
 
+		function por_categoria(){
+			
+			/* echo json_encode($_POST["data"]); */
+		    $json = array();
+			 	$json = loadModel(MODEL_SHOP, "shop_model", "obtain_categoria",$_POST["data"]);
+			 	echo json_encode($json);  
+			  
+		}
+
 		function details(){
 			
 			 if ((isset($_POST["id"]))){   
