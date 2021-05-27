@@ -72,7 +72,7 @@ function handlerRouter() {
 } 
 
  function handlerfunction($module, $obj, $URI_function) {
-/*     echo("ajsfd"); */
+
     $functions = simplexml_load_file(MODULES_PATH . $module . "/resources/function.xml");
     $exist = false;
    
@@ -85,7 +85,7 @@ function handlerRouter() {
     }
 
     if (!$exist) {
-        echo("IE que no existe");
+     
         require_once(VIEW_PATH_INC . "header.html"); 
         require_once(VIEW_PATH_INC . "404.php");
         require_once(VIEW_PATH_INC . "footer.html"); 

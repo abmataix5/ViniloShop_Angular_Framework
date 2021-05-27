@@ -4,10 +4,12 @@ viniloshop.factory('services_logIn', ['$rootScope', 'services', 'services_localS
     return service;
 
     function printMenu() {
+      
         if ((localStorage.token)) {
+            
             services.post('login', 'get_user_log', {token: localStorage.token})
             .then(function(response) {
-        /*         console.log(response[0]['avatar']); */
+
         console.log(response);
              if (response) {
                     $rootScope.showProfile = true; 
@@ -20,7 +22,10 @@ viniloshop.factory('services_logIn', ['$rootScope', 'services', 'services_localS
             }, function(error) {
                 console.log(error);
             });// end_services
-        }// end_if
+        }else{
+            $rootScope.showProfile = false; 
+            $rootScope.showLogIn = true;
+        }
 
     }// end_logIn
 
@@ -33,10 +38,18 @@ viniloshop.factory('services_logIn', ['$rootScope', 'services', 'services_localS
     }// end_redirectLogIn
 
     function logOut() {
-        console.log("oalsaslaspas");
-     localStorage.removeItem('token');
-     location.href = "#/home";
+
+       
+        $rootScope.closeSessionClick = function () {
+            console.log("dntro");
+            localStorage.removeItem('token');
+            printMenu();
+            location.href = "#/home";
+        }
+
     }// end_logOut
+
+    
 
  
 }]);// end_services_login

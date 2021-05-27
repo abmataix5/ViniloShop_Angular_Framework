@@ -148,14 +148,15 @@
 
 		function send_email_change_passw(){
 
-			    $User = array();
+			   /*  $User = array(); */
 				
-				$User = ($_POST["data"]);
-				$nameUser =  ($User[0]['value']);
-				$exist_user = loadModel(MODEL_LOGIN, "login_model", "select_user_email",$nameUser);
+				$User = ($_POST["user"]);
+				/* $nameUser =  ($User[0]['value']); */
+				$exist_user = loadModel(MODEL_LOGIN, "login_model", "select_user_email",$User);
 				/* echo json_encode($exist_user); */
-				$email =  ($exist_user[0]['email']);
-                $tokenMail = ($exist_user[0]['IDUser']);
+			
+		 	$email =  ($exist_user[0]['email']);
+                $tokenMail = ($exist_user[0]['IDUser']); 
 
 			 	$arrArgument = [
 					'type' => 'changepass',
@@ -170,15 +171,14 @@
 
 		function update_passwd(){ //token user
 			
-			loadView('modules/login/view/', 'up_psswd.html');
+		
 				
-	    	if (isset($_GET['param'])) {
+	    
 				
 	    		loadModel(MODEL_LOGIN, "login_model", "update_password",$_GET['param']);
 
 				/* Redirigimos al login */
-	            self::list_login();
-	    	}	
+	  
 	
 		}
 

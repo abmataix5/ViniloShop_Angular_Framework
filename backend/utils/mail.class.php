@@ -20,7 +20,7 @@ class mail{
     
              case 'changepass':
                 $subject = 'Cambio de contraseña en ViniloShop';
-                $ruta = '<a href="' . amigable("?module=login&function=update_passwd&param=" . $arr['token'], true) . '">aqu&iacute;</a>';
+                $ruta = '<a href="http://localhost/ViniloShop_Angular_Framework/#/login/recover/'. $arr['token'] .'">aqu&iacute;</a>';
                 $body = 'Para cambiar tu password pulsa ' . $ruta;
                 $from = 'abelclasse6@gmail.com';
                 $email = $arr['inputEmail'];

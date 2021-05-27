@@ -2,6 +2,7 @@ var viniloshop = angular.module('viniloshop', ['ngRoute','ui.bootstrap']);
 //////c
 /* console.log(viniloshop); */
 viniloshop.config(['$routeProvider', '$locationProvider',
+
     function ($routeProvider, $locationProvider) {
         $routeProvider
                 .when("/home", {
@@ -80,11 +81,11 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                             });// end_services
                         }// end_activateUser
                     }// end_resolve
-                })/* .when("/login/recover/:token", {
-                    templateUrl: "frontend/module/login/view/view_recoverForm.html",
+                }) .when("/login/recover/:token", {
+                    templateUrl: "frontend/module/login/view/recover_form.html",
                     controller: "controller_recoverForm",
                     resolve: {
-                        checkToken: function(services, $route, toastr) {
+                        checkToken: function(services, $route) {
                             services.post('login', 'checkTokenRecover', {'token': $route.current.params.token})
                             .then(function(response) {
                                 if (response == 'fail') {
@@ -96,7 +97,7 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                             });
                         }// end_checkToken
                     }// end_resolve
-                }) *//* .when("/profile", {
+                }) /* .when("/profile", {
                     templateUrl: "frontend/module/profile/view/view_profile.html",
                     controller: "controller_profile",
                     resolve: {
@@ -131,4 +132,6 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                     templateUrl: "frontend/module/home/view/view_home.html", 
                     controller: "controller_home"
                 });     */
+
+           
     }]);

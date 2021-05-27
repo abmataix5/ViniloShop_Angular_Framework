@@ -116,9 +116,9 @@
                         <div id="cuadro" ng-repeat= "data in stock">
                            
                            <img class="imga1" id="{{data.cod_producto}}" ng-src="frontend/{{data.ruta}}" ng-click="showDetails(data.cod_producto)"><br>
-                           <i id="{{data.cod_producto}}" class="heart fa fa-heart-o"></i>
+                        
                            <a class="btn_compra">Comprar</a>
-
+                           <a class="btn_fav" ng-click="click_fav(data.cod_producto)">&hearts;</a>
                         </div>
 
                      </div>

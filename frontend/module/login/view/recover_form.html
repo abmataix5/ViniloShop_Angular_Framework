@@ -18,14 +18,14 @@
             
              
                
-               <p> <input type="password" name="password" placeholder="Nueva contraseña" /><span id="e_passwordr" class="error">
+               <p> <input type="password" name="password" placeholder="Nueva contraseña" ng-model = "new_pss"/><span id="e_passwordr" class="error">
                 <?php
                     $e_passwordr="";
                     echo "$e_passwordr";
                 ?>
             </span></p> 
 
-               <p>  <input type="password" name="password2" placeholder="Repite la contraña" /><span id="e_rpasswordr" class="error">
+               <p>  <input type="password" name="password2" placeholder="Repite la contraña" ng-model = "usernameRecover"/><span id="e_rpasswordr" class="error">
                 <?php
                     $e_rpasswordr="";
                     echo "$e_rpasswordr";
@@ -34,7 +34,7 @@
                 
                 
                
-            <p class="submit"><input class="submit" type="button" name="commit" value="Cambiar contraseña" id="register_btn"></p>
+            <p class="submit"><input class="submit" type="button" name="commit" value="Cambiar contraseña" id="register_btn" ng-click="reset_passwd()"></p>
                
             
             </div>

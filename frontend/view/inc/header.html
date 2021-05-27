@@ -35,7 +35,7 @@
                      <div class="cart-icons">
                         <ul id="menu_bar_login">
                         <li>
-                              <a class = "españa">........</a>
+                              <a class = "engl2">........</a>
                            </li>
                            <li>
                            <a class = "engl">.........</a>
@@ -43,8 +43,8 @@
                            <li>
                               <span class="far fa-heart"></span>
                            </li>
-                           <li id="log_op"  >
-                            <a  href="#/login"><span id="icon_login" class="far fa-user"></span></a>                          
+                           <li id="log_op">
+                            <a  href="#/login"><span id="icon_login" class="far fa-user" ></span></a>                          
                           </li>
                          
                            <li class="toyscart toyscart2 cart cart box_1">
@@ -59,9 +59,9 @@
                            <li id="p_l">
                               0                   
                           </li>  
-                        <!--   <li> <a type="button"  href="index.php?page=controller_cart&op=cart_list" class="btn btn-dark" >Cart</a></li> -->
-                           <li> <a type="button" class="btn btn-dark" onclick="cambiarModo()">Modo oscuro</a></li>
-                           <li ng-show = "showProfile"><div class="div2" style = "background : url({{profileImg}})" ng-click="logOut()"></div> <p>{{profileName}}</p></li>
+               
+                           <li ng-show = "showProfile"><div class="div2" style = "background : url({{profileImg}})" ng-click="closeSessionClick()"></div> <p>{{profileName}}</p></li>
+                          
                         </ul>
                      </div>
                   </div>
@@ -76,12 +76,7 @@
                      <li class="nav-item ">
                         <a class="nav-link" href="#/home" data-tr="Inicio"> Home<span class="sr-only">(current)</span></a>
                      </li>
-                     <li class="nav-item" id="op_stock" >
-                        <a href="index.php?page=controller_stock&op=list"class="nav-link"  id="stock_li" data-tr="Stock">Stock</a>
-                     </li>
-                     <li class="nav-item">
-                        <a href="index.php?page=controller_order&op=list"class="nav-link" data-tr="DataTable">DataTable</a>
-                     </li>
+              
                      <li class="nav-item">
                         <a href="#/shop"class="nav-link" data-tr="Tienda">Shop</a>
                      </li>

@@ -1,5 +1,5 @@
 
-viniloshop.controller('controller_home', function($scope,services,carrousel,categorias,more_groups) {
+viniloshop.controller('controller_home', function($scope,services,carrousel,categorias,more_groups,services_logIn) {
 
  /*    console.log("dentro vinilo.controller"); */
 
@@ -70,7 +70,14 @@ $scope.redirectShop = function() {
      
 
 
+
 });// end_controller
+
+
+
+
+
+
 
 
 

@@ -16,12 +16,12 @@
     
             <div class="inputs">
             
-                <p> <input type="text" name="username" placeholder="Tu nombre de usuario" autofocus /><span id="e_user" class="error">
+                <p> <input type="text" name="username" placeholder="Tu nombre de usuario" ng-model = "usernameRecover"/><span id="e_user" class="error">
               
                 </span></p>
             
     
-                    <p class="submit"><input class="submit" type="button" name="commit" value="Enviar correro para cambiar contraseña" id="cnhg_user"></p>
+                    <p class="submit"><input class="submit" type="button" name="commit" value="Enviar correro para cambiar contraseña" id="cnhg_user" ng-click="sendRecoverEmail()"></p>
                
                 
                 
