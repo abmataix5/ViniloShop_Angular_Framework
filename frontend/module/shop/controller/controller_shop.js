@@ -223,7 +223,7 @@ viniloshop.controller('controller_shop', function($scope,services,grupos,all_sto
       console.log("Logued");
 
       var user_active = localStorage.getItem('token');
-      console.log(user_active);
+      console.log(user);
     }else{
         location.href = "#/login";
     }

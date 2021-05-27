@@ -1,7 +1,7 @@
 
 viniloshop.controller('controller_home', function($scope,services,carrousel,categorias,more_groups,services_logIn) {
 
- /*    console.log("dentro vinilo.controller"); */
+    services_logIn.logOut();
 
     let count = 3;
 
@@ -68,6 +68,8 @@ $scope.redirectShop = function() {
   location.href = "#/shop";
 }
      
+
+
 
 
 

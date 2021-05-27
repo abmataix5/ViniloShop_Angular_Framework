@@ -48,6 +48,8 @@ viniloshop.factory('services_Google', ['services_logInSocial', function(services
         }).catch(function(error) {
             console.log(error);
         });
+        authService.signOut()
+      
     }// end_logIn
 }]);// end_services_Google
 
@@ -79,5 +81,9 @@ viniloshop.factory('services_GitHub', ['services_logInSocial', function(services
         }).catch(function(error) {
             console.log(error);
         });
+
+        authService.signOut()
     }// end_logIn
+
+  
 }]); 

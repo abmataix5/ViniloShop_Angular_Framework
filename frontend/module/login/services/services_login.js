@@ -39,9 +39,9 @@ viniloshop.factory('services_logIn', ['$rootScope', 'services', 'services_localS
 
     function logOut() {
 
-       
+
         $rootScope.closeSessionClick = function () {
-            console.log("dntro");
+          
             localStorage.removeItem('token');
             printMenu();
             location.href = "#/home";
