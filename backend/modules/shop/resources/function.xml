@@ -41,6 +41,11 @@
         <uri>checks</uri>
     </function>
 
+    <function>
+        <name>get_user_from_token</name>
+        <uri>get_user_from_token</uri>
+    </function>
+
 <!--      <function>
         <name>owl_carrousel</name>
         <uri>owl_carrousel</uri>

@@ -92,4 +92,27 @@ class shop_dao {
     }
 
 
+
+    public function select_user($db,$arrArgument,$arrArgument2) {
+
+        /* Comrovem si es like o un like */
+        $sql = "SELECT * FROM favoritos WHERE IDUser = '$arrArgument' and cod_producto = '$arrArgument2'";
+        $stmt = $db->ejecutar($sql);
+        $favorito = $db->listar($stmt);
+       
+
+        if( sizeof($favorito) == 0){
+            $sql = "INSERT INTO `favoritos`(`cod_producto`, `IDUser`) VALUES ('$arrArgument2','$arrArgument')";
+    
+            $db->ejecutar($sql);
+            return 'like';
+        }else{
+            $sql = "DELETE FROM `favoritos` WHERE IDUSer = '$arrArgument' AND cod_producto = '$arrArgument2' ";
+    
+            $db->ejecutar($sql);
+            return 'unlike';
+        }
+    }
+
+
 }

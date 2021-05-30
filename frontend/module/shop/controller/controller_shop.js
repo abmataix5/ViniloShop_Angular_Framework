@@ -219,15 +219,26 @@ viniloshop.controller('controller_shop', function($scope,services,grupos,all_sto
     $scope.click_fav = function(cod_prod) {
     console.log(cod_prod);
 
-    if(localStorage.getItem('token')){
-      console.log("Logued");
 
+    
+    if(localStorage.getItem('token')){
+    
       var user_active = localStorage.getItem('token');
-      console.log(user);
+     
+
+      user_active = services.post('shop', 'get_user_from_token', {'token': user_active,'cod_fav':cod_prod}) 
+      user_active.then(function(data) {
+                   console.log(data);
+         
+      });
+
+      location.href = "#/shop";
+
     }else{
         location.href = "#/login";
     }
  
+  
 };
 
    

@@ -42,6 +42,10 @@
 		  public function obtain_checks_BLL($arrArgument,$arrArgument2){
 			return $this->dao->select_checks_list($this->db,$arrArgument,$arrArgument2);
 		  } 
+
+		  public function obtain_user_BLL($arrArgument,$arrArgument2){
+			return $this->dao->select_user($this->db,$arrArgument,$arrArgument2);
+		  } 
 /* 	    public function obtain_data_details_BLL($arrArgument){
 		  return $this->dao->select_data_details($this->db,$arrArgument);
 	    }

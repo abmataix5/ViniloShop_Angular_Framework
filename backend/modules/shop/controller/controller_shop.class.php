@@ -75,5 +75,17 @@
 			 
 	  }
 		
+
+	  
+	  function get_user_from_token(){
+
+		$token = decode_token($_POST["token"]);
+						
+		$nameUser = user_from_token($token);   
+		$nameUser = ($nameUser['user']);  
+
+	 $user = loadModel(MODEL_SHOP, "shop_model", "select_user_fav",$nameUser,$_POST["cod_fav"]); 
+	  echo json_encode($user); 
+	  }
 	
 	}
