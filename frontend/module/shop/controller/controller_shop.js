@@ -1,14 +1,55 @@
-viniloshop.controller('controller_shop', function($scope,services,grupos,all_stock) {
+viniloshop.controller('controller_shop', function($scope,services,grupos) {
 
+    cargar_data();
     console.log(grupos);
 
     var filtros = [];
     var filtros_catego = [];
-   
+   var all_stock;
+
     $scope.grupos = grupos;
     $scope.totalItems = all_stock.length;
     $scope.currentPage = 1;
     $scope.itemsPerPage = 12;
+
+
+
+    function cargar_data(){
+
+        all_stock = services.post('shop', 'maps_data',{'token': localStorage.getItem('token')}) 
+/* console.log(localStorage.getItem('token')); */
+        all_stock.then(function(data) {
+                       
+            all_stock = data;
+            console.log(all_stock);
+           /*  $scope.stock = data; */
+
+            if(localStorage.getItem('categoria')){
+
+
+     
+                var catego=  localStorage.getItem('categoria')
+                catego = services.post('shop', 'por_categoria', {'data': catego}) 
+                console.log(catego);
+                
+        
+                catego.then(function(data) {
+                               console.log(data)
+                    $scope.stock = data.slice((($scope.currentPage - 1) * $scope.itemsPerPage), ($scope.currentPage * $scope.itemsPerPage));;
+                    all_stock = data;
+                    $scope.totalItems = data.length; 
+               
+                });
+        
+                localStorage.removeItem('categoria');
+                
+            }else{
+                $scope.stock = all_stock.slice((($scope.currentPage - 1) * $scope.itemsPerPage), (($scope.currentPage) * $scope.itemsPerPage));
+                console.log($scope.stock);
+            }
+        });
+     
+    }
 
 
     $scope.showDetails = function(id_prod) {
@@ -181,7 +222,7 @@ viniloshop.controller('controller_shop', function($scope,services,grupos,all_sto
 
       /* END FILTROS  */
 
-    $scope.pageChanged = function() {
+      $scope.pageChanged = function() {
         $scope.stock = all_stock.slice((($scope.currentPage - 1) * $scope.itemsPerPage), ($scope.currentPage * $scope.itemsPerPage));
     };// end_PageChanged
 
@@ -189,28 +230,7 @@ viniloshop.controller('controller_shop', function($scope,services,grupos,all_sto
 
     /* Si hay algun flitro activo por el salto de home al shop entra aqui */
 
-  if(localStorage.getItem('categoria')){
 
-
-     
-        var catego=  localStorage.getItem('categoria')
-        catego = services.post('shop', 'por_categoria', {'data': catego}) 
-        console.log(catego);
-        
-
-        catego.then(function(data) {
-                       console.log(data)
-            $scope.stock = data.slice((($scope.currentPage - 1) * $scope.itemsPerPage), ($scope.currentPage * $scope.itemsPerPage));;
-            all_stock = data;
-            $scope.totalItems = data.length; 
-       
-        });
-
-        localStorage.removeItem('categoria');
-        
-    }else{
-        $scope.stock = all_stock.slice((($scope.currentPage - 1) * $scope.itemsPerPage), (($scope.currentPage) * $scope.itemsPerPage));
-    }
 
 
 
@@ -232,7 +252,7 @@ viniloshop.controller('controller_shop', function($scope,services,grupos,all_sto
          
       });
 
-      location.href = "#/shop";
+      window.location.reload();
 
     }else{
         location.href = "#/login";

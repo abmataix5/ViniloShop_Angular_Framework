@@ -29,9 +29,6 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                     resolve: {
                         grupos: function (services) {
                             return services.get('shop', 'grupos_disponibles');
-                        } ,
-                        all_stock: function (services) {
-                            return services.get('shop', 'maps_data');
                         }/* ,
                         favs: function(services) {
                             return services.post('shop', 'sendFavs', {JWT: localStorage.token});

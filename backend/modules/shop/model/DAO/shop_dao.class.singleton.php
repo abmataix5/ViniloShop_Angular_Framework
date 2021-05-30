@@ -43,8 +43,16 @@ class shop_dao {
         return $db->listar($stmt);
     }
 
-    public function select_maps_list($db) {
-        $sql = "SELECT * FROM stock ";
+    public function select_maps_list($db,$arrArgument) {
+
+      
+
+        $sql = "SELECT stock.*,likes.likes  FROM stock  LEFT JOIN 
+        ((SELECT DISTINCT f.cod_producto, 'like' as likes 
+        FROM favoritos f
+        WHERE f.IDUser  LIKE '$arrArgument') AS likes)
+        ON stock.cod_producto = likes.cod_producto
+        ";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
     }

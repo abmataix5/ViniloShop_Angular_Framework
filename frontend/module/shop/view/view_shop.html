@@ -119,11 +119,11 @@
                         
                            <a class="btn_compra">Comprar</a>
                <!--             <a class="btn_fav" ng-click="click_fav(data.cod_producto)">&hearts;</a> -->
-                              <span ng-if="'like'==product.likes">
+                              <span ng-if="'like'== data.likes">
                                  <i  class="fas fa-heart unlike"  style="font-size: 1.5em;" ng-click="click_fav(data.cod_producto)" id="{{data.cod_producto}}"></i>
                               </span>
 
-                              <span ng-if="'like'!=product.likes">
+                              <span ng-if="'like'!= data.likes">
                                  <i  class="far fa-heart like"  style="font-size: 1.5em;" ng-click="click_fav(data.cod_producto)" id="{{data.cod_producto}}"></i>
                               </span >
                                        

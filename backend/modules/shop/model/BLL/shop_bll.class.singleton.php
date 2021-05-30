@@ -35,8 +35,8 @@
 			return $this->dao->select_pag_list($this->db);
 		  } 
 
-		  public function obtain_maps_BLL(){
-			return $this->dao->select_maps_list($this->db);
+		  public function obtain_maps_BLL($arrArgument){
+			return $this->dao->select_maps_list($this->db,$arrArgument);
 		  } 
 
 		  public function obtain_checks_BLL($arrArgument,$arrArgument2){

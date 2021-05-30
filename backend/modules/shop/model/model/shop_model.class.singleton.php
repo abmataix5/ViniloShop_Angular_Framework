@@ -33,8 +33,8 @@ class shop_model {
         return $this->bll->obtain_pag_list_BLL();
     } 
 
-    public function data_maps(){
-        return $this->bll->obtain_maps_BLL();
+    public function data_maps($arrArgument){
+        return $this->bll->obtain_maps_BLL($arrArgument);
     } 
 
     public function obtain_checks($arrArgument,$arrArgument2){

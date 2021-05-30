@@ -58,9 +58,13 @@
 
 	   function maps_data(){
 			
+		$token = decode_token($_POST["token"]);
+						
+		$nameUser = user_from_token($token);   
+		$nameUser = ($nameUser['user']);
  
 		$json = array();
-		$json = loadModel(MODEL_SHOP, "shop_model", "data_maps","data_maps");
+		$json = loadModel(MODEL_SHOP, "shop_model", "data_maps",$nameUser);
 		echo json_encode($json); 
 	
        }
