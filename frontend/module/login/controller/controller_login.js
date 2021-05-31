@@ -17,7 +17,7 @@ viniloshop.controller('controller_login', function($scope,services,services_logI
                 var token = token2[0].replace(/['"]+/g,'');  
                 console.log(token);
                 services_logIn.redirectLogIn(token);
-                toastr.error('Usuario no encontrado');
+                toastr.success('Sesion iniciada');
             }else {
               
                 console.log("error login");

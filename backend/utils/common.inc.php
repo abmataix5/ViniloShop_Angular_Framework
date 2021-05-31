@@ -1,27 +1,31 @@
 <?php
-    function loadModel($model_path, $model_name, $function, $arrArgument = '',$arrArgument2 = ''){
+    function loadModel($model_path, $model_name, $function, $arrArgument = '',$arrArgument2 = '',$arrArgument3 = ''){
         $model = $model_path . $model_name . '.class.singleton.php';
-       /*    echo($model);   */ 
+      
         if (file_exists($model)) {
             include_once($model);
             $modelClass = $model_name;
 
-     /*      echo($modelClass);  */
+     
 
             if (!method_exists($modelClass, $function)){
                 throw new Exception();
             }
 
             $obj = $modelClass::getInstance();    
-          /*   return call_user_func(array($obj, $function),$arrArgument); */
+          
             
             if (isset($arrArgument)){
-               /*  echo("ye"); */
-                if (isset($arrArgument2)) {
-                    //return $obj->$function($arrArgument,$arrArgument2);
+               
+                if (isset($arrArgument2) && empty($arrArgument3)) {
+               
                     return call_user_func(array($obj, $function),$arrArgument,$arrArgument2);
                 }
-                //return $obj->$function($arrArgument);
+                if (isset($arrArgument3)) {
+                   
+                    return call_user_func(array($obj, $function),$arrArgument,$arrArgument2,$arrArgument3);
+                }
+               
                 return call_user_func(array($obj, $function),$arrArgument);
             }   
             

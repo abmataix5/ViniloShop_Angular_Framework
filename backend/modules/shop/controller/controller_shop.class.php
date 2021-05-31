@@ -22,8 +22,19 @@
 
 		function por_categoria(){
 		
+
+			if($_POST["token"]){
+
+				$token = decode_token($_POST["token"]);
+				$nameUser = user_from_token($token);   
+				$nameUser = ($nameUser['user']);
+			}else{
+	
+				$nameUser = "";
+			}
+
 		    	$json = array();
-			 	$json = loadModel(MODEL_SHOP, "shop_model", "obtain_categoria",$_POST["data"]);
+			 	$json = loadModel(MODEL_SHOP, "shop_model", "obtain_categoria",$_POST["data"],$nameUser);
 			 	echo json_encode($json);  
 			  
 		}
@@ -55,12 +66,13 @@
 	
        }
 
-	   function maps_data(){
+	   function data_stock(){
 
 
 
 		if($_POST["token"]){
 
+			$token = decode_token($_POST["token"]);
 			$nameUser = user_from_token($token);   
 			$nameUser = ($nameUser['user']);
 		}else{
@@ -77,9 +89,18 @@
 	   
 		function checks(){
 			
+			if($_POST["token"]){
+
+				$token = decode_token($_POST["token"]);
+				$nameUser = user_from_token($token);   
+				$nameUser = ($nameUser['user']);
+			}else{
+	
+				$nameUser = "";
+			}
 		
 			  $json = array();
-			  $json = loadModel(MODEL_SHOP, "shop_model", "obtain_checks",$_POST["checks"],$_POST["checks_2"]);
+			  $json = loadModel(MODEL_SHOP, "shop_model", "obtain_checks",$_POST["checks"],$_POST["checks_2"],$nameUser);
 			  echo json_encode($json); 
 			 
 	  }
@@ -94,7 +115,7 @@
 
 	  $user = loadModel(MODEL_SHOP, "shop_model", "select_user_fav",$nameUser,$_POST["cod_fav"]); 
 
-	  echo json_encode($user); 
+	  echo ($user); 
 	  }
 	
 	}

@@ -22,8 +22,8 @@ class shop_model {
         return $this->bll->obtain_details_list_BLL($arrArgument);
     } 
 
-    public function obtain_categoria($arrArgument){
-        return $this->bll->obtain_categoria_list_BLL($arrArgument);
+    public function obtain_categoria($arrArgument,$arrArgument2){
+        return $this->bll->obtain_categoria_list_BLL($arrArgument,$arrArgument2);
     } 
     public function obtain_grupos(){
         return $this->bll->obtain_grupos_list_BLL();
@@ -37,8 +37,8 @@ class shop_model {
         return $this->bll->obtain_maps_BLL($arrArgument);
     } 
 
-    public function obtain_checks($arrArgument,$arrArgument2){
-        return $this->bll->obtain_checks_BLL($arrArgument,$arrArgument2);
+    public function obtain_checks($arrArgument,$arrArgument2,$arrArgument3){
+        return $this->bll->obtain_checks_BLL($arrArgument,$arrArgument2,$arrArgument3);
     } 
 
     public function select_user_fav($arrArgument,$arrArgument2){

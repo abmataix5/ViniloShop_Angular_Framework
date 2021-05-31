@@ -136,8 +136,10 @@ viniloshop.config(['$routeProvider', '$locationProvider',
 
     viniloshop.run(function($rootScope,services_logIn) {
        
-        $rootScope.showLogIn = true;
-
+        
+    
+        services_logIn.printMenu();
+        
         $rootScope.closeSessionClick = function () {
           
             localStorage.removeItem('token');

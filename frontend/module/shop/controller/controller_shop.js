@@ -1,11 +1,11 @@
 viniloshop.controller('controller_shop', function($scope,services,grupos,toastr) {
 
     cargar_data();
-    console.log(grupos);
+  
 
     var filtros = [];
     var filtros_catego = [];
-   var all_stock;
+    var all_stock;
 
     $scope.grupos = grupos;
     $scope.totalItems = all_stock.length;
@@ -16,21 +16,21 @@ viniloshop.controller('controller_shop', function($scope,services,grupos,toastr)
 
     function cargar_data(){
 
-        all_stock = services.post('shop', 'maps_data',{'token': localStorage.getItem('token')}) 
-/* console.log(localStorage.getItem('token')); */
+        all_stock = services.post('shop', 'data_stock',{'token': localStorage.getItem('token')}) 
+       
         all_stock.then(function(data) {
                        
-            all_stock = data;
-            console.log(all_stock);
-           /*  $scope.stock = data; */
+           all_stock = data;
+         
+      
 
             if(localStorage.getItem('categoria')){
 
 
      
                 var catego=  localStorage.getItem('categoria')
-                catego = services.post('shop', 'por_categoria', {'data': catego}) 
-                console.log(catego);
+                catego = services.post('shop', 'por_categoria', {'data': catego,'token': localStorage.getItem('token')}) 
+               
                 
         
                 catego.then(function(data) {
@@ -45,7 +45,8 @@ viniloshop.controller('controller_shop', function($scope,services,grupos,toastr)
                 
             }else{
                 $scope.stock = all_stock.slice((($scope.currentPage - 1) * $scope.itemsPerPage), (($scope.currentPage) * $scope.itemsPerPage));
-                console.log($scope.stock);
+                $scope.totalItems = data.length; 
+               
             }
         });
      
@@ -207,13 +208,13 @@ viniloshop.controller('controller_shop', function($scope,services,grupos,toastr)
             localStorage.filters = filtros;
             var producto_filtrado = "";
     
-            producto_filtrado = services.post('shop', 'checks', {'checks': filtros,'checks_2': filtros_catego}) 
+            producto_filtrado = services.post('shop', 'checks', {'checks': filtros,'checks_2': filtros_catego,'token': localStorage.getItem('token')}) 
 
             /* Para poder sacar los datos en un array normal */
 
             producto_filtrado.then(function(data) {
-                       
-                $scope.stock = data.slice((($scope.currentPage - 1) * $scope.itemsPerPage), ($scope.currentPage * $scope.itemsPerPage));;
+                     
+                $scope.stock = data.slice((($scope.currentPage - 1) * $scope.itemsPerPage), ($scope.currentPage * $scope.itemsPerPage));
                 all_stock = data;
                 $scope.totalItems = data.length; 
            
@@ -237,30 +238,37 @@ viniloshop.controller('controller_shop', function($scope,services,grupos,toastr)
     /* FAVORITOS */
 
     $scope.click_fav = function(cod_prod) {
-    console.log(cod_prod);
-
 
     
-    if(localStorage.getItem('token')){
-    
-      var user_active = localStorage.getItem('token');
+        if(localStorage.getItem('token')){
+        
+        var user_active = localStorage.getItem('token');
+        
+
+        user_active = services.post('shop', 'get_user_from_token', {'token': user_active,'cod_fav':cod_prod}) 
+
+        user_active.then(function(data) {
+                    
+
+            if(data == 'like'){
+            
+                document.getElementById("fav-" + cod_prod) ? document.getElementById("fav-" + cod_prod).className = "fas fa-heart unlike" : null;
+            }else{
+
+                document.getElementById("fav-" + cod_prod) ? document.getElementById("fav-" + cod_prod).className = "far fa-heart like" : null;
+            }
+            
+        });
+
      
 
-      user_active = services.post('shop', 'get_user_from_token', {'token': user_active,'cod_fav':cod_prod}) 
-      user_active.then(function(data) {
-                   console.log(data);
-         
-      });
-
-      window.location.reload();
-
-    }else{
-        toastr.error('Inicia sesion para los  favoritos');
-        location.href = "#/login";
-    }
+        }else{
+            toastr.error('Inicia sesion para los  favoritos');
+            location.href = "#/login";
+        }
  
   
-};
+   };
 
    
 

@@ -24,8 +24,8 @@
 			return $this->dao->select_details_list($this->db,$arrArgument);
 		  } 
 
-		  public function obtain_categoria_list_BLL($arrArgument){
-			return $this->dao->select_categoria($this->db,$arrArgument);
+		  public function obtain_categoria_list_BLL($arrArgument,$arrArgument2){
+			return $this->dao->select_categoria($this->db,$arrArgument,$arrArgument2);
 		  } 
 		  public function obtain_grupos_list_BLL(){
 			return $this->dao->select_grupos_list($this->db);
@@ -39,8 +39,8 @@
 			return $this->dao->select_maps_list($this->db,$arrArgument);
 		  } 
 
-		  public function obtain_checks_BLL($arrArgument,$arrArgument2){
-			return $this->dao->select_checks_list($this->db,$arrArgument,$arrArgument2);
+		  public function obtain_checks_BLL($arrArgument,$arrArgument2,$arrArgument3){
+			return $this->dao->select_checks_list($this->db,$arrArgument,$arrArgument2,$arrArgument3);
 		  } 
 
 		  public function obtain_user_BLL($arrArgument,$arrArgument2){

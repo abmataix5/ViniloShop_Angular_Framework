@@ -79,20 +79,7 @@ viniloshop.factory("services", ['$http','$q', function ($http, $q) {
           return promise;
         }; 
 
- /*        obj.delete = function (module, functi, dada) {
-            var defered=$q.defer();
-            var promise=defered.promise;
-            $http({
-                  method: 'DELETE',
-                  url: serviceBase + module + '&op=' + functi + '&param=' + dada
-              }).success(function(data, status, headers, config) {
-                 //console.log(data);
-                 defered.resolve(data);
-              }).error(function(data, status, headers, config) {
-                 defered.reject(data);
-              });
-            return promise;
-        };  */
+
         
     return obj;
 }]);

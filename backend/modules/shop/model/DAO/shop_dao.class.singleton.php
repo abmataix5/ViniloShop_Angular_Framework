@@ -31,10 +31,19 @@ class shop_dao {
         return $db->listar($stmt);
     }
 
-    public function select_categoria($db,$arrArgument) {
-        $sql = "SELECT * FROM stock WHERE categoria = '$arrArgument'";
+    public function select_categoria($db,$arrArgument,$arrArgument2) {
+      /*   $sql = "SELECT * FROM stock WHERE categoria = '$arrArgument'"; */
+        $sql = "SELECT stock.*,likes.likes  FROM stock  LEFT JOIN 
+        ((SELECT DISTINCT f.cod_producto, 'like' as likes 
+        FROM favoritos f
+        WHERE f.IDUser  LIKE '$arrArgument2') AS likes)
+        ON stock.cod_producto = likes.cod_producto WHERE stock.categoria = '$arrArgument'
+        "; 
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
+
+        
+   
     }
 
     public function select_pag_list($db) {
@@ -57,7 +66,7 @@ class shop_dao {
         return $db->listar($stmt);
     }
 
-    public function select_checks_list($db,$arrArgument,$arrArgument2) {
+    public function select_checks_list($db,$arrArgument,$arrArgument2,$arrArgument3) {
 
         $estilo_array = sizeof($arrArgument);
         $catego_array = sizeof($arrArgument2);
@@ -74,25 +83,59 @@ class shop_dao {
         $catego_3 = $arrArgument2[3];
 
         if($estilo_array > 0 && $catego_array == 0){
-            $sql = "SELECT * FROM stock WHERE estilo_musical = '$check_0' or estilo_musical = '$check_1' or estilo_musical = '$check_2' or estilo_musical = '$check_3' or estilo_musical = '$check_4'";
+            
+            $sql = "SELECT stock.*,likes.likes  FROM stock  LEFT JOIN 
+            ((SELECT DISTINCT f.cod_producto, 'like' as likes 
+            FROM favoritos f
+            WHERE f.IDUser  LIKE '$arrArgument3') AS likes)
+            ON stock.cod_producto = likes.cod_producto WHERE stock.estilo_musical = '$check_0' or stock.estilo_musical = '$check_1' or stock.estilo_musical = '$check_2' or stock.estilo_musical = '$check_3' or stock.estilo_musical = '$check_4'
+            "; 
+
+        
             $stmt = $db->ejecutar($sql);
             return $db->listar($stmt);
+
         }if($catego_array > 0 && $estilo_array == 0){
-            $sql = "SELECT * FROM stock WHERE categoria = '$catego_0' or categoria = '$catego_1' or categoria = '$catego_2' or categoria = '$catego_3'";
+
+            $sql = "SELECT stock.*,likes.likes  FROM stock  LEFT JOIN 
+            ((SELECT DISTINCT f.cod_producto, 'like' as likes 
+            FROM favoritos f
+            WHERE f.IDUser  LIKE '$arrArgument3') AS likes)
+            ON stock.cod_producto = likes.cod_producto WHERE categoria = '$catego_0' or categoria = '$catego_1' or categoria = '$catego_2' or categoria = '$catego_3'
+            "; 
+
+           
             $stmt = $db->ejecutar($sql);
             return $db->listar($stmt);
+
         } if($estilo_array == 1  && $catego_array == 1){
-            $sql = "SELECT * FROM stock WHERE estilo_musical = '$check_0'  and categoria = '$catego_0'";
+
+            $sql = "SELECT stock.*,likes.likes  FROM stock  LEFT JOIN 
+            ((SELECT DISTINCT f.cod_producto, 'like' as likes 
+            FROM favoritos f
+            WHERE f.IDUser  LIKE '$arrArgument3') AS likes)
+            ON stock.cod_producto = likes.cod_producto  WHERE estilo_musical = '$check_0'  and categoria = '$catego_0'
+            "; 
+         
             
             $stmt = $db->ejecutar($sql);
             return $db->listar($stmt);
-        }  if($estilo_array == 2  && $catego_array == 1){
+
+        }  if($estilo_array == 2  && $catego_array == 1){      
+
             $sql = "SELECT * FROM stock WHERE categoria = '$catego_0'  and estilo_musical = '$check_1'  UNION SELECT * FROM stock WHERE categoria = '$catego_0'  and estilo_musical = '$check_0' ";
             
             $stmt = $db->ejecutar($sql);
             return $db->listar($stmt);
+
         } else{
-            $sql = "SELECT * FROM stock";
+
+            $sql = "SELECT stock.*,likes.likes  FROM stock  LEFT JOIN 
+            ((SELECT DISTINCT f.cod_producto, 'like' as likes 
+            FROM favoritos f
+            WHERE f.IDUser  LIKE '$arrArgument3') AS likes)
+            ON stock.cod_producto = likes.cod_producto
+            ";
             $stmt = $db->ejecutar($sql);
             return $db->listar($stmt);
         }
