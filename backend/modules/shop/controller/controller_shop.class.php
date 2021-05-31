@@ -4,12 +4,7 @@
 	        $_SESSION['module'] = "shop";
 		}
 		
-		function list_shop() {
-			require(VIEW_PATH_INC . "top_page_shop.php");  
-			require(VIEW_PATH_INC . "header.html");
-        	loadView('modules/shop/view/', 'shop.html');
-       		require_once(VIEW_PATH_INC . "footer.html");
-	    }
+	
 		
 		function all_data_shop(){
 			
@@ -41,11 +36,21 @@
 
 		function details(){
 			
-			 if ((isset($_POST["id"]))){   
+			if($_POST["token"]){
+
+				$token = decode_token($_POST["token"]);
+				$nameUser = user_from_token($token);   
+				$nameUser = ($nameUser['user']);
+			}else{
+	
+				$nameUser = "";
+			}
+
+
 			   $json = array();
-				$json = loadModel(MODEL_SHOP, "shop_model", "obtain_details",$_POST["id"]);
-				 echo json_encode($json); 
-			 }   
+			   $json = loadModel(MODEL_SHOP, "shop_model", "obtain_details",$_POST["id"],$nameUser);
+			   echo json_encode($json); 
+			 
 	   }
 
 	   function grupos_disponibles(){

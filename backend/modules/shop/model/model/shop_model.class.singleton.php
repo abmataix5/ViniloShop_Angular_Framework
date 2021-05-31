@@ -18,8 +18,8 @@ class shop_model {
         return $this->bll->obtain_data_list_BLL($arrArgument);
     }
 
-    public function obtain_details($arrArgument){
-        return $this->bll->obtain_details_list_BLL($arrArgument);
+    public function obtain_details($arrArgument,$arrArgument2){
+        return $this->bll->obtain_details_list_BLL($arrArgument,$arrArgument2);
     } 
 
     public function obtain_categoria($arrArgument,$arrArgument2){

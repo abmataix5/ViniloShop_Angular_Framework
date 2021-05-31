@@ -20,8 +20,8 @@
 		  return $this->dao->select_data_list($this->db,$arrArgument);
 	    }
 
-	    public function obtain_details_list_BLL($arrArgument){
-			return $this->dao->select_details_list($this->db,$arrArgument);
+	    public function obtain_details_list_BLL($arrArgument,$arrArgument2){
+			return $this->dao->select_details_list($this->db,$arrArgument,$arrArgument2);
 		  } 
 
 		  public function obtain_categoria_list_BLL($arrArgument,$arrArgument2){

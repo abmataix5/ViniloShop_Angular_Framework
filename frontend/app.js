@@ -42,7 +42,7 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                      resolve: {
                         producto: function(services, $route) {
                             console.log($route.current.params.id_prod);
-                             return services.post('shop', 'details', {'id': $route.current.params.id_prod}) 
+                             return services.post('shop', 'details', {'id': $route.current.params.id_prod,'token':localStorage.getItem('token')}) 
                         } /* ,
                         favs: function(services) {
                             return services.post('shop', 'sendFavs', {JWT: localStorage.token});
@@ -93,27 +93,15 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                             });
                         }// end_checkToken
                     }// end_resolve
-                }) /* .when("/profile", {
-                    templateUrl: "frontend/module/profile/view/view_profile.html",
-                    controller: "controller_profile",
-                    resolve: {
-                        userData: function (services) {
-                            return services.post('profile', 'sendData', {JWT: localStorage.token});
-                        }, userPurchases: function(services) {
-                            return services.post('profile', 'showPurchases', {JWT: localStorage.token});
-                        }, userFavs: function(services) {
-                            return services.post('profile', 'sendUserFavs', {JWT: localStorage.token});
-                        }// end_userFavs
-                    }// end_resolve
-                }).when("/cart", {
-                    templateUrl: "frontend/module/cart/view/view_cart.html",
+                })  .when("/cart", {
+                    templateUrl: "frontend/module/cart/view/cart.html",
                     controller: "controller_cart",
-                    resolve: {
+                   /*  resolve: {
                         dataCart: function(services) {
                             return services.post('cart', 'loadDataCart', {JWT: localStorage.token});
                         }
-                    }
-                }).when("/admin", {
+                    } */
+                })/* .when("/admin", {
                     templateUrl: "frontend/module/crud/view/view_crud.html",
                     controller: "controller_crud",
                     resolve: {
