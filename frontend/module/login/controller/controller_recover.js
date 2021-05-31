@@ -1,4 +1,4 @@
-viniloshop.controller('controller_recover', function($scope, services) {
+viniloshop.controller('controller_recover', function($scope, services,toastr) {
 /*     $scope.regUsername = /^[A-Za-z0-9._-]{5,15}$/; */
 
     $scope.sendRecoverEmail = function() {
@@ -8,10 +8,11 @@ viniloshop.controller('controller_recover', function($scope, services) {
         .then(function(response){
             console.log(response);
              if (response) {
-                window.alert("Hemos enviado un correo a tu cuenta para recuperar tu contraseña");
+               
+                toastr.success('Hemos enviado un correo a tu cuenta para recuperar tu contraseña');
                 location.href = "#/login"
             }else {
-                window.alert("Error");
+                toastr.error('Error');
             }// end_else 
         }, function(error) {
             console.log(error);

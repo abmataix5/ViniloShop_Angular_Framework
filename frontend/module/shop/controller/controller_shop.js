@@ -1,4 +1,4 @@
-viniloshop.controller('controller_shop', function($scope,services,grupos) {
+viniloshop.controller('controller_shop', function($scope,services,grupos,toastr) {
 
     cargar_data();
     console.log(grupos);
@@ -255,6 +255,7 @@ viniloshop.controller('controller_shop', function($scope,services,grupos) {
       window.location.reload();
 
     }else{
+        toastr.error('Inicia sesion para los  favoritos');
         location.href = "#/login";
     }
  

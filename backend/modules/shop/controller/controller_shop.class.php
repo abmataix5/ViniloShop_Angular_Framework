@@ -13,17 +13,16 @@
 		
 		function all_data_shop(){
 			
-			/* echo json_encode($_POST["data"]); */
-		    $json = array();
+			
+		    	$json = array();
 			 	$json = loadModel(MODEL_SHOP, "shop_model", "obtain_data_list",$_POST["data"]);
 			 	echo json_encode($json);  
 			  
 		}
 
 		function por_categoria(){
-			
-			/* echo json_encode($_POST["data"]); */
-		    $json = array();
+		
+		    	$json = array();
 			 	$json = loadModel(MODEL_SHOP, "shop_model", "obtain_categoria",$_POST["data"]);
 			 	echo json_encode($json);  
 			  
@@ -57,12 +56,18 @@
        }
 
 	   function maps_data(){
+
+
+
+		if($_POST["token"]){
+
+			$nameUser = user_from_token($token);   
+			$nameUser = ($nameUser['user']);
+		}else{
+
+			$nameUser = "";
+		}
 			
-		$token = decode_token($_POST["token"]);
-						
-		$nameUser = user_from_token($token);   
-		$nameUser = ($nameUser['user']);
- 
 		$json = array();
 		$json = loadModel(MODEL_SHOP, "shop_model", "data_maps",$nameUser);
 		echo json_encode($json); 
@@ -83,12 +88,12 @@
 	  
 	  function get_user_from_token(){
 
-		$token = decode_token($_POST["token"]);
-						
+		$token = decode_token($_POST["token"]);						
 		$nameUser = user_from_token($token);   
 		$nameUser = ($nameUser['user']);  
 
-	 $user = loadModel(MODEL_SHOP, "shop_model", "select_user_fav",$nameUser,$_POST["cod_fav"]); 
+	  $user = loadModel(MODEL_SHOP, "shop_model", "select_user_fav",$nameUser,$_POST["cod_fav"]); 
+
 	  echo json_encode($user); 
 	  }
 	

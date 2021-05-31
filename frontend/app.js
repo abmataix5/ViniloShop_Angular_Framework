@@ -1,6 +1,5 @@
-var viniloshop = angular.module('viniloshop', ['ngRoute','ui.bootstrap']);
-//////c
-/* console.log(viniloshop); */
+var viniloshop = angular.module('viniloshop', ['ngRoute','ui.bootstrap','toastr']);
+
 viniloshop.config(['$routeProvider', '$locationProvider',
 
     function ($routeProvider, $locationProvider) {
@@ -132,3 +131,18 @@ viniloshop.config(['$routeProvider', '$locationProvider',
 
            
     }]);
+
+
+
+    viniloshop.run(function($rootScope,services_logIn) {
+       
+        $rootScope.showLogIn = true;
+
+        $rootScope.closeSessionClick = function () {
+          
+            localStorage.removeItem('token');
+            services_logIn.printMenu();
+            location.href = "#/home";
+        }
+
+      });

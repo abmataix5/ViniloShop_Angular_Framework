@@ -1,5 +1,5 @@
 viniloshop.factory('services_logIn', ['$rootScope', 'services', 'services_localStorage', function($rootScope, services, services_localStorage) {
-    let service = {printMenu: printMenu, logOut: logOut, redirectLogIn: redirectLogIn};
+    let service = {printMenu: printMenu,redirectLogIn: redirectLogIn};
 
     return service;
 
@@ -37,17 +37,6 @@ viniloshop.factory('services_logIn', ['$rootScope', 'services', 'services_localS
 
     }// end_redirectLogIn
 
-    function logOut() {
-
-
-        $rootScope.closeSessionClick = function () {
-          
-            localStorage.removeItem('token');
-            printMenu();
-            location.href = "#/home";
-        }
-
-    }// end_logOut
 
     
 
