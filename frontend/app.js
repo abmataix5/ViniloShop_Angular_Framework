@@ -65,9 +65,9 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                         activateUser: function(services, $route) {
                             services.put('login', 'active_user', {'token': $route.current.params.token})
                             .then(function(response) {
-                                console.log(response);
+                               /*  console.log(response); */
                                 if (response == 'OK') {
-                              Window.alert('Cuenta activada');
+                              toastr.success('Cuenta activada');
                                 }else {
                                console.log("Erroor");
                                 }// end_else
@@ -96,11 +96,12 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                 })  .when("/cart", {
                     templateUrl: "frontend/module/cart/view/cart.html",
                     controller: "controller_cart",
-                   /*  resolve: {
+                   resolve: {
                         dataCart: function(services) {
-                            return services.post('cart', 'loadDataCart', {JWT: localStorage.token});
+                    
+                            return services.post('cart','select_cart_data',{token: localStorage.getItem('token')});
                         }
-                    } */
+                    }  
                 })/* .when("/admin", {
                     templateUrl: "frontend/module/crud/view/view_crud.html",
                     controller: "controller_crud",

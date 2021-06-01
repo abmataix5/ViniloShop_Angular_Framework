@@ -14,6 +14,8 @@ viniloshop.factory('services_logIn', ['$rootScope', 'services', 'services_localS
              if (response) {
                     $rootScope.showProfile = true; 
                     $rootScope.showLogIn = false;
+                    $rootScope.showCart = true;
+                    $rootScope.showLogOut = true;
                     $rootScope.profileName = response[0]['username'];
                     $rootScope.profileImg = response[0]['avatar'];
                 }// end_if
@@ -25,6 +27,8 @@ viniloshop.factory('services_logIn', ['$rootScope', 'services', 'services_localS
         }else{
             $rootScope.showProfile = false; 
             $rootScope.showLogIn = true;
+            $rootScope.showCart = false;
+            $rootScope.showLogOut = false;
         }
 
     }// end_logIn

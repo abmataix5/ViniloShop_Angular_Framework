@@ -270,6 +270,36 @@ viniloshop.controller('controller_shop', function($scope,services,grupos,toastr)
   
    };
 
+/* Añadir a carrito */
+
+   $scope.buy_product = function(cod_prod) {
+       
+   
+
+    if(localStorage.getItem('token')){
+
+                /* Insertar codigo producto, cantidad y IDUSer en la tabla cart */
+
+                var estado_compra = services.post('cart', 'insert_product',{'token':localStorage.getItem('token'),'prod': cod_prod});  
+
+                estado_compra.then(function(data) {
+                                
+
+                
+                    if(data == 'true'){
+                        toastr.success('Producto anadido a tu carrito');
+                    }else{
+                        toastr.error('Problemas con el stock de este producto');
+                    }
+                    
+                });
+
+
+    }else{
+        toastr.error('Inicia sesion para poder comprar nuestros productos');
+    }
+};
+
    
 
 });

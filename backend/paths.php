@@ -86,6 +86,15 @@
     define('BLL_LOGIN', SITE_ROOT . 'modules/login/model/BLL/');
     define('MODEL_LOGIN', SITE_ROOT . 'modules/login/model/model/');
     define('JS_VIEW_LOGIN', SITE_PATH . 'modules/login/view/js/');
+
+
+       //MODEL_CART
+       define('UTILS_CART', SITE_ROOT . 'modules/cart/utils/');
+       define('MODEL_PATH_CART', SITE_PATH . 'modules/cart/model/');
+       define('DAO_CART', SITE_ROOT . 'modules/cart/model/DAO/');
+       define('BLL_CART', SITE_ROOT . 'modules/cart/model/BLL/');
+       define('MODEL_CART', SITE_ROOT . 'modules/cart/model/model/');
+       define('JS_VIEW_CART', SITE_PATH . 'modules/cart/view/js/');
     
     //amigables
     define('URL_AMIGABLES', TRUE);

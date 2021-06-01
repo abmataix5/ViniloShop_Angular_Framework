@@ -596,3 +596,9 @@ right:0px; /*A la izquierda deje un espacio de 0px*/
 bottom:0px; /*Abajo deje un espacio de 0px*/
 height:500px; /*alto del div*/
 }
+
+
+.log_out{
+
+  background-color: red;
+}

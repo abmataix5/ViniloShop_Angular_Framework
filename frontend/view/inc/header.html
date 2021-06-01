@@ -35,7 +35,7 @@
                            <li id="log_op" ng-show = "showLogIn">
                             <a  href="#/login"><span id="icon_login" class="far fa-user" ></span></a>                          
                           </li>
-                          <li >
+                          <li ng-show = "showCart">
                            <a  href="#/cart"><span id="icon_login" class="fas fa-cart-arrow-down" ></span></a>                          
                        
                            <li id="p_l">
@@ -43,7 +43,7 @@
                           </li>  
                
                            <li ng-show = "showProfile"><div class="div2" style = "background : url({{profileImg}})" ng-click="closeSessionClick()"></div> <p>{{profileName}}</p></li>
-                          
+                           <li ng-show = "showLogOut">   <a id="log_out" class="btn" type="submit" ng-click="closeSessionClick()">Log Out</a></li>
                         </ul>
                      </div>
                   </div>

@@ -44,17 +44,30 @@ viniloshop.controller('controller_shopDetails', function($scope,services,product
 
    $scope.buy_product = function(cod_prod) {
        
-   console.log(cod_prod);
+   
 
-   if(localStorage.getItem('token')){
+        if(localStorage.getItem('token')){
 
-    /* Insertar codigo producto, cantidad y IDUSer en la tabla cart */
-    
-   /*  services.post('shop', 'get_user_from_token', {'token': user_active,'cod_fav':cod_prod})  */
+                    /* Insertar codigo producto, cantidad y IDUSer en la tabla cart */
 
-   }else{
-       toastr.error('Inicia sesion para poder comprar nuestros productos');
-   }
-};
+                    var estado_compra = services.post('cart', 'insert_product',{'token':localStorage.getItem('token'),'prod': cod_prod});  
+
+                    estado_compra.then(function(data) {
+                                    
+
+                    
+                        if(data == 'true'){
+                            toastr.success('Producto anadido a tu carrito');
+                        }else{
+                            toastr.error('Problemas con el stock de este producto');
+                        }
+                        
+                    });
+
+
+        }else{
+            toastr.error('Inicia sesion para poder comprar nuestros productos');
+        }
+    };
 
 });

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<functions>
+
+    <function>
+        <name>insert_product</name>
+        <uri>insert_product</uri>
+    </function>
+
+     <function>
+        <name>select_cart_data</name>
+        <uri>select_cart_data</uri>
+    </function>
+
+        <function>
+        <name>delete_cart_data</name>
+        <uri>delete_cart_data</uri>
+    </function>
+
+
+    
+    
+</functions>
