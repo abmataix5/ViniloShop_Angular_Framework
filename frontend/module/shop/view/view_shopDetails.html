@@ -44,7 +44,9 @@
              <tr>
                  <td>
                      <button id="volver_shop" ng-click="back_shop()">Volver</button>
-                     <a class="btn_compra">Añadir al carrito</a>
+
+                     <a class="btn_compra" ng-click="buy_product(data.cod_producto)">Añadir al carrito</a>
+
                      <span ng-if="'like'== data.likes">
                         <i  class="fas fa-heart unlike"  style="font-size: 1.5em;" ng-click="click_fav(data.cod_producto)" id="fav-{{data.cod_producto}}"></i>
                      </span>

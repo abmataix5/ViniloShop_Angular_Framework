@@ -1,6 +1,5 @@
-console.log('apiconector');
 viniloshop.factory("services", ['$http','$q', function ($http, $q) {
-    console.log('apiconectordentro');
+
     let serviceBase = '/ViniloShop_Angular_Framework/backend/index.php?module=';
     let obj = {};
 

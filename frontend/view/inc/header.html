@@ -14,21 +14,10 @@
                   <div class="col-lg-5 col-md-6 search-right">
 
                         <form class="search">
-                        <div class="autocomplete">
-                           <form class="form-inline my-lg-0">
-                           
-                              <input id="autocom" class="form-control mr-sm-2" type="search" placeholder="Busca tu producto">
-                              <div id="opauto"></div>
-                            
-                           </form>
-                        </div> 
-                         <!--   <select id="search_catego">
-                              <option value="0">Categoria?</option>
-                           </select>
-                           <select id="search_estilo">
-                              <option value="0">Estilo</option>
-                           </select> -->
-                           <a id="searchlist" class="btn" type="submit">Search</a>
+                     
+                              <input ng-model="keyword"  id="autocom" class="form-control mr-sm-2" type="search" placeholder="Busca tu producto">
+
+                               <a id="searchlist" class="btn" type="submit" ng-click="search()">Search</a>
                         </form>
                   </div>
                   <div class="col-lg-4 col-md-3 right-side-cart">

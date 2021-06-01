@@ -41,7 +41,7 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                     controller: "controller_shopDetails",
                      resolve: {
                         producto: function(services, $route) {
-                            console.log($route.current.params.id_prod);
+                            
                              return services.post('shop', 'details', {'id': $route.current.params.id_prod,'token':localStorage.getItem('token')}) 
                         } /* ,
                         favs: function(services) {
@@ -124,9 +124,9 @@ viniloshop.config(['$routeProvider', '$locationProvider',
 
     viniloshop.run(function($rootScope,services_logIn) {
        
-        
-    
         services_logIn.printMenu();
+    
+       
         
         $rootScope.closeSessionClick = function () {
           
@@ -134,5 +134,8 @@ viniloshop.config(['$routeProvider', '$locationProvider',
             services_logIn.printMenu();
             location.href = "#/home";
         }
+
+
+
 
       });

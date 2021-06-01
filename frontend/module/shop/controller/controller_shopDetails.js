@@ -1,10 +1,6 @@
-viniloshop.controller('controller_shopDetails', function($scope,services,producto) {
+viniloshop.controller('controller_shopDetails', function($scope,services,producto,toastr) {
 
     $scope.data = producto;
-
-    console.log($scope.data = producto); 
-
-
 
     $scope.back_shop = function() {
        
@@ -44,4 +40,21 @@ viniloshop.controller('controller_shopDetails', function($scope,services,product
  
   
    };
+
+
+   $scope.buy_product = function(cod_prod) {
+       
+   console.log(cod_prod);
+
+   if(localStorage.getItem('token')){
+
+    /* Insertar codigo producto, cantidad y IDUSer en la tabla cart */
+    
+   /*  services.post('shop', 'get_user_from_token', {'token': user_active,'cod_fav':cod_prod})  */
+
+   }else{
+       toastr.error('Inicia sesion para poder comprar nuestros productos');
+   }
+};
+
 });

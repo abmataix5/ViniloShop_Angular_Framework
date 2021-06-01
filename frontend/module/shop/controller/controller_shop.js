@@ -54,7 +54,7 @@ viniloshop.controller('controller_shop', function($scope,services,grupos,toastr)
 
 
     $scope.showDetails = function(id_prod) {
-        console.log(id_prod);
+       
          location.href = "#/shop/" + id_prod; 
     };// end_showDetails
 

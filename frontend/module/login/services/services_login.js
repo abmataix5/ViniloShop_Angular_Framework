@@ -10,7 +10,7 @@ viniloshop.factory('services_logIn', ['$rootScope', 'services', 'services_localS
             services.post('login', 'get_user_log', {token: localStorage.token})
             .then(function(response) {
 
-        console.log(response);
+     
              if (response) {
                     $rootScope.showProfile = true; 
                     $rootScope.showLogIn = false;
