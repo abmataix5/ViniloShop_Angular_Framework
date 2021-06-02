@@ -13,9 +13,9 @@ Aplicacion destinada a la venta online.
 
 *  *Video APP en funcionamiento* 
 *  *Tecnologias* 
-* *Modulos* 
+*  *Modulos* 
 *  *Funcionalidades*
-*   *Próximas actualizaciones* 
+*  *Próximas actualizaciones* 
 *  *Autores*
 
 
@@ -28,9 +28,9 @@ Aplicacion destinada a la venta online.
 ### Construido con 🛠️
 
 
-*  *Backend* - [PHP](https://www.php.net/)
+* *Backend* - [PHP](https://www.php.net/)
 * *Frontend* - [Javascript](https://es.wikipedia.org/wiki/JavaScript)
-*   *Frontend* - [JQuery](https://jquery.com/)
+* *Frontend* - [JQuery](https://jquery.com/)
 * *Backend* - [MySQL](https://www.mysql.com/)
 
 
@@ -40,7 +40,7 @@ Aplicacion destinada a la venta online.
     * *GoogleBooks Api* - [GoogleBooks](https://developers.google.com/books)
 
     #### Tecnologias secundarias🛠️
-    *  *Jquery DataTable* - [DataTable](https://datatables.net/)
+
     *   *Frontend* - [Bootstrap](https://getbootstrap.com/)
 
 
@@ -50,6 +50,7 @@ Aplicacion destinada a la venta online.
 * *Stock* 
 *  *Order*
 *   *Shop* 
+*   * *Cart* 
 * *Contact* 
 * *Login/Register/Social login*
 
@@ -61,7 +62,8 @@ Aplicacion destinada a la venta online.
 | Home  | Muestra OwlCarrousel con imagenes de la web, categorias de productos y grupos disponibles(laod more) |
 | Stock | Panel admin para adminsitrar stock de la web (CRUD) |
 | Order |Para consultar el stock de la web de manera más precisa(DataTable jQuery) |
-| Shop | Muestra todos los productos de la tienda con filtros,GMaps,ApiBooks,Pagination  |
+| Shop | Muestra todos los productos de la tienda con filtros,GMaps,ApiBooks,Pagination,Favoritos  |
+| Cart | Muestra lista de productos que el usuario logueado va a commprar |
 | Contact | Fomualario para que el cliente pueda contactar con nosotros + GMaps + InfoWeb  |
 | Disponible en toda la app | Translate, Modo Oscuro  |
 
