@@ -27,7 +27,8 @@ class cart_dao {
 
     public function select_cart($db,$IDUser) {
 
-        $sql = "SELECT cart.cantidad,stock.nombre_disco,stock.estilo_musical,stock.precio,stock.ruta,stock.cod_producto FROM cart INNER JOIN stock ON cart.cod_producto = stock.cod_producto WHERE cart.IDUser = '$IDUser'";
+        $sql = "SELECT stock.nombre_disco,stock.estilo_musical,stock.precio,stock.ruta,stock.cod_producto,count(cart.cod_producto) as cantidad 
+        FROM cart INNER JOIN stock ON cart.cod_producto = stock.cod_producto WHERE cart.IDUser = '$IDUser' GROUP BY cart.cod_producto";
 
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
@@ -37,8 +38,17 @@ class cart_dao {
 
     public function delete_compra($db,$IDUser,$prod) {
 
+        /* Primero borramos el producto  del carrito */
+
         $sql = "DELETE FROM cart WHERE cart.IDuser = '$IDUser' and cart.cod_producto = '$prod'";
-        return $db->ejecutar($sql);
+        $db->ejecutar($sql);
+
+         /* Hacemos un select con el carrito actualizado, para no tener que recargar la pagina */
+
+         $sql = "SELECT stock.nombre_disco,stock.estilo_musical,stock.precio,stock.ruta,stock.cod_producto,count(cart.cod_producto) as cantidad 
+         FROM cart INNER JOIN stock ON cart.cod_producto = stock.cod_producto WHERE cart.IDUser = '$IDUser' GROUP BY cart.cod_producto";
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
 
 
     }
