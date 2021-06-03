@@ -97,7 +97,7 @@
 	/* 		echo json_encode($exist_user); */
 
 		 	if ($exist_user == true) { 
-				echo json_encode("Ya existe usuario");
+				echo json_encode(false);
 			} else {
 				
 		

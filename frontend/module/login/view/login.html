@@ -18,12 +18,12 @@
     
             <div class="inputs">
             
-                <p> <input type="text" name="username" placeholder="Nombre de usuario" ng-model="username"/>
-            
+                <p> <input type="text" name="username" placeholder="Nombre de usuario" ng-pattern = "regUsername" ng-model="username"/>
+                    <span style="color: red ;" id="error_username">{{error_username}}</span>
                </p>
             
-                <p><input name="password" type="password" placeholder="Contraseña"ng-model="password" />
-               
+                <p><input name="password" type="password" placeholder="Contraseña"ng-model="password" ng-pattern="regPassword" />
+                    <span style="color: red ;" id="error_username">{{error_passwd}}</span>
                 </p>
     
                     <p class="submit"><input class="submit" type="button" name="commit" value="Inciar sesion" id="login_btn" ng-click="login()"></p>

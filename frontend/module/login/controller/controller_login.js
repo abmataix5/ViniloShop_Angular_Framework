@@ -1,21 +1,38 @@
 viniloshop.controller('controller_login', function($scope, $rootScope,services,services_logIn, services_Google, services_GitHub,toastr,services_logInSocial) {
-/*     $scope.regUsername = /^[A-Za-z0-9._-]{5,15}$/;
-    $scope.regPassword = /^[A-Za-z0-9._-]{5,20}$/; */
+
+    $scope.regUsername = /^[A-Za-z0-9._-]{5,15}$/;
+    $scope.regEmail = /^[A-Za-z0-9._-]{5,20}@[a-z]{3,7}.[a-z]{2,4}$/;
+    $scope.regPassword = /^[A-Za-z0-9._-]{5,20}$/;
     
+    /* Para que no de error el inizialitze al abrir varias sesiones */
     if (!$rootScope.socialInit) {
         $rootScope.socialInit = 0;
-    }// end_if
+    }
     if ($rootScope.socialInit == 0) {
         services_logInSocial.initialize();
         $rootScope.socialInit = 1;
-    }// end_if
+    }
+
+
 
     $scope.login = function() {
 
+
+
+
     let user = {'username': $scope.username, 'password': $scope.password};
              
-        
-       services.post('login', 'manual_login',{'data':user}).then(function(response){
+
+    if(!$scope.username){
+        $scope.error_username = "Usuario no valido";
+      
+     }else if(!$scope.password){
+                  
+        $scope.error_passwd = "Contrasena no valida";
+     }else{
+
+       
+        services.post('login', 'manual_login',{'data':user}).then(function(response){
         
           
             if (response != "NO existe el usuario") {
@@ -34,6 +51,9 @@ viniloshop.controller('controller_login', function($scope, $rootScope,services,s
         }, function(error) {
             console.log(error);
         });
+        
+     }
+ 
 
     };// end_logIn
 

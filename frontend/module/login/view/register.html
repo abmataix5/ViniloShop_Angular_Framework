@@ -16,20 +16,20 @@
     
             <div class="inputs">
             
-               <p> <input type="text" name="username" placeholder="Nombre de usuario" ng-model="username"/><span id="e_userr" class="error">
-             
+               <p> <input type="text" name="username" placeholder="Nombre de usuario" ng-model="username" ng-pattern = "regUsername" /><span id="e_userr" class="error">
+                  <span style="color: red ;" id="error_username">{{error_username}}</span>
             </span></p>
             
-               <p><input type="text" name="email" placeholder="Email"  ng-model="email"/><span id="e_mail" class="error">
-              
+               <p><input type="text" name="email" placeholder="Email"  ng-model="email"/><span id="e_mail" class="error" ng-pattern = "regEmail" >
+                  <span style="color: red ;" id="error_username">{{error_email}}</span>
             </span></p> 
                
-               <p> <input type="password" name="password" placeholder="Contraseña"  ng-model="password"/><span id="e_passwordr" class="error">
-        
+               <p> <input type="password" name="password" placeholder="Contraseña"  ng-model="password"/><span id="e_passwordr" class="error" ng-pattern="regPassword">
+                  <span style="color: red ;" id="error_username">{{error_passwd}}</span>
             </span></p> 
 
-               <p>  <input type="password" name="password2" placeholder="Repite la contraña"  ng-model="password_2"/><span id="e_rpasswordr" class="error">
-              
+               <p>  <input type="password" name="password2" placeholder="Repite la contraña"  ng-model="password_2"/><span id="e_rpasswordr" class="error" ng-pattern="regPassword">
+                  <span style="color: red ;" id="error_username">{{error_passwd2}}</span>
             </span></p> 
                 
                 
