@@ -1,7 +1,20 @@
 viniloshop.factory('services_logInSocial', ['services', 'services_localStorage', 'services_logIn',function(services, toastr, services_logIn) {
-    let service = { socialLogIn: socialLogIn};
+    let service = {initialize: initialize, socialLogIn: socialLogIn};
     return service;
 
+
+    function initialize() {
+        var firebaseConfig = {
+            apiKey: "AIzaSyAHXxF6wSxy7_SFuNkuc4Ulw6AtvFK3cls",
+            authDomain: "ViniloShop.firebaseapp.com",
+            databaseURL: "https://viniloshop.firebaseio.com",
+            projectId: "viniloshop",
+            storageBucket: "",
+            messagingSenderId: "326216469824"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+    }// end_initialize
 
 
     function socialLogIn(User_info) {
@@ -25,16 +38,7 @@ viniloshop.factory('services_Google', ['services_logInSocial', function(services
 
     function logIn() {
 
-        var firebaseConfig = {
-            apiKey: "AIzaSyAHXxF6wSxy7_SFuNkuc4Ulw6AtvFK3cls",
-            authDomain: "ViniloShop.firebaseapp.com",
-            databaseURL: "https://viniloshop.firebaseio.com",
-            projectId: "viniloshop",
-            storageBucket: "",
-            messagingSenderId: "326216469824"
-          };
-          // Initialize Firebase
-          firebase.initializeApp(firebaseConfig);
+      
          
         let provider = new firebase.auth.GoogleAuthProvider();
     /*     provider.addScope('email'); */
@@ -59,16 +63,7 @@ viniloshop.factory('services_GitHub', ['services_logInSocial', function(services
 
     function logIn() {
 
-        var firebaseConfig = {
-            apiKey: "AIzaSyAHXxF6wSxy7_SFuNkuc4Ulw6AtvFK3cls",
-            authDomain: "ViniloShop.firebaseapp.com",
-            databaseURL: "https://viniloshop.firebaseio.com",
-            projectId: "viniloshop",
-            storageBucket: "",
-            messagingSenderId: "326216469824"
-          };
-          // Initialize Firebase
-          firebase.initializeApp(firebaseConfig);
+       
         let provider = new firebase.auth.GithubAuthProvider();
 /*         provider.addScope('email'); */
         let authService = firebase.auth();

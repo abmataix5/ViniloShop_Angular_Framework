@@ -97,7 +97,7 @@ viniloshop.config(['$routeProvider', '$locationProvider',
 
 
 
-    viniloshop.run(function($rootScope,services_logIn,services_cart) {
+    viniloshop.run(function($rootScope,services_logIn,toastr) {
        
         services_logIn.printMenu();
     
@@ -107,10 +107,15 @@ viniloshop.config(['$routeProvider', '$locationProvider',
           
             localStorage.removeItem('token');
             services_logIn.printMenu();
+            toastr.error("Cerrando sesion...." ,'Log Out');
             location.href = "#/home";
         }
 
-        services_cart.count_product_user();
+            
+   
+    
+       
+    
 
 
       });

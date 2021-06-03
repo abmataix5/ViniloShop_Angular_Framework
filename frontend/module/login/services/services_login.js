@@ -1,4 +1,4 @@
-viniloshop.factory('services_logIn', ['$rootScope', 'services', 'services_localStorage', function($rootScope, services, services_localStorage) {
+viniloshop.factory('services_logIn', ['$rootScope', 'services', 'services_localStorage', 'services_cart', function($rootScope, services, services_localStorage, services_cart) {
     let service = {printMenu: printMenu,redirectLogIn: redirectLogIn};
 
     return service;
@@ -16,6 +16,7 @@ viniloshop.factory('services_logIn', ['$rootScope', 'services', 'services_localS
                     $rootScope.showLogIn = false;
                     $rootScope.showCart = true;
                     $rootScope.showLogOut = true;
+                    $rootScope.showCart_count = true;
                     $rootScope.profileName = response[0]['username'];
                     $rootScope.profileImg = response[0]['avatar'];
                 }// end_if
@@ -24,14 +25,20 @@ viniloshop.factory('services_logIn', ['$rootScope', 'services', 'services_localS
             }, function(error) {
                 console.log(error);
             });// end_services
+
+            /* Para pintar la cantidad de productos en el carrito */
+
+            services_cart.count_product_user();
+            
         }else{
             $rootScope.showProfile = false; 
             $rootScope.showLogIn = true;
             $rootScope.showCart = false;
             $rootScope.showLogOut = false;
+            $rootScope.showCart_count = false;
         }
 
-    }// end_logIn
+    }// 
 
     function redirectLogIn(token) {
   

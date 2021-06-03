@@ -1,5 +1,5 @@
 
-viniloshop.controller('controller_cart', function($scope,services,dataCart,toastr) {
+viniloshop.controller('controller_cart', function($scope,services,dataCart,toastr,services_cart) {
 
         $scope.data = dataCart;
    
@@ -14,6 +14,8 @@ viniloshop.controller('controller_cart', function($scope,services,dataCart,toast
 
         toastr.error('Producto borrado de tu carrito');
 
+           /* Contar productos carrito */
+           services_cart.count_product_user();
       };
         
         
@@ -26,6 +28,8 @@ viniloshop.controller('controller_cart', function($scope,services,dataCart,toast
           
         });
 
+           /* Contar productos carrito */
+        services_cart.count_product_user();
       };
 
       $scope.del_prod = function(cod_prod) {
@@ -37,6 +41,8 @@ viniloshop.controller('controller_cart', function($scope,services,dataCart,toast
          
        });
 
+           /* Contar productos carrito */
+          services_cart.count_product_user();
      };
 
 

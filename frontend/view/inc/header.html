@@ -35,14 +35,16 @@
                            <li id="log_op" ng-show = "showLogIn">
                             <a  href="#/login"><span id="icon_login" class="far fa-user" ></span></a>                          
                           </li>
+                     
                           <li ng-show = "showCart">
                            <a  href="#/cart"><span id="icon_login" class="fas fa-cart-arrow-down" ></span></a>                          
-                       
-                           <li id="p_l" >
-                              {{cart_total}}                   
-                          </li>  
-               
-                           <li ng-show = "showProfile"><div class="div2" style = "background : url({{profileImg}})" ng-click="closeSessionClick()"></div> <p>{{profileName}}</p></li>
+                         </li>
+                         <li id="p_l" ng-show = "showCart_count" >
+                          : {{cart_total}}                  
+                         </li> 
+                          <li><div class="vertical-line" style="height: 60px;"></div></li>
+                          <li><div class="vertical-line" style="height: 60px;"></div></li>
+                           <li ng-show = "showProfile" class="name_p"><div class="div2" style = "background : url({{profileImg}})" ng-click="closeSessionClick()"></div> <p>{{profileName}}</p></li>
                            <li ng-show = "showLogOut">   <a id="log_out" class="btn" type="submit" ng-click="closeSessionClick()">Log Out</a></li>
                         </ul>
                      </div>

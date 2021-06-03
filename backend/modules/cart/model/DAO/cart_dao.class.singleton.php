@@ -81,7 +81,7 @@ class cart_dao {
 
     public function count_cart($db,$IDUser) {
 
-        $sql = "SELECT sum(cart.cantidad)
+        $sql = "SELECT sum(cart.cantidad) as sum
         FROM cart INNER JOIN stock ON cart.cod_producto = stock.cod_producto WHERE cart.IDUser = '$IDUser'";
 
         $stmt = $db->ejecutar($sql);

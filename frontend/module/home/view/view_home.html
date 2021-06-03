@@ -2,11 +2,24 @@
 <!-- Div carousel -->
 
 
-<div id="caorusel" class = "owl-carousel owl-theme">
+<!-- <div id="caorusel" class = "owl-carousel owl-theme">
 
    <img ng-repeat ="data in slides" id="carousel_shop" ng-click="redirectShopCatego()" ng-src="frontend/{{data.ruta}}">
 
-</div> 
+</div>  -->
+
+<section id="caorusel">
+   <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+       <div uib-slide ng-repeat="slide in slides track by slide.img" index="$index">
+           <img ng-src="http://localhost/Kevin/Ejercicios_Kevin/Projecte/frontend/module/home/img/{{slide.img}}"
+               style="overflow: hidden; height: 200; max-height: 200;" id={{slide.category}}
+               ng-click="categoryClick(this)" class="carousel">
+           <div class="carousel-caption">
+               <h4>{{slide.category}}</h4>
+           </div>
+       </div>
+   </div>
+</section>
 
 
 <!-- Categorias  de productos -->

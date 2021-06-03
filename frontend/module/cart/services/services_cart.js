@@ -5,12 +5,12 @@ viniloshop.factory('services_cart', ['$rootScope', 'services', function($rootSco
 
     function count_product_user() {
       
- /*        $rootScope.showCount = response.length; */
+
             
             services.post('cart', 'count_cart_prod', {token: localStorage.token})
             .then(function(response) {
 
-                var total = response[0]['sum(cart.cantidad)'];
+                var total = response[0]['sum'];
                 
                 $rootScope.cart_total = total;
          
@@ -20,12 +20,8 @@ viniloshop.factory('services_cart', ['$rootScope', 'services', function($rootSco
             });// end_services
      
 
-    }// end_logIn
+    }//
+
 
  
-
-
-    
-
- 
-}]);// end_services_login
+}]);

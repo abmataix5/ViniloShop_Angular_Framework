@@ -1,4 +1,4 @@
-viniloshop.controller('controller_shop', function($scope,services,grupos,toastr) {
+viniloshop.controller('controller_shop', function($scope,services,grupos,toastr,services_cart) {
 
     cargar_data();
   
@@ -301,13 +301,20 @@ viniloshop.controller('controller_shop', function($scope,services,grupos,toastr)
                                 
                             });
 
+                               /* Actualizar total pructos en el carrito */
+                                 services_cart.count_product_user();
 
                         }else{
                             var update_cantidad = services.post('cart', 'update_cantidad',{'token':localStorage.getItem('token'),'prod': cod_prod}); 
                             toastr.success('Has anadido otro producto del mismo tipo a tu carrito'); 
+
+                               /* Actualizar total pructos en el carrito */
+                                 services_cart.count_product_user();
                         }
                     
                 });
+
+             
 
         }else{
             toastr.error('Inicia sesion para poder comprar nuestros productos');

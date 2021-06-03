@@ -1,7 +1,14 @@
-viniloshop.controller('controller_login', function($scope,services,services_logIn, services_Google, services_GitHub,toastr) {
+viniloshop.controller('controller_login', function($scope, $rootScope,services,services_logIn, services_Google, services_GitHub,toastr,services_logInSocial) {
 /*     $scope.regUsername = /^[A-Za-z0-9._-]{5,15}$/;
     $scope.regPassword = /^[A-Za-z0-9._-]{5,20}$/; */
     
+    if (!$rootScope.socialInit) {
+        $rootScope.socialInit = 0;
+    }// end_if
+    if ($rootScope.socialInit == 0) {
+        services_logInSocial.initialize();
+        $rootScope.socialInit = 1;
+    }// end_if
 
     $scope.login = function() {
         let user = {'username': $scope.username, 'password': $scope.password};
