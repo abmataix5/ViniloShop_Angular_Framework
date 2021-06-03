@@ -11,13 +11,13 @@ viniloshop.controller('controller_login', function($scope, $rootScope,services,s
     }// end_if
 
     $scope.login = function() {
-        let user = {'username': $scope.username, 'password': $scope.password};
-        console.log(user);
+
+    let user = {'username': $scope.username, 'password': $scope.password};
+             
         
+       services.post('login', 'manual_login',{'data':user}).then(function(response){
         
-       services.post('login', 'manual_login',{'data':user})
-        .then(function(response){
-            console.log(response);
+          
             if (response != "NO existe el usuario") {
 
                 var token2 = response.split(" ");
@@ -29,17 +29,21 @@ viniloshop.controller('controller_login', function($scope, $rootScope,services,s
               
                 console.log("error login");
                 toastr.error('Usuario no encontrado');
-            }// end_else
+            }
 
         }, function(error) {
             console.log(error);
-        }); // end_services 
+        });
+
     };// end_logIn
+
+
 
      $scope.login_Gmail = function() {
      
          services_Google.logIn(); 
-    };// end_logInGoogle
+     };// end_logInGoogle
+     
 
     $scope.login_GH = function() {
         console.log("ghub");

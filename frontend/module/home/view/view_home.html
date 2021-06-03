@@ -1,18 +1,19 @@
+<body>
 
-<!-- Div carousel -->
-
-
-<!-- <div id="caorusel" class = "owl-carousel owl-theme">
-
-   <img ng-repeat ="data in slides" id="carousel_shop" ng-click="redirectShopCatego()" ng-src="frontend/{{data.ruta}}">
-
-</div>  -->
-
-
-
+   
+<!-- Carrousel -->
+< <div id="caorusel" >
+   <section >
+      <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+         <div uib-slide ng-repeat="slide in slides" index="$index">
+            <img ng-src="frontend/{{slide.ruta}}" style="overflow: hidden; height: 100; max-height: 100;" ng-click="redirectShopCatego()"   class="carousel">         
+         </div>    
+      </div>
+   </section>
+</div> 
 
 <!-- Categorias  de productos -->
- <section class="about py-lg-4 py-md-3 py-sm-3 py-3" id="about">
+
 
      <div class="container py-lg-5 py-md-5 py-sm-4 py-4">
         <h3 class="title text-center mb-lg-5 mb-md-4  mb-sm-4 mb-3" id="productos">Categorias</h3>
@@ -49,3 +50,4 @@
   
   <!-- //Categorias de productos -->
 
+</body>

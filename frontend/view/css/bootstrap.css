@@ -6047,7 +6047,9 @@ button.close {
   border-left-color: #fff;
 }
 .carousel {
+  height:500px; /*alto del div*/
   position: relative;
+   top: 20px; 
 }
 .carousel-inner {
   position: relative;

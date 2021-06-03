@@ -4,43 +4,14 @@ viniloshop.controller('controller_home', function($scope,services,carrousel,cate
   /*   services_logIn.logOut(); */
 
     let count = 3;
+    $scope.myInterval = 3000;
+    $scope.noWrapSlides = false;
+    $scope.active = 0;
 
     $scope.slides = carrousel;  
     $scope.categorias = categorias;
     $scope.more_groups = more_groups.slice(0,count);
 
-
-
-    angular.element(document).ready(function() {
-
-
-         /* Owl carrousel */
-  
-      $('.owl-carousel').owlCarousel({
-        loop:true,
-        margin:10,
-        nav:false,
-        dots:false,
-        autoplay:true,
-        autoplayTimeout:3000,
-        autoplayHoverPause:true,
-        responsive:{
-          0:{
-            items:1
-          },
-          600:{
-            items:3
-          },
-          1000:{
-            items:3
-          }
-        }
-    
-       })  
-
-
-  
-  });
 
 
     /*Function para cargar mas grupos  */
