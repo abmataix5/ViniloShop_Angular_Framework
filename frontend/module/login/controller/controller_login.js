@@ -27,10 +27,10 @@ viniloshop.controller('controller_login', function($scope, $rootScope,services,s
         $scope.error_username = "Usuario no valido";
       
      }else if(!$scope.password){
-                  
+        $scope.error_username = "";
         $scope.error_passwd = "Contrasena no valida";
      }else{
-
+        $scope.error_passwd = "";
        
         services.post('login', 'manual_login',{'data':user}).then(function(response){
         
