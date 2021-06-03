@@ -15,7 +15,7 @@ viniloshop.controller('controller_login', function($scope,services,services_logI
 
                 var token2 = response.split(" ");
                 var token = token2[0].replace(/['"]+/g,'');  
-                console.log(token);
+       
                 services_logIn.redirectLogIn(token);
                 toastr.success('Sesion iniciada');
             }else {

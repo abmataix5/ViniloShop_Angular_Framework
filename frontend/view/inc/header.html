@@ -38,8 +38,8 @@
                           <li ng-show = "showCart">
                            <a  href="#/cart"><span id="icon_login" class="fas fa-cart-arrow-down" ></span></a>                          
                        
-                           <li id="p_l">
-                              0                   
+                           <li id="p_l" >
+                              {{cart_total}}                   
                           </li>  
                
                            <li ng-show = "showProfile"><div class="div2" style = "background : url({{profileImg}})" ng-click="closeSessionClick()"></div> <p>{{profileName}}</p></li>

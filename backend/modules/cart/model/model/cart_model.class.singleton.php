@@ -20,14 +20,27 @@ class cart_model {
         }
 
         public function select_data($IDUser){
-            return $this->bll->select_data_BLL($IDUser);
-        
+            return $this->bll->select_data_BLL($IDUser);     
         }
 
         public function delete_data($IDUser,$prod){
             return $this->bll->delete_data_BLL($IDUser,$prod);
         }
     
-   
+        public function select_exist_cart($IDUser,$prod){
+            return $this->bll->exist_BLL($IDUser,$prod);
+        }
 
+   
+        public function update_cart_cantidad($IDUser,$prod){
+            return $this->bll->up_cantidad_BLL($IDUser,$prod);
+        }
+
+        public function update_cart_cantidad_menos($IDUser,$prod){
+            return $this->bll->up_cantidad_menos_BLL($IDUser,$prod);
+        }
+
+        public function count_cart($IDUser){
+            return $this->bll->up_count_cart_BLL($IDUser);
+        }
     }

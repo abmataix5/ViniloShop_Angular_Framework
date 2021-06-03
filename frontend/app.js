@@ -28,13 +28,7 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                     resolve: {
                         grupos: function (services) {
                             return services.get('shop', 'grupos_disponibles');
-                        }/* ,
-                        favs: function(services) {
-                            return services.post('shop', 'sendFavs', {JWT: localStorage.token});
-                        },
-                        cart: function(services) {
-                            return services.post('cart', 'selectCart', {JWT: localStorage.token});
-                        }  */
+                        }
                     } 
                 }) .when('/shop/:id_prod' , {
                     templateUrl: "frontend/module/shop/view/view_shopDetails.html",
@@ -43,13 +37,7 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                         producto: function(services, $route) {
                             
                              return services.post('shop', 'details', {'id': $route.current.params.id_prod,'token':localStorage.getItem('token')}) 
-                        } /* ,
-                        favs: function(services) {
-                            return services.post('shop', 'sendFavs', {JWT: localStorage.token});
-                        },
-                        cart: function(services) {
-                            return services.post('cart', 'selectCart', {JWT: localStorage.token});
-                        }  */
+                        } 
                     }
                 }).when("/login", {
                     templateUrl: "frontend/module/login/view/login.html",
@@ -65,7 +53,7 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                         activateUser: function(services, $route) {
                             services.put('login', 'active_user', {'token': $route.current.params.token})
                             .then(function(response) {
-                               /*  console.log(response); */
+                         
                                 if (response == 'OK') {
                               toastr.success('Cuenta activada');
                                 }else {
@@ -102,28 +90,14 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                             return services.post('cart','select_cart_data',{token: localStorage.getItem('token')});
                         }
                     }  
-                })/* .when("/admin", {
-                    templateUrl: "frontend/module/crud/view/view_crud.html",
-                    controller: "controller_crud",
-                    resolve: {
-                        dataCrud: function(services) {
-                            return services.post('crud', 'listCars');
-                        }
-                    }
-                }).when("/admin/addCar", {
-                    templateUrl: "frontend/module/crud/view/view_crud_addCar.html",
-                    controller: "controller_crud_addCar"
-                }).otherwise("/home", {
-                    templateUrl: "frontend/module/home/view/view_home.html", 
-                    controller: "controller_home"
-                });     */
+                })
 
            
     }]);
 
 
 
-    viniloshop.run(function($rootScope,services_logIn) {
+    viniloshop.run(function($rootScope,services_logIn,services_cart) {
        
         services_logIn.printMenu();
     
@@ -136,7 +110,7 @@ viniloshop.config(['$routeProvider', '$locationProvider',
             location.href = "#/home";
         }
 
-
+        services_cart.count_product_user();
 
 
       });

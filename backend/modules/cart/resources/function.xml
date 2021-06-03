@@ -11,12 +11,31 @@
         <uri>select_cart_data</uri>
     </function>
 
-        <function>
+     <function>
         <name>delete_cart_data</name>
         <uri>delete_cart_data</uri>
     </function>
 
-
     
+    <function>
+        <name>select_prod_user</name>
+        <uri>select_prod_user</uri>
+    </function>
+
+    <function>
+        <name>update_cantidad</name>
+        <uri>update_cantidad</uri>
+    </function>
+
+
+    <function>
+        <name>update_cantidad_menos</name>
+        <uri>update_cantidad_menos</uri>
+    </function>
+    
+        <function>
+        <name>count_cart_prod</name>
+        <uri>count_cart_prod</uri>
+    </function>
     
 </functions>

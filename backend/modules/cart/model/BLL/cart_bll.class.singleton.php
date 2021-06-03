@@ -31,10 +31,35 @@
             
           }
 
-		  public function delete_data_BLL($IDUser,$prod){
+		 public function delete_data_BLL($IDUser,$prod){
 
 			return $this->dao->delete_compra($this->db,$IDUser,$prod); 
 			
 		  }
 
+		 public function exist_BLL($IDUser,$prod){
+
+			return $this->dao->exist_cart($this->db,$IDUser,$prod); 
+			
+		  }
+
+
+		 public function up_cantidad_BLL($IDUser,$prod){
+
+			return $this->dao->update_cantidad($this->db,$IDUser,$prod); 
+			
+		  }
+
+		  
+		 public function up_cantidad_menos_BLL($IDUser,$prod){
+
+			return $this->dao->update_cantidad_menos($this->db,$IDUser,$prod); 
+			
+		  }
+
+		  public function up_count_cart_BLL($IDUser){
+
+			return $this->dao->count_cart($this->db,$IDUser); 
+			
+		  }
 	}

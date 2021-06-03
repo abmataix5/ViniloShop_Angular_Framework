@@ -1,25 +1,19 @@
 <?php
 	class controller_cart {
+
+
 		function __construct(){
 	        $_SESSION['module'] = "cart";
 		}
 		
 	
-		
-		
-
 		function insert_product(){
 		
-
-		 	if($_POST["token"]){
 
 				$token = decode_token($_POST["token"]);
 				$nameUser = user_from_token($token);   
 				$nameUser = ($nameUser['user']);
-			}else{
-	
-				$nameUser = "";
-			}
+		
 
 		    	$json = array();
 		 	 	$json = loadModel(MODEL_CART, "cart_model", "insert_compra",$nameUser,$_POST["prod"]);  
@@ -31,41 +25,97 @@
 		function select_cart_data(){
 		
 
-			if($_POST["token"]){
-
 			   $token = decode_token($_POST["token"]);
 			   $nameUser = user_from_token($token);   
 			   $nameUser = ($nameUser['user']);
-		   }else{
-   
-			   $nameUser = "";
-		   }
+		
 
-		         $json = array();
-				 $json = loadModel(MODEL_CART, "cart_model", "select_data",$nameUser);   
+		        $json = array();
+				$json = loadModel(MODEL_CART, "cart_model", "select_data",$nameUser);   
 				echo json_encode($json);  
 			 
 	   }
 
+	   function select_prod_user(){
+		
+
+			
+
+			$token = decode_token($_POST["token"]);
+			$nameUser = user_from_token($token);   
+			$nameUser = ($nameUser['user']);
+	
+
+			$json = array();
+			$json = loadModel(MODEL_CART, "cart_model", "select_exist_cart",$nameUser,$_POST["prod"]);   
+			echo json_encode($json);  
+		 
+       }
+
+	   
+	   function update_cantidad(){
+		
+
+
+
+		$token = decode_token($_POST["token"]);
+		$nameUser = user_from_token($token);   
+		$nameUser = ($nameUser['user']);
+
+     
+		$json = array();
+		$json = loadModel(MODEL_CART, "cart_model", "update_cart_cantidad",$nameUser,$_POST["prod"]);   
+		echo json_encode($json);  
+	 
+      }
+
+	  function update_cantidad_menos(){
+		
+
+
+
+		$token = decode_token($_POST["token"]);
+		$nameUser = user_from_token($token);   
+		$nameUser = ($nameUser['user']);
+
+     
+		$json = array();
+		$json = loadModel(MODEL_CART, "cart_model", "update_cart_cantidad_menos",$nameUser,$_POST["prod"]);   
+		echo json_encode($json);  
+	 
+      }
+
 	   function delete_cart_data(){
 		
 
-		if($_POST["token"]){
+			
 
-		   $token = decode_token($_POST["token"]);
-		   $nameUser = user_from_token($token);   
-		   $nameUser = ($nameUser['user']);
-	   }else{
+			$token = decode_token($_POST["token"]);
+			$nameUser = user_from_token($token);  
+			$nameUser = ($nameUser['user']);
+		
 
-		   $nameUser = "";
-	   }
-
-			 $json = array();
-			 $json = loadModel(MODEL_CART, "cart_model", "delete_data",$nameUser,$_POST["prod"]);   
+			$json = array();
+			$json = loadModel(MODEL_CART, "cart_model", "delete_data",$nameUser,$_POST["prod"]);   
 			echo json_encode($json);  
 		 
-   }
+        }
 
+		function count_cart_prod(){
+		
+
+			
+
+			$token = decode_token($_POST["token"]);
+			$nameUser = user_from_token($token);  
+			$nameUser = ($nameUser['user']);
+		
+
+			$json = array();
+			$json = loadModel(MODEL_CART, "cart_model", "count_cart",$nameUser);   
+			echo json_encode($json);  
+		 
+        }
 
 
 	
