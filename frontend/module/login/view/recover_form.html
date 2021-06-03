@@ -18,18 +18,12 @@
             
              
                
-               <p> <input type="password" name="password" placeholder="Nueva contraseña" ng-model = "new_pss"/><span id="e_passwordr" class="error">
-                <?php
-                    $e_passwordr="";
-                    echo "$e_passwordr";
-                ?>
+               <p> <input type="password" name="password" placeholder="Nueva contraseña" ng-model = "password" ng-pattern = "regPassword" /><span id="e_passwordr" class="error">
+                <span style="color: red ;" id="error_pasword">{{error_passw}}</span>
             </span></p> 
 
-               <p>  <input type="password" name="password2" placeholder="Repite la contraña" ng-model = "usernameRecover"/><span id="e_rpasswordr" class="error">
-                <?php
-                    $e_rpasswordr="";
-                    echo "$e_rpasswordr";
-                ?>
+               <p>  <input type="password" name="password2" placeholder="Repite la contraña" ng-model = "password_2" ng-pattern = "regPassword"/><span id="e_rpasswordr" class="error">
+                <span style="color: red ;" id="error_username">{{error_passw2}}</span>
             </span></p> 
                 
                 

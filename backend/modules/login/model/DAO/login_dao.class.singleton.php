@@ -54,6 +54,7 @@
 
         
         public function select_user($db,$nameUser) {
+            
             $id_user = $nameUser;
          
             $sql = "SELECT IDUser,email FROM user WHERE username='$id_user' or IDUser = '$id_user'";
