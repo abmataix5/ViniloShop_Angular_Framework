@@ -20,6 +20,13 @@
             $stmt = $db->ejecutar($sql);
             return $db->listar($stmt);
         }
+
+        public function check_token($db,$User) {
+        
+            $sql = "SELECT IDUser as user FROM user WHERE IDUser = '$User'";
+            $stmt = $db->ejecutar($sql);
+            return $db->listar($stmt);
+        }
         
         public function insert_register_dao($db,$data_user) {
             $nameUser =  ($data_user['username']);
@@ -56,13 +63,13 @@
         }
 
         
-        public function up_passwd($db,$arrArgument) {
+        public function up_passwd($db,$arrArgument,$arrArgument2) {
 
             
             $password = $arrArgument;
             $hashed_pass = password_hash(strtolower($password), PASSWORD_DEFAULT);
           
-            $sql = "UPDATE user SET password = '$password' WHERE IDUSer = '$arrArgument'";
+            $sql = "UPDATE user SET password = '$hashed_pass' WHERE IDUSer = '$arrArgument2'";
              return $db->ejecutar($sql); 
          }
 

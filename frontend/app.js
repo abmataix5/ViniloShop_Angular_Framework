@@ -70,15 +70,10 @@ viniloshop.config(['$routeProvider', '$locationProvider',
                     controller: "controller_recoverForm",
                     resolve: {
                         checkToken: function(services, $route) {
-                            services.post('login', 'checkTokenRecover', {'token': $route.current.params.token})
-                            .then(function(response) {
-                                if (response == 'fail') {
-                                    toastr.error("The current token is invalid." ,'Error');
-                                    location.href = "#/home";
-                                }// end_if
-                            }, function(error) {
-                                console.log(error);
-                            });
+
+                           localStorage.setItem('IDUser', $route.current.params.token);
+                           return services.post('login', 'checkTokenRecover', {'token': $route.current.params.token});
+                       
                         }// end_checkToken
                     }// end_resolve
                 })  .when("/cart", {

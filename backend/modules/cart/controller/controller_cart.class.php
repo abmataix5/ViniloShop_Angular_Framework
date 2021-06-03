@@ -103,9 +103,6 @@
 
 		function count_cart_prod(){
 		
-
-			
-
 			$token = decode_token($_POST["token"]);
 			$nameUser = user_from_token($token);  
 			$nameUser = ($nameUser['user']);

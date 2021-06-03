@@ -34,8 +34,8 @@ viniloshop.controller('controller_login', function($scope, $rootScope,services,s
        
         services.post('login', 'manual_login',{'data':user}).then(function(response){
         
-          
-            if (response != "NO existe el usuario") {
+          console.log(response);
+            if (response != 'false') {
 
                 var token2 = response.split(" ");
                 var token = token2[0].replace(/['"]+/g,'');  

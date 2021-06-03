@@ -37,5 +37,10 @@
         <name>count_cart_prod</name>
         <uri>count_cart_prod</uri>
     </function>
+
+        <function>
+        <name>select_stock_product</name>
+        <uri>select_stock_product</uri>
+    </function>
     
 </functions>

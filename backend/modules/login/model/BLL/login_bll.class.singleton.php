@@ -32,8 +32,8 @@
 			return $this->dao->select_user($this->db,$nameUSer);
 		  }
 
-		  public function update_password_BLL($arrArgument){
-			return $this->dao->up_passwd($this->db,$arrArgument);
+		  public function update_password_BLL($arrArgument,$arrArgument2){
+			return $this->dao->up_passwd($this->db,$arrArgument,$arrArgument2);
 		  }
 
 		  public function register_social_login_BLL($nameUSer){
@@ -42,6 +42,10 @@
 
 		  public function register_social_data_BLL($User){
 			return $this->dao->insert_register_social($this->db,$User);
+		  }
+
+		  public function check_token_BLL($User){
+			return $this->dao->select_user($this->db,$User);
 		  }
 
 	

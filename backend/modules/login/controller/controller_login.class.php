@@ -30,12 +30,12 @@
 				exit();
 			}else{
 
-				echo("Contraseña incorrecta");
+				echo('false');
 
 			}
 			
 			} else{ /* El usuario no existe */
-				echo("NO existe el usuario");
+				echo('false');
 			}  
 
 		}
@@ -171,15 +171,18 @@
 
 		function update_passwd(){ //token user
 			
-		
-				
-	    
-				
-	    		loadModel(MODEL_LOGIN, "login_model", "update_password",$_GET['param']);
+	    	$json = 	loadModel(MODEL_LOGIN, "login_model", "update_password",$_POST['password'],$_POST['token']);
+            echo json_encode($json);
 
-				/* Redirigimos al login */
-	  
-	
 		}
 
+		
+		function checkTokenRecover(){ //token user
+
+		
+			$json = loadModel(MODEL_LOGIN, "login_model", "check_token",$_POST['token']);
+
+			echo json_encode($json);
+
+		}
 	}

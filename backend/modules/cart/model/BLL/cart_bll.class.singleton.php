@@ -62,4 +62,10 @@
 			return $this->dao->count_cart($this->db,$IDUser); 
 			
 		  }
+
+		  public function stock_product_BLL($prod){
+
+			return $this->dao->stock_product($this->db,$prod); 
+			
+		  }
 	}

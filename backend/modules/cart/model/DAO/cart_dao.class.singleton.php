@@ -79,6 +79,18 @@ class cart_dao {
 
     }
 
+    public function stock_product($db,$prod) {
+
+        $sql = "SELECT stock.stock
+        FROM stock  WHERE stock.cod_producto = '$prod'";
+
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
+
+
+    }
+
+
     public function count_cart($db,$IDUser) {
 
         $sql = "SELECT sum(cart.cantidad) as sum

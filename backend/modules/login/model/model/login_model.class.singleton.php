@@ -27,8 +27,8 @@ class login_model {
     public function select_user_email($nameUSer){
         return $this->bll->select_user_BLL($nameUSer);
     }
-    public function update_password($arrArgument){
-        return $this->bll->update_password_BLL($arrArgument);
+    public function update_password($arrArgument,$arrArgument2){
+        return $this->bll->update_password_BLL($arrArgument,$arrArgument2);
     }
 
     public function social_login_data($nameUSer){
@@ -37,6 +37,10 @@ class login_model {
 
     public function social_login_register($User){
         return $this->bll->register_social_data_BLL( $User);
+    }
+
+    public function check_token($User){
+        return $this->bll->check_token_BLL( $User);
     }
 
     

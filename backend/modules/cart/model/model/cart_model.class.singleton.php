@@ -43,4 +43,8 @@ class cart_model {
         public function count_cart($IDUser){
             return $this->bll->up_count_cart_BLL($IDUser);
         }
+
+        public function stock_product($prod){
+            return $this->bll->stock_product_BLL($prod);
+        }
     }

@@ -61,5 +61,10 @@
         <name>social_login</name>
         <uri>social_login</uri>
     </function>
+
+   <function>
+        <name>checkTokenRecover</name>
+        <uri>checkTokenRecover</uri>
+    </function>
     
 </functions>
