@@ -47,4 +47,12 @@ class cart_model {
         public function stock_product($prod){
             return $this->bll->stock_product_BLL($prod);
         }
+
+        public function check_out_model($IDUser){
+            return $this->bll->check_out_BLL($IDUser);
+        }
+
+        public function check_stock_model($IDUser,$prod){
+            return $this->bll->check_stock_BLL($IDUser,$prod);
+        }
     }

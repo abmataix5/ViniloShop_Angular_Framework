@@ -27,7 +27,7 @@ class cart_dao {
 
     public function select_cart($db,$IDUser) {
 
-        $sql = "SELECT stock.nombre_disco,stock.estilo_musical,stock.precio,stock.ruta,stock.cod_producto,cart.cantidad as cantidad 
+        $sql = "SELECT stock.stock,stock.nombre_disco,stock.estilo_musical,stock.precio,stock.ruta,stock.cod_producto,cart.cantidad as cantidad 
         FROM cart INNER JOIN stock ON cart.cod_producto = stock.cod_producto WHERE cart.IDUser = '$IDUser' GROUP BY cart.cod_producto";
 
         $stmt = $db->ejecutar($sql);
@@ -43,7 +43,7 @@ class cart_dao {
         $db->ejecutar($sql);
 
         /* Select con las nuevas cantidades actualizadas */
-        $sql = "SELECT stock.nombre_disco,stock.estilo_musical,stock.precio,stock.ruta,stock.cod_producto,cart.cantidad as cantidad 
+        $sql = "SELECT stock.stock,stock.nombre_disco,stock.estilo_musical,stock.precio,stock.ruta,stock.cod_producto,cart.cantidad as cantidad 
          FROM cart INNER JOIN stock ON cart.cod_producto = stock.cod_producto WHERE cart.IDUser = '$IDUser' GROUP BY cart.cod_producto";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
@@ -58,11 +58,25 @@ class cart_dao {
         $db->ejecutar($sql);
 
         /* Select con las nuevas cantidades actualizadas */
-        $sql = "SELECT stock.nombre_disco,stock.estilo_musical,stock.precio,stock.ruta,stock.cod_producto,cart.cantidad as cantidad 
+        $sql = "SELECT stock.stock,stock.nombre_disco,stock.estilo_musical,stock.precio,stock.ruta,stock.cod_producto,cart.cantidad as cantidad 
          FROM cart INNER JOIN stock ON cart.cod_producto = stock.cod_producto WHERE cart.IDUser = '$IDUser' GROUP BY cart.cod_producto";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
 
+    }
+
+
+    public function check_out($db,$IDUser) {
+        /* Actualizamos cantidad + 1 */
+
+        $sql1 = "INSERT INTO compras SELECT * FROM cart WHERE cart.IDUser = '$IDUser'";
+        $db->ejecutar($sql1);
+
+        $sql2 = "DELETE FROM cart WHERE cart.IDUser = '$IDUser'";
+        $db->ejecutar($sql2);
+
+        /* Select con las nuevas cantidades actualizadas */
+         return $db;
     }
 
 
@@ -111,8 +125,19 @@ class cart_dao {
 
          /* Hacemos un select con el carrito actualizado, para no tener que recargar la pagina */
 
-         $sql = "SELECT stock.nombre_disco,stock.estilo_musical,stock.precio,stock.ruta,stock.cod_producto,cart.cantidad as cantidad 
+         $sql = "SELECT stock.stock,stock.nombre_disco,stock.estilo_musical,stock.precio,stock.ruta,stock.cod_producto,cart.cantidad as cantidad 
          FROM cart INNER JOIN stock ON cart.cod_producto = stock.cod_producto WHERE cart.IDUser = '$IDUser' GROUP BY cart.cod_producto";
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
+
+
+    }
+
+    public function comprobar_stock($db,$IDUser,$prod) {
+
+        $sql = "SELECT stock.stock,cart.cantidad FROM stock,cart WHERE cart.IDUser = '$IDUser' 
+        and cart.cod_producto = stock.cod_producto and cart.cod_producto ='$prod'";
+
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
 

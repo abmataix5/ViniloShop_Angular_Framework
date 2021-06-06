@@ -114,6 +114,33 @@
 		 
         }
 
+		function check_out(){
+		
+			$token = decode_token($_POST["token"]);
+			$nameUser = user_from_token($token);  
+			$nameUser = ($nameUser['user']);
+		
+
+			$json = array();
+			$json = loadModel(MODEL_CART, "cart_model", "check_out_model",$nameUser);   
+			echo json_encode($json);  
+		 
+        }
+
+		function comprobar_stock(){
+		
+			$token = decode_token($_POST["token"]);
+			$nameUser = user_from_token($token);  
+			$nameUser = ($nameUser['user']);
+		
+
+			$json = array();
+			$json = loadModel(MODEL_CART, "cart_model", "check_stock_model",$nameUser,$_POST["prod"]);   
+			echo json_encode($json);  
+		 
+        }
+
+
 
 	
 	}

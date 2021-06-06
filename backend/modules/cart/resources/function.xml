@@ -42,5 +42,17 @@
         <name>select_stock_product</name>
         <uri>select_stock_product</uri>
     </function>
+
+     <function>
+        <name>check_out</name>
+        <uri>check_out</uri>
+    </function>
+
+    
+     <function>
+        <name>comprobar_stock</name>
+        <uri>comprobar_stock</uri>
+    </function>
+    
     
 </functions>

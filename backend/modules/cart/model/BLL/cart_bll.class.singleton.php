@@ -68,4 +68,16 @@
 			return $this->dao->stock_product($this->db,$prod); 
 			
 		  }
+
+		  public function check_out_BLL($IDUser){
+
+			return $this->dao->check_out($this->db,$IDUser); 
+			
+		  }
+
+		  public function check_stock_BLL($IDUser,$prod){
+
+			return $this->dao->comprobar_stock($this->db,$IDUser,$prod); 
+			
+		  }
 	}

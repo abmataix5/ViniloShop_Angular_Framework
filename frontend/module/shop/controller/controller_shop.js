@@ -312,14 +312,14 @@ viniloshop.controller('controller_shop', function($scope,services,grupos,toastr,
                                  services_cart.count_product_user();
                         }
                     
-                });
+                    });
 
              
 
-        }else{
+         }else{
             toastr.error('Inicia sesion para poder comprar nuestros productos');
         }
-};
+    };
 
    
 

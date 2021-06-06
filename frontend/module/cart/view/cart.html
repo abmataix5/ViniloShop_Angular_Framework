@@ -26,6 +26,7 @@
                                         <div class="col-sm-10">
                                             <h4 class="nomargin">{{data.nombre_disco}}</h4>
                                             <p>{{data.estilo_musical}}</p>
+                                            <p style="color: rgb(0, 255, 34) ;""> Quedan {{data.stock}} en stock!!</p>
                                         </div>
                                     </div>
                                 </td>
@@ -33,7 +34,7 @@
                                 <td data-th="Quantity"><strong>{{data.cantidad}}</strong>
                                   <!--   <input type="number" class="form-control text-center" name="up_cant" ng-value="{{data.cantidad}}" ng-model="up_cant" ng-click="add_prod()"> -->
                                  <button  ng-click="del_prod(data.cod_producto)" ng-disabled="all"><img class="resta" src="frontend/view/images/resta.png" /></button>
-                                 <button  ng-click="add_prod(data.cod_producto)"><img class="suma" src="frontend/view/images/suma.jpg" /></button>
+                                 <button id="{{data.cod_producto}}" ng-click="add_prod(data.cod_producto)"><img class="suma" src="frontend/view/images/suma.jpg" /></button>
                                 </td>
                                 <td data-th="Subtotal" class="text-center">{{data.precio * data.cantidad}} $</td>
                                 <td class="actions" data-th="">
@@ -50,7 +51,7 @@
                                 <td><a href="#/shop" class="btn btn-warning"><i class="fa fa-angle-left"></i>Continuar comprando</a></td>
                                 <td colspan="2" class="hidden-xs"></td>
                                 <td class="hidden-xs text-center"><strong>Total : {{Total()}} $</strong></td>
-                                <td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+                                <td><a href="#/home" class="btn btn-success btn-block" ng-click="check_out()">Checkout <i class="fa fa-angle-right"></i></a></td>
                             </tr>
                         </tfoot>
                     </table>
