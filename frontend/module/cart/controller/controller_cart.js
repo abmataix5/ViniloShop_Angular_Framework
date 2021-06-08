@@ -28,26 +28,9 @@ viniloshop.controller('controller_cart', function($scope,services,dataCart,toast
           
         });
 
-        services.post('cart', 'comprobar_stock',{'token':localStorage.getItem('token'),'prod': cod_prod}).then(function(data) {
-      
-     
-
-        if(data[0]['stock'] == data[0]['cantidad']){
-
-          /* Funcion para eliminar elementos, le pasamos el cod_prodcuto, 
-          cuando la cantidad que quiere el usuario es igual al maximo stock
-          quitamos el boton de sumar productos */
-
-              eliminarElemento(cod_prod);
-      
-        }
-          
-        });
-
-        
-
            /* Contar productos carrito */
         services_cart.count_product_user();
+        
       };
 
       $scope.del_prod = function(cod_prod) {
@@ -78,9 +61,10 @@ viniloshop.controller('controller_cart', function($scope,services,dataCart,toast
 
       $scope.check_out = function() {
 
+        /* Hay un trigger, que luego de cada compra actualiza el stock de cada producto*/
+
         services.post('cart', 'check_out',{'token':localStorage.getItem('token')}).then(function(data) {
     
-         console.log(data);
          toastr.success('Compra realizada con exito');
           
         });

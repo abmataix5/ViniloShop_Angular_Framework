@@ -44,6 +44,9 @@ class shop_model {
     public function select_user_fav($arrArgument,$arrArgument2){
         return $this->bll->obtain_user_BLL($arrArgument,$arrArgument2);
     } 
+    public function obtain_checks_no_user($arrArgument,$arrArgument2){
+        return $this->bll->obtain_checks_no_user_BLL($arrArgument,$arrArgument2);
+    } 
 /*     public function obtain_data_details($arrArgument){
         return $this->bll->obtain_data_details_BLL($arrArgument);
     }

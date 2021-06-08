@@ -185,4 +185,51 @@ class shop_dao {
     }
 
 
+    
+
+    public function checks_no_user($db,$arrArgument,$arrArgument2) {
+
+        $estilo_array = sizeof($arrArgument);
+        $catego_array = sizeof($arrArgument2);
+
+        $check_0 = $arrArgument[0];
+        $check_1 = $arrArgument[1];
+        $check_2 = $arrArgument[2];
+        $check_3 = $arrArgument[3];
+        $check_4 = $arrArgument[4];
+
+      
+        $catego_0 = $arrArgument2[0];
+        $catego_1 = $arrArgument2[1];
+        $catego_2 = $arrArgument2[2];
+        $catego_3 = $arrArgument2[3];
+
+        if($estilo_array > 0 && $catego_array == 0){
+            $sql = "SELECT * FROM stock WHERE estilo_musical = '$check_0' or estilo_musical = '$check_1' or estilo_musical = '$check_2' or estilo_musical = '$check_3' or estilo_musical = '$check_4'";
+            $stmt = $db->ejecutar($sql);
+            return $db->listar($stmt);
+        }if($catego_array > 0 && $estilo_array == 0){
+            $sql = "SELECT * FROM stock WHERE categoria = '$catego_0' or categoria = '$catego_1' or categoria = '$catego_2' or categoria = '$catego_3'";
+            $stmt = $db->ejecutar($sql);
+            return $db->listar($stmt);
+        } if($estilo_array == 1  && $catego_array == 1){
+            $sql = "SELECT * FROM stock WHERE estilo_musical = '$check_0'  and categoria = '$catego_0'";
+
+            $stmt = $db->ejecutar($sql);
+            return $db->listar($stmt);
+        }  if($estilo_array == 2  && $catego_array == 1){
+            $sql = "SELECT * FROM stock WHERE categoria = '$catego_0'  and estilo_musical = '$check_1'  UNION SELECT * FROM stock WHERE categoria = '$catego_0'  and estilo_musical = '$check_0' ";
+
+            $stmt = $db->ejecutar($sql);
+            return $db->listar($stmt);
+        } else{
+            $sql = "SELECT * FROM stock";
+            $stmt = $db->ejecutar($sql);
+            return $db->listar($stmt);
+
+        }
+      
+    
+    }
+
 }

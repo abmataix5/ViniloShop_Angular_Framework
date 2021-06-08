@@ -210,10 +210,12 @@ viniloshop.controller('controller_shop', function($scope,services,grupos,toastr,
     
             producto_filtrado = services.post('shop', 'checks', {'checks': filtros,'checks_2': filtros_catego,'token': localStorage.getItem('token')}) 
 
-            /* Para poder sacar los datos en un array normal */
+     
 
             producto_filtrado.then(function(data) {
                      
+                console.log(data);
+                
                 $scope.stock = data.slice((($scope.currentPage - 1) * $scope.itemsPerPage), ($scope.currentPage * $scope.itemsPerPage));
                 all_stock = data;
                 $scope.totalItems = data.length; 

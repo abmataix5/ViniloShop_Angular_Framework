@@ -32,9 +32,9 @@
                                 </td>
                                 <td data-th="Price">{{data.precio}} $</td>
                                 <td data-th="Quantity"><strong>{{data.cantidad}}</strong>
-                                  <!--   <input type="number" class="form-control text-center" name="up_cant" ng-value="{{data.cantidad}}" ng-model="up_cant" ng-click="add_prod()"> -->
-                                 <button  ng-click="del_prod(data.cod_producto)" ng-disabled="all"><img class="resta" src="frontend/view/images/resta.png" /></button>
-                                 <button id="{{data.cod_producto}}" ng-click="add_prod(data.cod_producto)"><img class="suma" src="frontend/view/images/suma.jpg" /></button>
+                               
+                                 <button  ng-click="del_prod(data.cod_producto)" ng-disabled="{{data.cantidad == 0}}"><img class="resta" src="frontend/view/images/resta.png" /></button>
+                                 <button id="{{data.cod_producto}}" ng-disabled="{{data.cantidad == data.stock}}" ng-click="add_prod(data.cod_producto)"><img class="suma" src="frontend/view/images/suma.jpg" /></button>
                                 </td>
                                 <td data-th="Subtotal" class="text-center">{{data.precio * data.cantidad}} $</td>
                                 <td class="actions" data-th="">

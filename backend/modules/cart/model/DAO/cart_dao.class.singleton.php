@@ -67,6 +67,7 @@ class cart_dao {
 
 
     public function check_out($db,$IDUser) {
+        
         /* Actualizamos cantidad + 1 */
 
         $sql1 = "INSERT INTO compras SELECT * FROM cart WHERE cart.IDUser = '$IDUser'";

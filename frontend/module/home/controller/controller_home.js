@@ -1,7 +1,7 @@
 
 viniloshop.controller('controller_home', function($scope,services,carrousel,categorias,more_groups,services_logIn) {
 
-  /*   services_logIn.logOut(); */
+ 
 
     let count = 3;
     $scope.myInterval = 3000;

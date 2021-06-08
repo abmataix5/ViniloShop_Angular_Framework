@@ -9,7 +9,7 @@ viniloshop.controller('controller_recover', function($scope, services,toastr) {
            
              if (response) {
             console.log(response);
-                toastr.success('Hemos enviado un correo a tu cuenta para recuperar tu contraseña');
+                toastr.success('Hemos enviado un correo a tu cuenta para recuperar tu contrasena');
                 location.href = "#/login"
             }else {
                 toastr.error('Error');

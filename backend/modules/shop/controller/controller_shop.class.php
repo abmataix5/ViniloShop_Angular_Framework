@@ -99,14 +99,17 @@
 				$token = decode_token($_POST["token"]);
 				$nameUser = user_from_token($token);   
 				$nameUser = ($nameUser['user']);
+				$json = array();
+				$json = loadModel(MODEL_SHOP, "shop_model", "obtain_checks",$_POST["checks"],$_POST["checks_2"],$nameUser);
+				echo json_encode($json); 
 			}else{
 	
-				$nameUser = "";
+				$json = array();
+				$json = loadModel(MODEL_SHOP, "shop_model", "obtain_checks_no_user",$_POST["checks"],$_POST["checks_2"]);
+				echo json_encode($json); 
 			}
 		
-			  $json = array();
-			  $json = loadModel(MODEL_SHOP, "shop_model", "obtain_checks",$_POST["checks"],$_POST["checks_2"],$nameUser);
-			  echo json_encode($json); 
+			 
 			 
 	  }
 		
