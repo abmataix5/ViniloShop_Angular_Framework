@@ -1,3 +1,4 @@
+![ViniloShop - Google Chrome 2021-06-09 19-01-28](https://user-images.githubusercontent.com/62066419/121399484-c1c1b500-c956-11eb-930c-a402792ee9fc.gif)
 
 
 # APP WEB VINILOSHOP 📋
@@ -21,7 +22,8 @@ Aplicacion destinada a la venta online.
 
 ### Video de la APP en funcionamiento ⌨️
 
-![ViniloShop - Google Chrome 2021-03-02 20-58-35 (2)](https://user-images.githubusercontent.com/62066419/109805866-413b3c00-7c24-11eb-84cd-e5a92278bbc5.gif)
+![ViniloShop - Google Chrome 2021-06-09 19-01-28](https://user-images.githubusercontent.com/62066419/121399498-c5553c00-c956-11eb-8838-e6aea446faa3.gif)
+
 
 
 
@@ -43,14 +45,16 @@ Aplicacion destinada a la venta online.
     #### Tecnologias secundarias🛠️
 
     *   *Frontend* - [Bootstrap](https://getbootstrap.com/)
-    *   *MailGun* - [MailGun](https://www.mailgun.com/?utm_term=mailgun&utm_campaign=12070351916&utm_content=&utm_source=google&utm_medium=cpc&hsa_grp=119308153667&hsa_cam=750089235&hsa_mt=e&hsa_net=adwords&hsa_ver=3&hsa_acc=2217295277&hsa_ad=491312739064&hsa_src=g&hsa_tgt=kwd-41599135362&hsa_kw=mailgun&gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQxmR6zuAXG0Ln7Gh0nvELbRtBl2x4adOYebLI67aqiPMVOml_qhWfgaAv3EEALw_wcB)
+    *   *Backend* - [JWT](https://jwt.io/)
+    *   *Backend* - [MailGun](https://www.mailgun.com/?utm_term=mailgun&utm_campaign=12070351916&utm_content=&utm_source=google&utm_medium=cpc&hsa_grp=119308153667&hsa_cam=750089235&hsa_mt=e&hsa_net=adwords&hsa_ver=3&hsa_acc=2217295277&hsa_ad=491312739064&hsa_src=g&hsa_tgt=kwd-41599135362&hsa_kw=mailgun&gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQxmR6zuAXG0Ln7Gh0nvELbRtBl2x4adOYebLI67aqiPMVOml_qhWfgaAv3EEALw_wcB)
+    
 
 
 ### Modulos de la app 🔩
 
 * *Home* 
 * *Shop* 
-*  **Cart* 
+*  *Cart* 
 * *Contact* 
 * *Login/Register/Social login*
 
