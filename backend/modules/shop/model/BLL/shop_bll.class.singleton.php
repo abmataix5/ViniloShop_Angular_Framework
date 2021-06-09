@@ -52,22 +52,5 @@
 		  public function search_BLL($arrArgument,$arrArgument2){
 			return ($this->dao->search($this->db,$arrArgument,$arrArgument2));
 		  } 
-/* 	    public function obtain_data_details_BLL($arrArgument){
-		  return $this->dao->select_data_details($this->db,$arrArgument);
-	    }
-	    public function number_breeds_BLL($arrArgument){
-		  return $this->dao->select_number_breeds($this->db,$arrArgument);
-	    }
-	    public function all_breeds_BLL(){
-	      return $this->dao->select_all_breeds($this->db);
-	    }
-	    public function select_user_BLL($arrArgument){
-	      return $this->dao->select_user($this->db,$arrArgument);
-	    }
-	    public function insert_adoption_BLL($arrArgument,$arrArgument2){
-	      return $this->dao->insert_adoption($this->db,$arrArgument,$arrArgument2);
-	    }
-	    public function update_value_BLL($arrArgument){
-	      return $this->dao->update_value($this->db,$arrArgument);
-	    } */
+
 	}
