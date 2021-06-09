@@ -50,7 +50,7 @@ Aplicacion destinada a la venta online.
 
 * *Home* 
 * *Shop* 
-*  **Cart* 
+*  *Cart* 
 * *Contact* 
 * *Login/Register/Social login*
 
