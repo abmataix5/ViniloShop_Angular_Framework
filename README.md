@@ -30,14 +30,15 @@ Aplicacion destinada a la venta online.
 
 * *Backend* - [PHP](https://www.php.net/)
 * *Frontend* - [Javascript](https://es.wikipedia.org/wiki/JavaScript)
-* *Frontend* - [JQuery](https://jquery.com/)
+* *Frontend* - [AngularJS 1.4](https://angularjs.org/)
 * *Backend* - [MySQL](https://www.mysql.com/)
 
 
-    #### Apis utilizadas🛠️
+    #### Librerias utilizadas🛠️
 
-    * *Api Google Maps*  - [GoogleMapsApi](https://developers.google.com/maps/documentation?hl=es)
-    * *GoogleBooks Api* - [GoogleBooks](https://developers.google.com/books)
+    * *Bootstrap*  -
+    * *Toastr* - 
+    *  * *Firebase* - [Firebase](https://firebase.google.com/?hl=es)
 
     #### Tecnologias secundarias🛠️
 
