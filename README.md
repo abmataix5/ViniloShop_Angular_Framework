@@ -36,22 +36,21 @@ Aplicacion destinada a la venta online.
 
     #### Librerias utilizadas🛠️
 
-    * *Bootstrap*  -
+
     * *Toastr* - 
-    *  * *Firebase* - [Firebase](https://firebase.google.com/?hl=es)
+    * *Firebase* - [Firebase](https://firebase.google.com/?hl=es)
 
     #### Tecnologias secundarias🛠️
 
     *   *Frontend* - [Bootstrap](https://getbootstrap.com/)
+    *    *   *MailGun* - [MailGun](https://www.mailgun.com/?utm_term=mailgun&utm_campaign=12070351916&utm_content=&utm_source=google&utm_medium=cpc&hsa_grp=119308153667&hsa_cam=750089235&hsa_mt=e&hsa_net=adwords&hsa_ver=3&hsa_acc=2217295277&hsa_ad=491312739064&hsa_src=g&hsa_tgt=kwd-41599135362&hsa_kw=mailgun&gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQxmR6zuAXG0Ln7Gh0nvELbRtBl2x4adOYebLI67aqiPMVOml_qhWfgaAv3EEALw_wcB)
 
 
 ### Modulos de la app 🔩
 
-*  *Home* 
-* *Stock* 
-*  *Order*
-*   *Shop* 
-*   * *Cart* 
+* *Home* 
+* *Shop* 
+*  **Cart* 
 * *Contact* 
 * *Login/Register/Social login*
 
@@ -61,17 +60,17 @@ Aplicacion destinada a la venta online.
 |Modulo | Funcionaliad|
 | ------------- | ------------- |
 | Home  | Muestra OwlCarrousel con imagenes de la web, categorias de productos y grupos disponibles(laod more) |
-| Stock | Panel admin para adminsitrar stock de la web (CRUD) |
-| Order |Para consultar el stock de la web de manera más precisa(DataTable jQuery) |
-| Shop | Muestra todos los productos de la tienda con filtros,GMaps,ApiBooks,Pagination,Favoritos  |
+| Login | El módulo de login cuenta con login manual o con social login, mediante gmail o Git Hub, también cuenta con register(con correro de confirmación
+), recover password(también con correo de confirmación), |
+| Shop | Muestra todos los productos de la tienda con filtros,Pagination,Favoritos  |
 | Cart | Muestra lista de productos que el usuario logueado va a commprar |
 | Contact | Fomualario para que el cliente pueda contactar con nosotros + GMaps + InfoWeb  |
-| Disponible en toda la app | Translate, Modo Oscuro  |
+| Disponible en toda la app | Search, Log Out  |
 
 ### Próximas actualizaciones: 🛠️
 
 
-* *Shop carrito compra* 
+* *...* 
 
 
 ## Autores ✒️
