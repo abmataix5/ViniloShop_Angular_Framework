@@ -57,17 +57,14 @@ class mail{
 		$html .= "</body>";
 		$html .= "</html>";
 
-        //set_error_handler('ErrorHandler');
+    
         try{
-         /*    if ($arr['type'] === 'admin')
-                $address = 'mataix.ab@gmail.com';
-            else
-                $address = $arr['inputEmail']; */
+    
             $result = self::send_mailgun($from, $email, $subject, $html);    
         } catch (Exception $e) {
 			$return = 0;
 		}
-		//restore_error_handler();
+
         return $result;
     }
 

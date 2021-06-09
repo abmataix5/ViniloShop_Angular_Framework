@@ -518,7 +518,7 @@ input:-moz-placeholder {
   border-right-width: 1em;
   border-bottom-width: thick;
   border-left-width: thin;
-  border: lawngreen;
+  border: rgb(8, 8, 8);
 }
 .btn_compra{
   text-decoration: none;
@@ -531,7 +531,7 @@ input:-moz-placeholder {
   font-style: italic;
   color: hsl(0, 100%, 100%);
 
-  background-color: #678d00;
+  background-color: #0011f8;
   border-radius: 15px;
   border: 3px double #fafffa;
   cursor: pointer;
@@ -619,4 +619,8 @@ div.vertical-line{
   height: 100%;
   float: left; 
   border: 1px inset; /* This is default border style for <hr> tag */
+}
+
+.cart_img{
+  width: 20px; height: 20px;
 }

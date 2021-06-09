@@ -96,8 +96,6 @@ viniloshop.config(['$routeProvider', '$locationProvider',
        
         services_logIn.printMenu();
     
-       
-        
         $rootScope.closeSessionClick = function () {
           
             localStorage.removeItem('token');
@@ -106,11 +104,13 @@ viniloshop.config(['$routeProvider', '$locationProvider',
             location.href = "#/home";
         }
 
-            
-   
-    
        
-    
 
+        $rootScope.search = function () {
+          
+            valor_Search = document.getElementById("autocom").value;
+            localStorage.search = valor_Search;
+            location.href = "#/shop";
+        }
 
       });

@@ -4,12 +4,7 @@
 	        $_SESSION['module'] = "home";
 	    }
 
-	  /*   function list_home() {
-			require(VIEW_PATH_INC . "top_page_home.php");  
-			require(VIEW_PATH_INC . "header.html");
-        	loadView('modules/home/view/', 'home1.html');
-       		require_once(VIEW_PATH_INC . "footer.html");
-	    } */
+
 	    
 	    function owl_carrousel(){
 			/* echo("Tamo dentro funcion carrousel"); */

@@ -49,6 +49,9 @@
 		  public function obtain_checks_no_user_BLL($arrArgument,$arrArgument2){
 			return ($this->dao->checks_no_user($this->db,$arrArgument,$arrArgument2));
 		  } 
+		  public function search_BLL($arrArgument,$arrArgument2){
+			return ($this->dao->search($this->db,$arrArgument,$arrArgument2));
+		  } 
 /* 	    public function obtain_data_details_BLL($arrArgument){
 		  return $this->dao->select_data_details($this->db,$arrArgument);
 	    }

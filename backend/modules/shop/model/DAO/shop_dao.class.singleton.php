@@ -50,6 +50,21 @@ class shop_dao {
    
     }
 
+    public function search($db,$arrArgument,$arrArgument2) {
+     
+        $sql = "SELECT stock.*,likes.likes  FROM stock  LEFT JOIN 
+        ((SELECT DISTINCT f.cod_producto, 'like' as likes 
+        FROM favoritos f
+        WHERE f.IDUser  LIKE '$arrArgument2') AS likes)
+        ON stock.cod_producto = likes.cod_producto WHERE stock.categoria LIKE '$arrArgument%' OR stock.nombre_grupo LIKE '$arrArgument%' "; 
+      
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt);
+
+        
+   
+    }
+
     public function select_pag_list($db) {
         $sql = "SELECT * FROM stock ";
         $stmt = $db->ejecutar($sql);

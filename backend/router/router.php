@@ -23,7 +23,7 @@ function handlerRouter() {
     } else {
         
         $URI_module = 'home';
-        // echo'<script>window.location.href = "./home/list_home/";</script>';
+ 
     }
 
     if (!empty($_GET['function'])) {
@@ -44,14 +44,14 @@ function handlerRouter() {
             $exist = true;
 
             $URI_module = (String) $module->name;
-   /*          echo($URI_module); */
+
             $path = MODULES_PATH . $URI_module . "/controller/controller_" . $URI_module . ".class.php";
-              /* echo($path);   */
+      
             if (file_exists($path)) {
-                /*  echo($URI_module); */  
+             
                 require_once($path);
                 $controllerClass = "controller_" . $URI_module;
-                /* echo ($URI_module); */
+         
                 $obj = new $controllerClass;
                 
             } else {

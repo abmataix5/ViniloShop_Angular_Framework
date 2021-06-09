@@ -12,23 +12,17 @@
 
       <!--show Now-->  
       <section id="all_shop" class="contact py-lg-4 py-md-3 py-sm-3 py-3">
+
          <div class="container-fluid py-lg-5 py-md-4 py-sm-4 py-3">
+
             <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3" id="title_Shop">Compra aquí nuestros productos</h3>
-            <section id="cargar_maps">
-              <!-- Aqui cargamos el div del maps -->
-            </section>
+
 
             <div class="row">
                <div class="side-bar col-lg-3">
-            
-							<!-- maps -->
-                     <img class="mapdetails" src="frontend/view/images/maps.png">
-                     				
 
-							<!-- //maps -->
-                  
+                  <!--Grupos disponibles-->
 
-                  <!--Filtros, por grupo -->
                   <div class="left-side">
                      <h3 class="agileits-sear-head">Grupos/Artistas disponibles</h3>
                      <ul id ="filtros" >
@@ -38,15 +32,12 @@
                             </li>
                      </ul>
                   </div>
-                 <!--Filtros, por grupo -->
+         
 
 
                   <!--Filtros, por estilo musical -->
+
                <form name="f1" class="ff"> 
-
-
-              
-
 
                   <div class="left-side">
                      <h3 class="agileits-sear-head">Estilo musical</h3>
@@ -116,8 +107,23 @@
                         <div id="cuadro" ng-repeat= "data in stock">
                            
                            <img class="imga1" id="{{data.cod_producto}}" ng-src="frontend/{{data.ruta}}" ng-click="showDetails(data.cod_producto)"><br>
+
+                           
+                           <span ng-if="'0'== data.stock">
+                           
+                              <p style="color: rgb(255, 8, 8) ;""><strong>Sin stock</strong></p>
+                              <button ng-click="buy_product(data.cod_producto)" ng-disabled="{{data.stock == 0}}" ><img class ="cart_img" src="frontend/view/images/cart.png" /></button>
+                  
+                           </span>
+
+                           <span ng-if="'0'!= data.stock">
+
+                              <p style="color: rgb(0, 255, 34) ;""> <strong>Disponible</strong></p>
+                              <button ng-click="buy_product(data.cod_producto)" ng-disabled="{{data.stock == 0}}" ><img class ="cart_img" src="frontend/view/images/cart.png" /></button>
+                          
+                           </span >
                         
-                           <a class="btn_compra" ng-click="buy_product(data.cod_producto)">Añadir al carrito</a>
+                        <!-- <a class="btn_compra" ng-click="buy_product(data.cod_producto)" ng-disabled="{{data.stock == 0}}" >Añadir al carrito</a> -->
           
                               <span ng-if="'like'== data.likes">
                                  <i  class="fas fa-heart unlike"  style="font-size: 1.5em;" ng-click="click_fav(data.cod_producto)" id="fav-{{data.cod_producto}}"></i>
@@ -142,13 +148,7 @@
                         </div>
                      </div>
 
-
-
-                     <!-- Api books realcionados -->
-                     <div id="api_div">
-                     <h1 id="titulo_api">Otros productos que podrian interesarte:</h1>
-                     <!-- <div id="load_Api"></div> -->
-                  </div>
+              
                  </div>
                </div>
 

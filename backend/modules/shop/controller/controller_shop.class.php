@@ -34,6 +34,25 @@
 			  
 		}
 
+		function search(){
+		
+
+			if($_POST["token"]){
+
+				$token = decode_token($_POST["token"]);
+				$nameUser = user_from_token($token);   
+				$nameUser = ($nameUser['user']);
+			}else{
+	
+				$nameUser = "";
+			}
+
+		    	$json = array();
+			 	$json = loadModel(MODEL_SHOP, "shop_model", "obtain_search_model",$_POST["data"],$nameUser);
+			 	echo json_encode($json);  
+			  
+		}
+
 		function details(){
 			
 			if($_POST["token"]){
