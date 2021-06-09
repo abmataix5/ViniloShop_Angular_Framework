@@ -43,7 +43,7 @@ Aplicacion destinada a la venta online.
     #### Tecnologias secundarias🛠️
 
     *   *Frontend* - [Bootstrap](https://getbootstrap.com/)
-    *    *   *MailGun* - [MailGun](https://www.mailgun.com/?utm_term=mailgun&utm_campaign=12070351916&utm_content=&utm_source=google&utm_medium=cpc&hsa_grp=119308153667&hsa_cam=750089235&hsa_mt=e&hsa_net=adwords&hsa_ver=3&hsa_acc=2217295277&hsa_ad=491312739064&hsa_src=g&hsa_tgt=kwd-41599135362&hsa_kw=mailgun&gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQxmR6zuAXG0Ln7Gh0nvELbRtBl2x4adOYebLI67aqiPMVOml_qhWfgaAv3EEALw_wcB)
+    *   *MailGun* - [MailGun](https://www.mailgun.com/?utm_term=mailgun&utm_campaign=12070351916&utm_content=&utm_source=google&utm_medium=cpc&hsa_grp=119308153667&hsa_cam=750089235&hsa_mt=e&hsa_net=adwords&hsa_ver=3&hsa_acc=2217295277&hsa_ad=491312739064&hsa_src=g&hsa_tgt=kwd-41599135362&hsa_kw=mailgun&gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQxmR6zuAXG0Ln7Gh0nvELbRtBl2x4adOYebLI67aqiPMVOml_qhWfgaAv3EEALw_wcB)
 
 
 ### Modulos de la app 🔩
@@ -60,10 +60,9 @@ Aplicacion destinada a la venta online.
 |Modulo | Funcionaliad|
 | ------------- | ------------- |
 | Home  | Muestra OwlCarrousel con imagenes de la web, categorias de productos y grupos disponibles(laod more) |
-| Login | El módulo de login cuenta con login manual o con social login, mediante gmail o Git Hub, también cuenta con register(con correro de confirmación
-), recover password(también con correo de confirmación), |
+| Login | El módulo de login cuenta con login manual o con social login, mediante gmail o Git Hub, también cuenta con register y recover password |
 | Shop | Muestra todos los productos de la tienda con filtros,Pagination,Favoritos  |
-| Cart | Muestra lista de productos que el usuario logueado va a commprar |
+| Cart | Muestra lista de productos que el usuario logueado va a commprar, cuenta con triggers para el control del stock. |
 | Contact | Fomualario para que el cliente pueda contactar con nosotros + GMaps + InfoWeb  |
 | Disponible en toda la app | Search, Log Out  |
 
