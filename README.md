@@ -1,3 +1,4 @@
+![ViniloShop - Google Chrome 2021-06-09 19-01-28](https://user-images.githubusercontent.com/62066419/121399484-c1c1b500-c956-11eb-930c-a402792ee9fc.gif)
 
 
 # APP WEB VINILOSHOP 📋
@@ -21,7 +22,8 @@ Aplicacion destinada a la venta online.
 
 ### Video de la APP en funcionamiento ⌨️
 
-![ViniloShop - Google Chrome 2021-03-02 20-58-35 (2)](https://user-images.githubusercontent.com/62066419/109805866-413b3c00-7c24-11eb-84cd-e5a92278bbc5.gif)
+![ViniloShop - Google Chrome 2021-06-09 19-01-28](https://user-images.githubusercontent.com/62066419/121399498-c5553c00-c956-11eb-8838-e6aea446faa3.gif)
+
 
 
 
