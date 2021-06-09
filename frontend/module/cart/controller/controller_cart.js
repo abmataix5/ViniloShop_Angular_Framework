@@ -2,7 +2,7 @@
 viniloshop.controller('controller_cart', function($scope,services,dataCart,toastr,services_cart) {
 
         $scope.data = dataCart;
-   console.log($scope.data);
+
 
       $scope.delete_prod = function(cod_prod) {
 
@@ -12,7 +12,7 @@ viniloshop.controller('controller_cart', function($scope,services,dataCart,toast
           
           });
 
-        toastr.error('Producto borrado de tu carrito');
+          toastr.error('Producto borrado de tu carrito');
 
            /* Contar productos carrito */
            services_cart.count_product_user();

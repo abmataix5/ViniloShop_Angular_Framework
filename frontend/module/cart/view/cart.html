@@ -33,7 +33,7 @@
                                 <td data-th="Price">{{data.precio}} $</td>
                                 <td data-th="Quantity"><strong>{{data.cantidad}}</strong>
                                
-                                 <button  ng-click="del_prod(data.cod_producto)" ng-disabled="{{data.cantidad == 0}}"><img class="resta" src="frontend/view/images/resta.png" /></button>
+                                 <button  ng-click="del_prod(data.cod_producto)" ng-disabled="{{data.cantidad == 1}}"><img class="resta" src="frontend/view/images/resta.png" /></button>
                                  <button id="{{data.cod_producto}}" ng-disabled="{{data.cantidad == data.stock}}" ng-click="add_prod(data.cod_producto)"><img class="suma" src="frontend/view/images/suma.jpg" /></button>
                                 </td>
                                 <td data-th="Subtotal" class="text-center">{{data.precio * data.cantidad}} $</td>

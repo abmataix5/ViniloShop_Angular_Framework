@@ -7,9 +7,9 @@ viniloshop.factory('services_cart', ['$rootScope', 'services', function($rootSco
       
 
             
-            services.post('cart', 'count_cart_prod', {token: localStorage.token})
-            .then(function(response) {
-console.log(response);
+            services.post('cart', 'count_cart_prod', {token: localStorage.token}).then(function(response) {
+       
+
                 var total = response[0]['sum'];
                 
                 $rootScope.cart_total = total;

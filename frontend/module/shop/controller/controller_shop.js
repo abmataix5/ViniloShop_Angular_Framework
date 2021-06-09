@@ -229,7 +229,7 @@ viniloshop.controller('controller_shop', function($rootScope,$scope,services,gru
                      
                 
                 $scope.stock = data.slice((($scope.currentPage - 1) * $scope.itemsPerPage), ($scope.currentPage * $scope.itemsPerPage));
-
+                all_stock = data;
 
                 $scope.totalItems = data.length;  /* Para la paginacion */
            

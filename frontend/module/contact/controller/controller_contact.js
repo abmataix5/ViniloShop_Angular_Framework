@@ -1,4 +1,3 @@
-
 viniloshop.controller('controller_contact', function($scope,services) {
 
   
@@ -7,14 +6,4 @@ viniloshop.controller('controller_contact', function($scope,services) {
   
   
   
-  });// end_controller
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+});// end_controller
