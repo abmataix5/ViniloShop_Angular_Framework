@@ -1,4 +1,4 @@
-![ViniloShop - Google Chrome 2021-06-09 19-01-28](https://user-images.githubusercontent.com/62066419/121399484-c1c1b500-c956-11eb-930c-a402792ee9fc.gif)
+
 
 
 # APP WEB VINILOSHOP 📋
