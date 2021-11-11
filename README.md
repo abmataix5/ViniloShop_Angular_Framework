@@ -50,7 +50,7 @@ Aplicacion destinada a la venta online de productos de segunda mano.
 *  *Login/Register* 
 * *Perfil* 
 * *Settings*
-* * *Mis pedidos*
+* *Mis pedidos*
 
 
 ### Funcionalidad ⚙️
