@@ -47,9 +47,10 @@ Aplicacion destinada a la venta online de productos de segunda mano.
 
 * *Home* 
 * *Shop* 
-*  *Login* 
-* *Contact* 
-* *Login/Register/Social login*
+*  *Login/Register* 
+* *Perfil* 
+* *Settings*
+* * *Mis pedidos*
 
 
 ### Funcionalidad ⚙️
