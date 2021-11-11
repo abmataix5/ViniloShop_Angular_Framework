@@ -29,23 +29,17 @@ Aplicacion destinada a la venta online de productos de segunda mano.
 ### Construido con 🛠️
 
 
-* *Backend* - [PHP](https://www.php.net/)
+* *Backend* -
 * *Frontend* - [Angular 12](https://angular.io/)
-* *Frontend* - [AngularJS 1.4](https://angularjs.org/)
-* *Backend* - [MySQL](https://www.mysql.com/)
+
 
 
     #### Librerias utilizadas🛠️
 
 
-    * *Toastr* - 
-    * *Firebase* - [Firebase](https://firebase.google.com/?hl=es)
 
     #### Tecnologias secundarias🛠️
 
-    *   *Frontend* - [Bootstrap](https://getbootstrap.com/)
-    *   *Backend* - [JWT](https://jwt.io/)
-    *   *Backend* - [MailGun](https://www.mailgun.com/?utm_term=mailgun&utm_campaign=12070351916&utm_content=&utm_source=google&utm_medium=cpc&hsa_grp=119308153667&hsa_cam=750089235&hsa_mt=e&hsa_net=adwords&hsa_ver=3&hsa_acc=2217295277&hsa_ad=491312739064&hsa_src=g&hsa_tgt=kwd-41599135362&hsa_kw=mailgun&gclid=Cj0KCQjwzYGGBhCTARIsAHdMTQxmR6zuAXG0Ln7Gh0nvELbRtBl2x4adOYebLI67aqiPMVOml_qhWfgaAv3EEALw_wcB)
     
 
 
@@ -72,8 +66,8 @@ Aplicacion destinada a la venta online de productos de segunda mano.
 - Articles list: Componente para mostrar los productos en venta del usuario.
 - Favorites list : Componente para mostrar los productos favoritos del usuario.
 - Followed list : Componente para mostrar los seguidores del usuario.
-- Following list. Componente para mostrar los usaurios a los que siga el usuario.
-|
+- Following list. Componente para mostrar los usaurios a los que siga el usuario.|
+
 | Settings | Search, Log Out  |
 
 ### Próximas actualizaciones: 🛠️
