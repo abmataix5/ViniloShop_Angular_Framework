@@ -1,9 +1,9 @@
 
 
 
-# APP WEB VINILOSHOP 📋
+# APP WEB THOHANDAPP 📋
 
-Aplicacion destinada a la venta online.
+Aplicacion destinada a la venta online de productos de segunda mano.
 
 
 
@@ -16,13 +16,12 @@ Aplicacion destinada a la venta online.
 *  *Tecnologias* 
 *  *Modulos* 
 *  *Funcionalidades*
-*  *Próximas actualizaciones* 
 *  *Autores*
 
 
 ### Video de la APP en funcionamiento ⌨️
 
-![ViniloShop - Google Chrome 2021-06-09 19-01-28](https://user-images.githubusercontent.com/62066419/121399498-c5553c00-c956-11eb-8838-e6aea446faa3.gif)
+
 
 
 
@@ -31,7 +30,7 @@ Aplicacion destinada a la venta online.
 
 
 * *Backend* - [PHP](https://www.php.net/)
-* *Frontend* - [Javascript](https://es.wikipedia.org/wiki/JavaScript)
+* *Frontend* - [Angular 12](https://angular.io/)
 * *Frontend* - [AngularJS 1.4](https://angularjs.org/)
 * *Backend* - [MySQL](https://www.mysql.com/)
 
