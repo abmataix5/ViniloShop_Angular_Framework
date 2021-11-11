@@ -53,7 +53,7 @@ Aplicacion destinada a la venta online de productos de segunda mano.
 
 * *Home* 
 * *Shop* 
-*  *Cart* 
+*  *Login* 
 * *Contact* 
 * *Login/Register/Social login*
 
@@ -63,11 +63,18 @@ Aplicacion destinada a la venta online de productos de segunda mano.
 |Modulo | Funcionaliad|
 | ------------- | ------------- |
 | Home  | Muestra OwlCarrousel con imagenes de la web, categorias de productos y grupos disponibles(laod more) |
-| Login | El módulo de login cuenta con login manual o con social login, mediante gmail o Git Hub, también cuenta con register y recover password |
-| Shop | Muestra todos los productos de la tienda con filtros,Pagination,Favoritos  |
-| Cart | Muestra lista de productos que el usuario logueado va a commprar, cuenta con triggers para el control del stock. |
-| Contact | Fomualario para que el cliente pueda contactar con nosotros + GMaps + InfoWeb  |
-| Disponible en toda la app | Search, Log Out  |
+| Login | Sistema de login y register con validación JWT |
+| Shop | El módulo de home se compone de varios componentes -> Filtros, Search, Paginación, Sistema de favoritos |
+| Details | El módulo de details, nos mostrara los detalles de un determinado producto, cuenta con los componentes de favoritos, boton de compra y el sistema de comentarios |
+| Mis pedidos | En este módulo, mostraremos la informacion de los productos comprados por el usuario logueado, desde aquí, podremos puntuar al vendedor del producto mediante el sistema de rating|
+| Perfil | El módulo de perfil, cuenta con diversos componentes : 
+- Perfil usuario : muestra la info del usuario y un botón para el follow/unfollow del usuario.
+- Articles list: Componente para mostrar los productos en venta del usuario.
+- Favorites list : Componente para mostrar los productos favoritos del usuario.
+- Followed list : Componente para mostrar los seguidores del usuario.
+- Following list. Componente para mostrar los usaurios a los que siga el usuario.
+|
+| Settings | Search, Log Out  |
 
 ### Próximas actualizaciones: 🛠️
 
