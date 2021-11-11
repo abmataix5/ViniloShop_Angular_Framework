@@ -80,5 +80,5 @@ Aplicacion destinada a la venta online.
 
 
 
-* *Abel Mataix Pascual* - [abmataix5](https://github.com/abmataix5/)
-* * *Abel Mataix Pascual* - [hachemico](https://github.com/hachemico/)
+* *Abel Mataix* - [abmataix5](https://github.com/abmataix5/)
+* *Hugo Micó* - [hachemico](https://github.com/hachemico/)
